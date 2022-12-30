@@ -23,6 +23,9 @@ socket.on('update', function (msg) {
         console.log("Player '" + game.players[game.playerTurn].playerName + "' stats:" );
         console.log(game.players[game.playerTurn].stats);*/
     }
+
+
+
 });
 
 socket.on('gamestop', function (msg) {
