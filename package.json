@@ -26,6 +26,7 @@
 		"mongoose": "^6.7.3",
 		"multer": "^1.4.5-lts.1",
 		"net": "^1.0.2",
+		"node": "^16.19.0",
 		"nodemon": "^2.0.20",
 		"package.json": "^0.0.0",
 		"passport": "^0.6.0",
