@@ -1,0 +1,46 @@
+{
+	"name": "ProLudoClub",
+	"version": "0.1.0",
+	"scripts": {
+		"dev": "nodemon main.js"
+	},
+	"main": "main.js",
+	"description": "Online multiplayer Ludo made with Node.js.",
+	"repository": {
+		"type": "git",
+		"url": ""
+	},
+	"dependencies": {
+		"body-parser": "^1.18.3",
+		"clone": "^1.0.4",
+		"cookie-session": "^2.0.0",
+		"cors": "^2.8.5",
+		"deep-extend": ">=0.5.1",
+		"diff": "^3.5.0",
+		"ejs": "^3.1.8",
+		"express": "^4.16.4",
+		"express-session": "^1.17.3",
+		"fast-json-patch": "^2.0.7",
+		"jquery": "^3.4.1",
+		"jsonwebtoken": "^8.3.0",
+		"mongoose": "^6.7.3",
+		"multer": "^1.4.5-lts.1",
+		"net": "^1.0.2",
+		"nodemon": "^2.0.20",
+		"package.json": "^0.0.0",
+		"passport": "^0.6.0",
+		"passport-google-oauth2": "^0.2.0",
+		"path": "^0.12.7",
+		"serverless-http": "^2.3.0",
+		"socket.io": "^2.1.1",
+		"validator": "^13.7.0"
+	},
+	"engines": {
+		"node": "10.x"
+	},
+	"now": {
+		"engines": {
+			"node": "10.x"
+		}
+	}
+}

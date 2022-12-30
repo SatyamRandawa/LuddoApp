@@ -1,0 +1,103 @@
+<html>
+<head>
+    <script language="JavaScript">var baseUrl = "<%= baseUrl %>"</script>
+    <script src="<%= baseUrl %>libs/jquery.min.js"></script>
+    
+   
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"
+            integrity="sha384-xrRywqdh3PHs8keKZN+8zzc5TX0GRTLCcmivcbNJWm2rs5C8PRhcEn3czEjhAO9o"
+            crossorigin="anonymous"></script>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="<%= baseUrl %>game.css"/>
+    <title>ProLudoClub - Lobby</title>
+    <style>
+       
+    </style>
+</head>
+<body>
+    <div class="container">
+  <h2>Hover Rows</h2>
+  <p>The .table-hover class enables a hover state (grey background on mouse over) on table rows:</p>            
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>game id</th>
+        <th>Room id</th>
+        <th>players</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody id = 't_body'>
+      <tr>
+        <td>1</td>
+        <td>002</td>
+        <td>052</td>
+        <td>Doe</td>
+        <td><a href = "#" >btn</a></td>
+      </tr>
+     
+    </tbody>
+  </table>
+</div>
+
+
+<script>
+
+
+    $(document).ready(function(){
+      getData();
+      //  setTimeout(getData_2,5000);
+    });
+    function getData(){
+
+      let baseUrlFullPath = "<%= baseUrlFullPath %>"; 
+        console.log("baseUrl == ",baseUrlFullPath);
+        let html = '';
+    jQuery.ajax({
+        
+        url: baseUrlFullPath + "/game_list",
+        type: "get",
+        data: {},
+        async: false,
+        contentType: 'application/json; charset=utf-8',
+        success: function (resultData) {
+            if (resultData.status) {
+              
+               console.log(resultData.details);
+               resultData.details.map((item,index)=>{
+                   let g_id =  item.play_game.object.gameId;
+                   let urls = `${baseUrlFullPath}/admin_view_game/${g_id}/${item._id}`;
+                   
+                  let p_name = "";
+                   item.play_game.object.players.map((p)=>{
+                    p_name += `<li> ${p.playerName} </li>`; 
+                   })
+                  let m_ul = `<ul>${p_name} </ul>`; 
+
+
+
+                  html += ` <tr>
+                                <td>${index+1}</td>
+                                <td>${item._id}</td>
+                                <td>${g_id}</td>
+                                <td>${(p_name != '')? m_ul : '' }</td>
+                                <td><a href = "${urls}"   >show</a></td>
+                            </tr>`;
+               }) ;
+            }
+        },
+        error: function (jqXHR, textStatus, errorThrown) {
+        },
+
+       // timeout: 120000,
+    });
+
+    jQuery("#t_body").html(html);
+
+}
+
+
+    </script>
+</body>

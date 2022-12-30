@@ -1,0 +1,107 @@
+<html>
+<head>
+    <script language="JavaScript">var baseUrl = "<%= baseUrl %>"</script>
+    <script src="<%= baseUrl %>libs/jquery.min.js"></script>
+    
+   
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"
+            integrity="sha384-xrRywqdh3PHs8keKZN+8zzc5TX0GRTLCcmivcbNJWm2rs5C8PRhcEn3czEjhAO9o"
+            crossorigin="anonymous"></script>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="<%= baseUrl %>game.css"/>
+    <title>ProLudoClub - Lobby</title>
+    <style>
+        body {
+            height: 100%;
+            background-size: cover;
+            background: url("assets/img/bg5.jpg") no-repeat center center fixed;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="row" style="padding:10px">
+       <div class="col-12">
+            <h1>Admin User view page </h1>
+            <button onclick="getData()" >submin</button>
+        </div>     
+    </div>
+  
+
+    
+</div>
+
+<script>
+    $(document).ready(function(){
+        
+       // alert(u_id+" ==raj== "+u_name);
+        getData();
+        setTimeout(getData_2,5000);
+    });
+   
+   
+    function getData(){
+
+      let u_name = "<%= u_name %>"; 
+      u_name = u_name.replace("+", " ");
+      let u_id = "<%= u_id %>"; 
+      let baseUrlFullPath = "<%= baseUrlFullPath %>"; 
+        console.log("baseUrl == ",baseUrlFullPath);
+    jQuery.ajax({
+        url: baseUrlFullPath + "/rest/regPlayer",
+        type: "POST",
+        data: JSON.stringify({"playerName": u_name}),
+
+        contentType: 'application/json; charset=utf-8',
+        success: function (resultData) {
+            if (resultData.success) {
+                localStorage.token = resultData.token;
+                localStorage.playerId = resultData.playerId;
+                window.location.href = baseUrlFullPath + "/lobby";
+            }
+        },
+        error: function (jqXHR, textStatus, errorThrown) {
+        },
+
+        timeout: 120000,
+    });
+}
+
+
+
+    function getData_2(){
+
+      let u_name = "<%= u_name %>"; 
+      u_name = u_name.replace("+", " ");
+      u_name = u_name+ Math.floor(Math.random() * 10);
+      let u_id = "<%= u_id %>"; 
+      let baseUrlFullPath = "<%= baseUrlFullPath %>"; 
+        console.log("baseUrl == ",baseUrlFullPath);
+    jQuery.ajax({
+        url: baseUrlFullPath + "/rest/regPlayer",
+        type: "POST",
+        data: JSON.stringify({"playerName": u_name}),
+
+        contentType: 'application/json; charset=utf-8',
+        success: function (resultData) {
+            if (resultData.success) {
+                localStorage.token = resultData.token;
+                localStorage.playerId = resultData.playerId;
+                window.location.href = baseUrlFullPath + "/lobby";
+            }
+        },
+        error: function (jqXHR, textStatus, errorThrown) {
+        },
+
+        timeout: 120000,
+    });
+}
+
+
+
+
+
+    </script>
+</body>

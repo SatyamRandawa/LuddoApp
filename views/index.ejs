@@ -1,0 +1,1180 @@
+<!DOCTYPE html>
+<html class="no-js" lang="zxx">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Ludo | Mobile Game</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+   <!-- createNickname -->
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.4/socket.io.js"></script>
+   <script type="text/javascript" src="<%= baseUrl %>index.js"></script>
+   
+
+   
+    <script language="JavaScript">var baseUrl = "<%= baseUrl %>"</script>
+    <script src="<%= baseUrl %>libs/jquery.min.js"></script>
+   
+    
+    <script src="<%= baseUrl %>libs/js/jquery.min.js"></script>
+    
+    <script src="<%= baseUrl %>libs/js/bootstrap.min.js"></script>
+    
+    <script src="<%= baseUrl %>libs/js/main.js"></script>
+
+    <link rel="icon" href="assets/img/favicon.ico">
+    
+    <link rel="stylesheet" href="<%= baseUrl %>assets/css/bootstrap.min.css">
+   
+    <link rel="stylesheet" href="<%= baseUrl %>assets/css/font-awesome.min.css">
+    
+    <link rel="stylesheet" href="<%= baseUrl %>assets/css/style.css">
+    
+</head>
+<body style="background-image: url(assets/img/ludo/background.png);
+    background-repeat: no-repeat, repeat;
+    background-size: cover;
+    overflow-y: hidden !important;">
+   
+    
+    
+    <div class="body-wrapper space-pt--70 space-pb--120">
+
+       
+        <header>
+            <div class="header-wrapper border-bottom">
+                <div class="container space-y--15" style="--bs-gutter-x: 0rem;">
+                    <div class="row align-items-center my-row">
+                        <div class="col-auto">
+                          
+                            <div class="header-logo">
+                                
+                                    <img src="assets/img/ludo/header.png" class="img-fluid" alt="">
+                                
+                            </div>
+                            <div class="profile my-profile">
+                                <a href="#" data-bs-toggle="modal" data-bs-target="#static">
+                                <img src="assets/img/ludo/profile.png" class="img-fluid" alt="" width="50px">
+                                </a>
+                                
+                                <p class="text-white">Sumit</p>
+                            </div>
+                            <div class="star">
+                                <img src="assets/img/ludo/start.png" class="img-fluid" alt="" width="20px">
+                                 <p class="text-white">49</p>
+                            </div>
+                            <div class="live">
+                                <img src="assets/img/ludo/Vectorstart.png" class="img-fluid" alt="" width="15px">
+                                 
+                            </div>
+
+                        </div>
+                        <div class="col d-flex justify-content-center">
+                            
+                            <div class="header-search">
+                               <div class="score-top">
+                                <span class="my-right" >1215</span>
+                              
+                               </div>
+                               <div class="top-score">
+                                    <span class="my-left">101</span>
+                               </div>
+                            </div>
+                            
+                        </div>
+                        <div class="col-auto">
+                            
+                            <button class="header-menu-trigger" id="header-menu-trigger">
+                                <img src="assets/img/icons/menu.svg" class="injectable" alt="">
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+          
+           
+        </header>
+       
+        
+      
+         <div class="featured-product-area space-mb--25">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                       
+                        <h2 class="section-title space-mb--20"> <a href="#"> <span><img
+                src="assets/img/icons/arrow-right.svg" class="injectable" alt=""></span></a></h2>
+                       
+                        <div class="featured-product-wrapper space-mb-m--15">
+                            <div class="row row-5">
+                                <div class="col-2">
+                                    <div class="featured-product space-mb--15 " style="padding: unset">
+                                        
+                                        <div class="featured-product__content">
+                                           
+                                            <div class="icon icon-left">
+                                                <a class="my-btn"><img src="assets/img/ludo/exit.png" class="injectable" alt="" width="40"></a>
+                                                <a class="my-btn"><img src="assets/img/ludo/price.png" class="injectable" alt="" width="40"></a>
+                                                <a class="my-btn"><img src="assets/img/ludo/kingplus.png" class="injectable" alt="" width="40"></a>
+                                                <a class="my-btn"><img src="assets/img/ludo/live.png" class="injectable" alt="" width="40"></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-8">
+                                    <div class="featured-product space-mb--15 ">
+                                        <div class="featured-product__image">
+                                            <a href="#">
+                                                <img src="assets/img/ludo/logo.png" class="img-fluid" alt="">
+                                            </a>
+                                        </div>
+                                        
+                                    </div>
+                                </div>
+                                <div class="col-2">
+                                    <div class="featured-product space-mb--15" style="padding: unset;">
+                                       
+                                        <div class="featured-product__content">
+                                            
+                                             <div class="icon">
+                                                <a class="my-btn"><img src="assets/img/ludo/setting.png" class="injectable" alt="" width="40"></a>
+                                                <a class="my-btn"><img src="assets/img/ludo/friends.png" class="injectable" alt="" width="40"></a>
+                                                <a class="my-btn"><img src="assets/img/ludo/invite.png" class="injectable" alt="" width="40"></a>
+                                                <a class="my-btn"><img src="assets/img/ludo/ads.png" class="injectable" alt="" width="40"></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="products-area card-20">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                       
+                        <div class="all-products-wrapper space-mb-m--20">
+                            <div class="row row-20">
+                                <div class="col-6">
+                                    <div class="grid-product  card-30">
+                                        <div class="grid-product__image" >
+                                            <a href="#" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                                                <img src="assets/img/ludo/play.png" class="img-fluid" alt="" width="120px"> 
+                                            </a>
+                                            <!--<button class="icon"><img src="assets/img/icons/heart-dark.svg" class="injectable" alt=""></button>-->
+                                        </div>
+                                        <div class="grid-product__content">
+                                          
+                                            <div class="price text-center">
+                                                <span class="bulaet">&#x2022;</span>
+                                                <span class="main-price">
+                                                Players:</span>
+                                                <span class="discounted-price">11,603</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="grid-product ">
+                                        <div class="grid-product__image" >
+                                            <a href="#">
+                                                <img src="assets/img/ludo/frinds.png" class="img-fluid" alt="" width="120px">
+                                            </a>
+                                           <!-- <button class="icon"><img src="assets/img/icons/heart-dark.svg" class="injectable" alt=""></button>-->
+                                        </div>
+                                        <div class="grid-product__content">
+                                            
+                                            <div class="price text-center">
+                                                  <span class="bulaet">&#x2022;</span>
+                                                <span class="main-price">
+                                                Players:</span>
+
+                                                <span class="discounted-price">11,603</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="grid-product ">
+                                        <div class="grid-product__image" >
+                                            <a href="#" data-bs-toggle="modal" data-bs-target="#staticBackComputer">
+                                                <img src="assets/img/ludo/computer.png" class="img-fluid" alt="" width="120px">
+                                            </a>
+                                            <!--<button class="icon"><img src="assets/img/icons/heart-dark.svg" class="injectable" alt=""></button>-->
+                                        </div>
+                                        
+                                    </div>
+                                </div>
+                               
+                                
+                                <div class="col-6">
+                                    <div class="grid-product ">
+                                        <div class="grid-product__image">
+                                            <a href="#">
+                                                <img src="assets/img/ludo/pass.png" class="img-fluid" alt="" width="120px">
+                                            </a>
+                                            <!--<button class="icon"><img src="assets/img/icons/heart-dark.svg" class="injectable" alt=""></button>-->
+                                        </div>
+                                       
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+       
+        <div class="featured-product-area ">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                      
+                        <div class="featured-product-wrapper space-mb-m--15 mt-4">
+                            <div class="row row-5">
+                                <div class="col-3">
+                                    <div class="featured-product">
+                                        <div class="featured-product__image" style="margin-bottom: unset;">
+                                            <a href="#">
+                                                <img src="assets/img/ludo/7icon.png" class="img-fluid" alt="" width="90" >
+                                            </a>
+                                        </div>
+                                      
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="featured-product ">
+                                        <div class="featured-product__image" style="margin-bottom: unset;">
+                                            <a href="#">
+                                                <img src="assets/img/ludo/tournament.png" class="img-fluid" alt="" width="140px">
+                                            </a>
+                                        </div>
+                                        
+                                    </div>
+                                </div>
+                                <div class="col-3">
+                                    <div class="featured-product mt-2">
+                                        <div class="featured-product__image" style="margin-bottom: unset;">
+                                            <a href="#">
+                                                <img src="assets/img/ludo/snakeladder.png" class="img-fluid" alt="">
+                                            </a>
+                                        </div>
+                                       
+                                    </div>
+                                </div>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+         
+        <div class="featured-product-area ">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                       
+                        <div class="featured-product-wrapper ">
+                            <div class="row row-5">
+                                <div class="col-12">
+                                    <div class="featured-product " style="position: relative;">
+                                       
+                                        <div class="featured-product__content justify-content-center">
+                                            
+                                            <div class="icon claim-btn">
+                                                <button ><img src="assets/img/ludo/claim.png" class="injectable" alt="" width="170px"></button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                               
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+       
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="staticBackdropLabel"><img src="assets/img/ludo/coinn.png" class="img-fluid" alt="" width="20px"> 5,205</h5>
+        <h5 class="modal-title" id="staticBackdropLabel"><img src="assets/img/ludo/dimond.png" class="img-fluid" alt="" width="20px"> 100</h5>
+       
+      </div>
+      <div class="modal-body">
+        <div class="popup-border">
+        <div class="row text-center">
+            <div class="col-sm-12 mt-2">
+                <img src="assets/img/ludo/selectgame.png" class="injectable " alt="" width="230" style="margin-left: 15px;">
+            </div>
+            <div class="col-sm-12 select-btn mt-2">
+               <button class="icon"><img src="assets/img/ludo/quick.png" class="injectable opc" alt="" width="230"></button><br>
+                <div class="price1 text-center">
+                  <span class="bulaet1">&#x2022;</span>
+                <span class="main-price1">
+                Players:</span>
+
+                <span class="main-price1">11,603</span>
+            </div>
+            </div>
+             <div class="col-sm-12 select-btn">
+                <button class="icon" >
+                    <img src="assets/img/ludo/classic.png" class="injectable " alt="" width="230">
+                </button><br>
+                <div class="price1 text-center">
+                    <span class="bulaet1">&#x2022;</span>
+                      <span class="main-price1">Players:</span>
+
+                        <span class="main-price1">11,603</span>
+                </div>
+            </div>
+             <div class="col-sm-12 select-btn">
+                <button class="icon">
+                    <img src="assets/img/ludo/pouplar.png" class="injectable opc" alt="" width="230" >
+                </button><br>
+                <div class="price1 text-center">
+                      <span class="bulaet1">&#x2022;</span>
+                    <span class="main-price1">
+                    Players:</span>
+
+                    <span class="main-price1">11,603</span>
+                </div>
+            </div>
+             <div class="col-sm-12 select-btn mb-2">
+                <button class="icon">
+                    <img src="assets/img/ludo/maskmode.png" class="injectable opc" alt="" width="230">
+                </button><br>
+                <div class="price1 text-center">
+                      <span class="bulaet1">&#x2022;</span>
+                    <span class="main-price1">
+                    Players:</span>
+
+                    <span class="main-price1">11,603</span>
+                </div>
+            </div>
+        </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        
+        <button type="button" class="btn " data-bs-dismiss="modal" data-bs-toggle="modal" data-bs-target="#staticBackdropselct"><img src="assets/img/ludo/next.png" class="injectable" alt="" width="110"></button>
+      </div>
+     <div>
+        <button type="button" class="btn" onclick="pageRedirect()"><img src="assets/img/ludo/return.png" class="injectable" alt="" width="50"></button>
+          
+     </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="modal fade" id="staticBackdropselct" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="staticBackdropLabel"><img src="assets/img/ludo/coinn.png" class="img-fluid" alt="" width="20px"> 5,205</h5>
+        <h5 class="modal-title" id="staticBackdropLabel"><img src="assets/img/ludo/dimond.png" class="img-fluid" alt="" width="20px"> 100</h5>
+        
+      </div>
+      <div class="modal-body">
+         
+        <div class="product-color-picker  space-pt--25 space-pb--25 popup-border  text-center">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <h3 class="space-mb--20"><img src="assets/img/ludo/select-color.png"  alt="" width="250" style="margin-left: 15px;">
+                       </h3>
+                       <form id="adminForm">
+                            <ul class=" mb-1">
+                                <li class="loc">
+                                    <img src="assets/img/ludo/bluedice.png"  alt="" width="40" >
+                                    <img src="assets/img/ludo/reddice.png"  alt="" width="40" >
+                                    <img src="assets/img/ludo/greendice.png"  alt="" width="40" >
+                                    <img src="assets/img/ludo/yellowdice.png"  alt="" width="40" >
+                                </li>
+                            </ul>
+                            <ul class="color-picker">
+                                <li>
+                                    
+                                    <input id="black" type="radio" class="point_num" name="color" value="Blue" >
+                                    <label class="black" for="black"></label>
+                                </li>
+                                <li>
+                                    <input id="blue" type="radio" class="point_num" name="color" value="Red">
+                                    <label class="blue" for="blue"></label>
+                                </li>
+                                <li>
+                                    <input id="pink" type="radio" class="point_num"  name="color" value="Green">
+                                    <label class="pink" for="pink"></label>
+                                </li>
+                                <li>
+                                    <input id="brown" type="radio" class="point_num" name="color" value="Yellow">
+                                    <label class="brown" for="brown"></label>
+                                </li>
+                            </ul>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="product-color-picker  space-pt--25 space-pb--25 popup-border text-center mt-2 ">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <h3 class="space-mb--20 "><img src="assets/img/ludo/selectplayer.png"  alt="" width="180" >
+                       </h3>
+                        <form>
+                            <ul class="color-picker1 ">
+                                <li>
+                                    <input id="black1" type="radio" name="color" value="black" checked> 
+                                    <label class="black1" for="black1"> </label><span class="Players">2 PLAYER</span>
+                                </li>
+                                <li>
+                                    <input id="blue1" type="radio" name="color" value="blue" > 
+                                    <label class="blue1" for="blue1"> </label><span class="Players">4 PLAYER</span>
+                                </li>
+                                
+                            </ul>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        
+        <div class="popup-border space-pt--25 mt-2">
+        <div class="row ">
+            <div class="col-sm-12  text-center">
+                <img src="assets/img/ludo/gameselect.png" class="injectable " alt="" width="165" >
+
+            </div>
+            <div class="text-left mt-2">
+                    <img src="assets/img/ludo/upto.png" class="injectable " alt="" width="90">
+                    <div class="up-12">
+                        <h6>UP TO 12</h6>
+                    </div>
+                </div>
+            <div class="col-sm-12 select-btn  text-center" style="margin-top: -1rem">
+                
+               <button class="icon "><img src="assets/img/ludo/gamecenter.png" class="injectable " alt="" width="250"></button><br>
+                <div class="price2 text-center">
+                 
+
+                <span class="main-price2">
+                9,500</span> <br>
+
+                <span class="entry">5,000</span>
+            </div>
+            </div>
+             
+            
+                
+            <div id="form" style="margin-left: 5.7rem;">
+
+
+<div class="input-group mb-2 ">
+    <input type="hidden" id="playerName" name="playerName" class="form-control" placeholder="Nickname" aria-label="Recipient's username" aria-describedby="button-addon2">
+    <div class="input-group-append">
+        <button id="createNickname" class="btn mt-5" type="button" id="button-addon2"><img src="assets/img/ludo/playbtn.png" class="injectable" alt="" width="110"></button>
+    
+    </div>
+</div>
+</div>
+         
+            
+
+        </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        
+        
+      </div>
+     <div class="mt-2 px-2">
+        <button type="button" class="btn " onclick="pageRedirect()"><img src="assets/img/ludo/return.png" class="injectable" alt="" width="50"></button>
+          
+     </div>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="modal fade" id="staticBackdropPlayes" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered d-block" id="modal-background">
+    <div class="modal-content">
+      <div class="modal-header mt-4">
+        <h5 class="modal-title" id="staticBackdropLabel"><img src="assets\img\ludo\Backbutton.png" class="img-fluid" alt="" width="40px"></h5>
+        <div class="d-flex handle_sound">
+                    <h5 class="modal-title" id="staticBackdropLabel"><img src="assets\img\ludo\music.png" class="img-fluid" alt="" width="40px"></h5>
+        <h5 class="modal-title" id="staticBackdropLabel"><img src="assets\img\ludo\sound.png" class="img-fluid" alt="" width="40px"></h5>
+        </div>
+        
+      </div>
+      <div class="modal-body">
+        <div class="row justify-content-center text-center">
+            <div class="col-12">
+                <img src="assets/img/ludo/logo.png " class="w-75" alt="">
+            </div>
+
+            <div class="col-12 mxt-03">
+                <img src="assets/img/ludo/real_time_player.png " class="w-75 mb-1 "  alt="">
+            </div>
+            <div class="col-12 mt-1">
+                <img src="assets\img\ludo\EntryAmount.png " class="logo_w-90" alt="">
+            </div>
+        </div>
+        <div class="d-flex  align-items-center text-center mt-3">
+            <div>
+                <img src="assets\img\ludo\playerimage.png " class="w-75 b_color" alt="">
+              
+                <img src="assets\img\ludo\username.png " class="w-100 mxt-04" alt="">
+                <span class="player_name">User1</span>
+            </div>
+            <div >
+                <img src="assets\img\ludo\vs.png " class="w-75"  alt="">
+            </div>
+            <div>
+                <img src="assets\img\ludo\playerimage.png" class="w-75 b_color" alt="">
+              
+                <img src="assets\img\ludo\username.png" class="w-100 mxt-04" alt="">
+                <span class="player_names">User2</span>
+            </div>
+        </div>
+        </div>
+        <div class="d-flex text-center justify-content-evenly flex-column  g-5">
+
+            <div class="my-5 mb-3">
+                <span class="text-white position-relative top-0 start-25 my-auto">12:45pm</span>
+                <img src="assets\img\ludo\gametime.png" alt="star_time"  class="logo_w-40 me-5" srcset="">
+               
+            </div>
+
+            
+        <div class=" mt-3" >
+        <a href="#" " data-bs-dismiss="modal" data-bs-toggle="modal" data-bs-target="#startinguserplayname">  
+        <img src="assets\img\ludo\Searching.png" class="w-75" alt="searching_Player">
+      </a> 
+            </div>
+        </div>
+      
+      </div>
+      <div class="modal-footer">
+        
+        
+      </div>
+   
+    </div>
+  </div>
+
+   <div class="modal fade" id="startinguserplayname" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered d-block" id="modal-background">
+      <div class="modal-content">
+        <div class="modal-header mt-4">
+            <h5 class="modal-title mxl-05" id="staticBackdropLabel "><img src="assets/img/ludo/backerror.png" class="img-fluid" alt="" width="55px"></h5>
+            <div class="d-flex handle_sound">
+                        <h5 class="modal-title" id="staticBackdropLabel"><img src="assets\img\ludo\music.png" class="img-fluid" alt="" width="40px"></h5>
+            <h5 class="modal-title" id="staticBackdropLabel"><img src="assets\img\ludo\sound.png" class="img-fluid" alt="" width="40px"></h5>
+            </div>
+          
+          </div>
+        <div class="modal-body">
+            <div class="row justify-content-center text-center">
+                <div class="col-12">
+                    <img src="assets/img/ludo/logo.png " class="w-75" alt="">
+                </div>
+    
+                <div class="col-12 mxt-03">
+                    <a href="#" data-bs-dismiss="modal" data-bs-toggle="modal" data-bs-target="#searchingPlayes">       <img src="assets/img/ludo/real_time_player.png " class="w-75 mb-1 "  alt=""></a>
+                </div>
+                <div class="col-12 mt-1">
+                    <img src="assets\img\ludo\EntryAmount.png " class="logo_w-90" alt="">
+                </div>
+            </div>
+            <div class="d-flex  align-items-center text-center mt-3">
+                <div>
+                    <img src="assets\img\ludo\playerimage.png " class="w-75 b_color" alt="">
+                  
+                    <img src="assets\img\ludo\username.png " class="w-100 mxt-04" alt="">
+                    <span class="player_name">User1</span>
+                </div>
+                <div >
+                    <img src="assets/img/ludo/diamond.png" class="w-75"  alt="">
+                </div>
+                <div>
+                    <img src="assets\img\ludo\playerimage.png" class="w-75 b_color" alt="">
+                  
+                    <img src="assets\img\ludo\username.png" class="w-100 mxt-04" alt="">
+                    <span class="player_names">User2</span>
+                </div>
+            </div>
+          </div>
+        
+        
+        </div>
+        <div class="modal-footer">
+          
+          
+        </div>
+     
+      </div>
+    </div>
+
+ <div class="modal fade" id="searchingPlayes" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">  
+    <div class="modal-dialog modal-dialog-centered d-block" id="modal-background">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title mt-3 mxl-05" id="staticBackdropLabel"><img src="assets\img\ludo\backerror.png" class="img-fluid" alt="" width="65px"></h5>
+                  <div class="d-flex handle_sound mt-3">
+                              <h5 class="modal-title" id="staticBackdropLabel"><img src="assets/img/ludo/music.png" class="img-fluid" alt="" width="50px"></h5>
+                  <h5 class="modal-title" id="staticBackdropLabel"><img src="assets/img/ludo/sound.png" class="img-fluid" alt="" width="50px"></h5>
+                  </div>
+                 
+                </div>
+                <div class="modal-body">
+                  <div class="row justify-content-center text-center my-1">
+                    <div class="row justify-content-center text-center">
+                        <div class="col-12">
+                            <img src="assets/img/ludo/logo.png " class="w-75" alt="">
+                        </div>
+            
+                        <div class="col-12 mxt-03">
+                            <img src="assets/img/ludo/real_time_player.png " class="w-75 mb-1 "  alt="">
+                        </div>
+                        <div class="col-12 mt-1">
+                            <img src="assets\img\ludo\EntryAmount.png " class="logo_w-90" alt="">
+                        </div>
+                    </div>
+                    
+                     
+                  </div>
+                  <div class="d-flex flex-column align-items-center text-center ">
+                    <div>
+                        <img src="assets\img\ludo\playerimage.png " class="b_color"  width="90px"  alt="">
+                        
+                   <img src="assets\img\ludo\username.png " class="d-block mxt-04 " width="115px" alt="">
+                   <span class="player_name mcr_9">reet</span> 
+                    </div>
+                  
+                    <div >
+                        <img src="assets\img\ludo\diamond.png" width="100px"  alt="">
+                    </div>
+                  
+                </div>
+                  </div>
+                
+
+
+                  <div class="d-flex  align-items-center justify-content-evenly text-center mt-1">
+                    <div>
+                        <img src="assets\img\ludo\playerimage.png " class=" b_color"  width="80px" alt="">
+                      
+                        <img src="assets\img\ludo\username.png " class="mxt-04"  width="100px" alt="">
+                        <span class="player_name mlc_07">reet</span>
+                    </div>
+                  
+                    <div>
+                        <img src="assets\img\ludo\playerimage.png " class=" b_color"  width="80px" alt="">
+                      
+                        <img src="assets\img\ludo\username.png " class=" mxt-04"  width="100px" alt="">
+                        <span class="player_name mc_06">reet</span>
+                    </div>
+                  
+                    <div>
+                        <img src="assets\img\ludo\playerimage.png" class=" b_color "   width="80px"alt="">
+                      
+                        <img src="assets\img\ludo\username.png" class=" mxt-04"  width="100px" alt="">
+                        <span class="player_names mcr_8">reet</span>
+                    </div>
+                </div>
+                
+                <div class="d-flex text-center justify-content-evenly flex-column-reverse  g-5">
+
+                    <div class="my-1 mb-3">
+                        <span class="text-white position-relative top-0 start-25 my-auto">12:45pm</span>
+                        <img src="assets\img\ludo\gametime.png" alt="star_time"  class="logo_w-40 me-5" srcset="">
+                       
+                    </div>
+                    <div class=" mt-2" >
+         <a href="#" data-bs-dismiss="modal" data-bs-toggle="modal" data-bs-target="#startinguserplayname">      <img src="assets\img\ludo\Searching.png" width="70%" alt="searching_Player"></a> 
+            </div>
+        </div>
+
+
+
+        
+        </div>
+        <div class="modal-footer">
+          
+          
+        </div>
+     
+      </div>
+    </div>
+
+
+ 
+<div class="modal fade" id="staticBackComputer" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        
+      </div>
+      <div class="modal-body">
+        <div class="popup-border">
+        <div class="row text-center">
+            <div class="col-sm-12 mt-4">
+                <img src="assets/img/ludo/comuter-select.png" class="injectable " alt="" width="200" style="margin-left: 15px;">
+            </div>
+            <div class="col-sm-12 select-btn mt-2">
+                <button class="icon" >
+                    <img src="assets/img/ludo/computer-classic.png" class="injectable " alt="" width="200">
+                </button><br>
+                
+            </div>
+            <div class="col-sm-12 select-btn mt-2 mb-3">
+               <button class="icon"><img src="assets/img/ludo/popular.png" class="injectable " alt="" width="200"></button><br>
+                
+            </div>
+             
+             
+             
+        </div>
+        </div>
+      </div>
+      <div class="modal-footer modl-foot">
+        <button type="button" class="btn" onclick="pageRedirect()" ><img src="assets/img/ludo/return.png" class="injectable" alt="" width="50"></button>
+        <button type="button" class="btn mx-4" data-bs-dismiss="modal" data-bs-toggle="modal" data-bs-target="#staticBackdropselctCom"><img src="assets/img/ludo/next.png" class="injectable" alt="" width="110"></button>
+      </div>
+     <div>
+        
+          
+     </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="modal fade" id="staticBackdropselctCom" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+      
+      </div>
+      <div class="modal-body">
+        
+        <div class="product-color-picker  space-pt--25 space-pb--25 popup-border  text-center mb-3">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <h3 class="space-mb--20"><img src="assets/img/ludo/select-color.png"  alt="" width="250" style="margin-left: 15px;">
+                       </h3>
+                        <form>
+                            <ul class=" mb-1">
+                                <li class="loc">
+                                    <img src="assets/img/ludo/bluedice.png"  alt="" width="40" >
+                                    <img src="assets/img/ludo/reddice.png"  alt="" width="40" >
+                                    <img src="assets/img/ludo/greendice.png"  alt="" width="40" >
+                                    <img src="assets/img/ludo/yellowdice.png"  alt="" width="40" >
+                                </li>
+                            </ul>
+                            <ul class="color-picker3">
+                                <li>
+                                    
+                                    <input id="black3" type="radio" name="color" value="black" checked>
+                                    <label class="black3" for="black3"></label>
+                                </li>
+                                <li>
+                                    <input id="blue3" type="radio" name="color" value="blue">
+                                    <label class="blue3" for="blue3"></label>
+                                </li>
+                                <li>
+                                    <input id="pink3" type="radio" name="color" value="pink">
+                                    <label class="pink3" for="pink3"></label>
+                                </li>
+                                <li>
+                                    <input id="brown3" type="radio" name="color" value="brown">
+                                    <label class="brown3" for="brown3"></label>
+                                </li>
+                            </ul>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+         
+        <div class="product-color-picker  space-pt--25 space-pb--25 popup-border text-center  mb-3">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <h3 class="space-mb--20 "><img src="assets/img/ludo/selectplayer.png"  alt="" width="180" >
+                       </h3>
+                        <form>
+                            <ul class="color-picker2 ">
+                                <li>
+                                    <input id="black2" type="radio" name="color" value="black" checked> 
+                                    <label class="black2" for="black2"> </label><span class="Players">2 PLAYER</span>
+                                </li>
+                                <li>
+                                    <input id="blue2" type="radio" name="color" value="blue" > 
+                                    <label class="blue2" for="blue2"> </label><span class="Players">4 PLAYER</span>
+                                </li>
+                               
+                            </ul>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        
+      </div>
+      <div class="modal-footer modl-foot">
+        <button type="button" class="btn" onclick="pageRedirect()"><img src="assets/img/ludo/return.png" class="injectable" alt="" width="50"></button>
+
+         <a type="button" href="#" class="btn mx-4" ><img src="assets/img/ludo/playbtn.png" class="injectable" alt="" width="110"></a>
+        
+      </div>
+     <div class="mt-2 px-2">
+        
+          
+     </div>
+    </div>
+  </div>
+</div>
+<div id="myModal" class="modal fade">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header justify-content-center">
+                 <div class="">
+                     <img src="assets/img/ludo/savedevice.png" class="injectable" alt="" width="300px" height="50">
+                 </div>
+                
+            </div>
+            <div class="modal-body">
+                
+                
+        <div class="cart-product-area popup-border2">
+            <div class="cart-product prodt">
+                <div class="">
+                    <a href="shop-product.html">
+                        <img src="assets/img/ludo/login-facebook.png" class="img-fluid" alt="" >
+                    </a>
+                </div>
+                
+            </div>
+            <div class="cart-product prodt">
+                <div class="text-log justify-content-center">
+                    <a href="#">
+                        <h6 class="text-white  text-center" style="font-size: 16px;">This doesn't let the opp post to facebook</h6>
+                    </a>
+                </div>
+                
+            </div>
+            <div class="cart-product prodt">
+                <div class="">
+                    <a href="#">
+                       <img src="assets/img/ludo/sign-google.png" class="img-fluid" alt="" >
+                    </a>
+                </div>
+                
+                
+            </div>
+        </div>
+        <div class="cart-product-area">
+             <div class="cart-product prodt">
+               <div class="cart-product__image">
+                   
+                </div>
+                <div class="cart-product__content text-center">
+                    <a href="#">
+                        <img src="assets/img/ludo/or.png" class="img-fluid" alt="" width="40px">
+                    </a>
+                    
+                </div>
+                 
+                <div class="cart-product__counter">
+                    
+                </div>
+            </div>
+            
+            <div class="cart-product prodt">
+                <div class="">
+                    <a href="#" data-bs-dismiss="modal" aria-label="Close">
+                       <img src="assets/img/ludo/playasguest.png" class="img-fluid" alt="" width="350px">
+                    </a>
+                </div>
+                
+                
+            </div>
+        </div>
+        
+
+            </div>
+            <div class="model-footer">
+                <div class="text-center mod-text">
+                    <p class="text-white">By continuing i agree that Gametion Technologies Pvt.Ltd. may store and process my date in accordance with the</p>
+                    <a href="#" class="text-white"><span class="boder-bot">Privacy Policy</span></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="modal fade" id="static" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header justify-content-center">
+        <h5 class="modal-title" id="staticBackdropLabel"><img src="assets/img/ludo/statistic.png" class="img-fluid" alt="" width="180" > </h5>
+       
+      </div>
+      <div class="modal-body pro-pop">
+        <div class="popup-border">
+            <div class="row text-center">
+                <div class="col-sm-12 mt-2">
+                    <img src="assets/img/ludo/profile-name.png" class="injectable " alt="" width="160" >
+                    <div class="price1 text-center">
+                     
+                    <span class="main-name text-black text-center">
+                    Sumit</span>
+
+                    
+                </div>
+                <p class="text-white id--0">1354fdf1454dsfdf4564</p>
+            </div>
+            <div class="cart-product-area area">
+                <div class="cart-product " style="margin-left: 0px;">
+                    <div class="cart-product__content">
+                        <h3 class="title">
+                           <div class="profile-border">
+                                <a href="#">
+                                    <img src="assets/img/ludo/profiledp.png" class="img-fluid" alt="" width="60" style="margin: 3px 0px 3px 0px">
+                                </a>
+                           </div>
+                        </h3>
+                       
+                    </div>
+                    <div class="cart-product__image flag">
+                        <a href="#">
+                            <img src="assets/img/ludo/country.png" class="img-fluid" alt="">
+                        </a>
+                    </div>
+                    
+                    <div class="cart-product__counter">
+                        <div class="dimond">
+                             <span class="dimond-price">5,205</span>
+                             <br>
+
+                             <span class="dimond-coin">100</span>
+                         </div>
+                         <img src="assets/img/ludo/coin-dimond.png" class="img-fluid" alt="">
+
+                    </div>
+                </div>
+               <div class="performance-level ">
+                   <div class="row">
+                        <div class="col-6">
+                            <div class="rating-001">
+                                <span>0</span>
+                            </div>
+                            <img src="assets/img/ludo/perfo-rating.png" class="img-fluid" alt="">
+                            
+                        </div>
+                        <div class="col-6 level">
+                            <div class="level-001">
+                                <span>210/270</span>
+                            </div>
+                            <img src="assets/img/ludo/level.png" class="img-fluid levl" alt="" >
+                            
+                        </div>
+                       
+                   </div>
+               </div>
+               <div class="performance-level1">
+                   <div class="row">
+                        <div class="col-12">
+
+                            <img src="assets/img/ludo/tourn-wins.png" class="img-fluid" alt="">
+                        </div>
+                        
+                       
+                   </div>
+               </div>
+               <div class="performance-level-croen">
+                   <div class="row">
+                        <div class="col-12">
+                            <div class="crown-point">
+                                <p class="text-white">00</p>
+                                
+                            </div>
+                            <img src="assets/img/ludo/crown.png" class="img-fluid" alt="">
+
+                        </div>
+                        
+                       
+                   </div>
+               </div>
+               <div class="performance-level1">
+                   <div class="row">
+                        <div class="col-12">
+                            <img src="assets/img/ludo/online-play.png" class="img-fluid" alt="">
+                        </div>
+                        
+                       
+                   </div>
+               </div>
+               <div class="performance-level-croen1">
+                   <div class="row">
+                    <ul class="score">
+                            <li>05</li>
+                            <li>05</li>
+                            <li>05</li>
+                            <li>05</li>
+                            <li>05</li>
+                        </ul>
+                    <div class="score">
+
+                        
+                    </div>
+                        <div class="col-12">
+                            <img src="assets/img/ludo/rankicons.png" class="img-fluid" alt="">
+                        </div>
+                        
+                       
+                   </div>
+               </div>
+
+               <div class="performance-level">
+                   <div class="row">
+                        <div class="col-5">
+                           <button class="pro-back"><img src="assets/img/ludo/return.png" class="injectable" alt="" width="50"></button>
+                        </div>
+                        <div class="col-7">
+                           <button type="button" class="btn edit-btn" data-bs-dismiss="modal" data-bs-toggle="modal" data-bs-target="#staticBackdropselct"><img src="assets/img/ludo/edit-profile.png" class="injectable" alt="" width="150"></button>
+                        </div>
+                       
+                   </div>
+               </div>
+               
+              
+            </div>
+        </div>
+      </div>
+      
+     <div>
+        <div class="text-center mt-2">
+                     <img src="assets/img/ludo/savedevice.png" class="injectable" alt="" width="300px" height="50">
+                 </div>
+      <div class="cart-product-area popup-border2">
+            <div class="cart-product prodt1 justify-content-center">
+                <div class="">
+                    <a href="shop-product.html">
+                        <img src="assets/img/ludo/login-facebook.png" class="img-fluid" alt="" width="200">
+                    </a>
+                </div>
+                
+            </div>
+            <div class="cart-product prodtt justify-content-center">
+                <div class=" justify-content-center">
+                    <a href="#">
+                        <h6 class="text-white" style="font-size: 10px;">This doesn't let the opp post to facebook</h6>
+                    </a>
+                </div>
+                
+            </div>
+            <div class="cart-product prodt1 justify-content-center">
+                <div class="">
+                    <a href="#">
+                       <img src="assets/img/ludo/sign-google.png" class="img-fluid" alt="" width="200">
+                    </a>
+                </div>
+                
+                
+            </div>
+        </div>
+     </div>
+    </div>
+    <div class="modal-footer">
+        
+        <button type="button" class="btn " data-bs-dismiss="modal"><img src="assets/img/ludo/share.png" class="injectable" alt="" width="140"></button>
+      </div>
+  </div>
+</div>
+</div>
+        
+        <footer>
+            <div class="footer-nav-wrapper">
+                <a href="#" class="footer-nav-single">
+                    <div class="menu-wrapper">
+                        <img src="assets/img/ludo/freegift.png" class="injectable" alt="" width="65px">
+                       
+                    </div>
+                </a>
+                <a href="#" class="footer-nav-single">
+                    <div class="menu-wrapper">
+                       
+                    </div>
+                </a>
+                <a href="#" class="footer-nav-single">
+                    <div class="menu-wrapper">
+                       
+                    </div>
+                </a>
+                <a href="#" class="footer-nav-single">
+                    <div class="menu-wrapper">
+                        <img src="assets/img/ludo/spin.png" class="injectable" alt="" width="90px">
+                        
+                    </div>
+                </a>
+            </div>
+        </footer>
+       
+    </div>
+    
+    
+
+    <script>
+    
+    let redirect_Page = () => {
+        let tID = setTimeout(function () {
+            window.location.href = `/rest/game`;
+            window.clearTimeout(tID);      
+
+        }, 3000);
+    }
+     
+    
+
+   
+</script>
+ <script>
+    $(document).ready(function(){
+//         $("#myModal").modal('show');
+    });
+ </script>
+ <script>
+    function pageRedirect() {
+      window.location.href = `/index`;
+    }      
+</script> 
+<script >
+    $("input[name='color']").click('#adminForm',function(){
+        var point_num = $(".point_num:checked").val();
+        localStorage.setItem("color",point_num);
+        // alert(point_num);
+});
+</script> 
+</body>
+
+</html>

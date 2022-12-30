@@ -1,0 +1,1020 @@
+<html>
+
+<head>
+    <script language="JavaScript">var baseUrl = "<%= baseUrl %>"</script>
+    <script type="text/javascript" src="<%= baseUrl %>libs/jquery.min.js"></script>
+    <script type="text/javascript" src="<%= baseUrl %>libs/socket.io.js"></script>
+    <script type="text/javascript" src="<%= baseUrl %>game2.js"></script>
+    <script type="text/javascript" src="<%= baseUrl %>libs/bootstrap.min.js"></script>
+    <script type="text/javascript" src="<%= baseUrl %>libs/fast-json-patch.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="<%= baseUrl %>libs/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="<%= baseUrl %>game.css" />
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
+        integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <title>ProLudoClub</title>
+    <script>
+        $("#pos-92").click(function () {
+                setTimeout(function () {
+                    console.log("1231321321321321321321321321321321321321321321321setTime")
+                    if ("#playerText-0") {
+                        $(".dice-image").toggleClass("dice-image1").removeClass(".dice-image");
+                    }
+                }, 3000);
+
+            });
+
+        
+            
+
+        // $(".red").show();
+        // function get_clr() {
+        //     let clr = window.localStorage.getItem("color");
+        //     let playerID = window.localStorage.getItem("playerId");
+        //     console.log('====================================');
+        //     console.log("chalu hai be456");
+        //     console.log('====================================');
+        //     if (playerID == 0 && clr == "Blue") {
+        //         console.log("condition PAAAAAAAAAAAAAAAAAAAAAAAAAAASSSSSSSSSSSSSSSss")
+        //         $(".red").toggleClass("blue");
+        //     }
+
+        // }
+
+        //get_clr();
+    </script>
+
+    <style>
+        body {
+            background-image: url(assets/img/ludo/background.png);
+            background-repeat: no-repeat, repeat;
+            background-size: cover;
+        }
+        .Dice_manage{
+            width: 100%;
+        }
+        .bootam-img{
+        width: 100%;
+       }
+        .red_inbox {
+            fill: red
+        }
+
+        .green_inbox {
+            fill: green;
+        }
+
+        .yellow_inbox {
+            fill: yellow
+        }
+
+        .blue_inbox {
+            fill: #298cf6;
+        }
+
+
+
+
+
+        /***************************Arrow Style*************************************/
+
+        .arrow-right {
+            padding-left: 0px;
+            font-size: 50px;
+            color: red;
+            position: absolute;
+            margin-top: -8px;
+        }
+
+        .arrow-down {
+            padding-left: 15px;
+            font-size: 62px;
+            color: green;
+            margin-top: -21px;
+            position: absolute;
+        }
+
+        .arrow-left {
+            padding-left: 0px;
+            font-size: 60px;
+            color: yellow;
+            position: absolute;
+            margin-top: -20px;
+        }
+
+        .arrow-up {
+            padding-left: 16px;
+            font-size: 60px;
+            color: #2993f6;
+            margin-top: -16px;
+            position: absolute;
+        }
+
+        .arrow-up1 {
+            padding-left: 0px;
+            font-size: 55px;
+            color: #2993f6;
+            position: absolute;
+            margin-top: -8px;
+        }
+
+        .arrow-right1 {
+            padding-left: 16px;
+            font-size: 60px;
+            color: red;
+            margin-top: -16px;
+            position: absolute;
+        }
+
+        .arrow-down1 {
+            padding-left: 0px;
+            font-size: 50px;
+            color: green;
+            position: absolute;
+            margin-top: -8px;
+        }
+
+        .arrow-left1 {
+            padding-left: 15px;
+            font-size: 62px;
+            color: yellow;
+            margin-top: -21px;
+            position: absolute;
+        }
+
+        
+
+
+
+
+
+
+       
+
+        .border-r {
+            border-radius: 50px;
+        }
+
+        
+
+.dice-image {
+    height: 151px;
+    position: absolute;
+    margin-top: 424px;
+    margin-left: 400px;
+}
+
+        .dice-image1 {
+            margin-left: 86%;
+        }
+
+        .ply {
+            position: absolute;
+            font-size: 40px;
+            margin-left: 10%;
+        }
+
+        .ply1 {
+            position: absolute;
+            font-size: 40px;
+            margin-left: 5%;
+        }
+
+        .reddice {
+            position: absolute;
+            margin-top: 10px;
+            margin-left: 10px;
+        }
+
+        .yellowdice {
+            position: absolute;
+            margin-top: 10px;
+            margin-left: 135px;
+        }
+        .redd{
+            margin-top: 43%;
+        }
+    </style>
+</head>
+
+<body>
+    <- class="row-16" style="
+    margin-top: 15%;
+">
+
+        <div class="col-md-6 col-xs-12" style="margin-top: 15%;">
+            <div class="grid">
+                <div class="col-6-15 border">
+
+                    <div class="row-6-15 border red " id="red">
+                        <div id="playerText-0" class="red textPlayer ply">Player 1</div>
+                        <div class="start-red border white">
+                            <div class="start-red">
+                                <div class="col-2-5 border noBorder">
+                                    <div id="pos-0" role="button" class="row-2-5 border red border-r">
+
+                                    </div>
+                                    <div class="row-1-5 noBorder">
+
+                                    </div>
+                                    <div id="pos-1" class="row-2-5 border red border-r">
+
+                                    </div>
+                                </div>
+                                <div class="col-1-5 noBorder">
+                                    <div class="row-1-3 border noBorder">
+                                    </div>
+                                </div>
+                                <div class="col-2-5 border noBorder">
+                                    <div id="pos-2" class="row-2-5 border red border-r">
+
+                                    </div>
+                                    <div class="row-1-5 noBorder">
+
+                                    </div>
+                                    <div id="pos-3" class="row-2-5 border red border-r">
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row-3-15 border">
+                        <div class="col-1-6 border">
+                            <div id="pos-67" class="row-1-3 border white">
+
+                            </div>
+                            <div id="pos-66" class="row-1-3 border white">
+                                <span class="arrow-right" id="arrow-right">&#8594</span>
+                            </div>
+                            <div id="pos-65" class="row-1-3 border white">
+
+                            </div>
+                        </div>
+                        <div class="col-1-6 border">
+                            <div id="pos-16" class="row-1-3 border red">
+
+                            </div>
+                            <div id="pos-68" class="row-1-3 border red">
+
+                            </div>
+                            <div id="pos-64" class="row-1-3 border white">
+
+                            </div>
+                        </div>
+                        <div class="col-1-6 border">
+                            <div id="pos-17" class="row-1-3 border white">
+
+                            </div>
+                            <div id="pos-69" class="row-1-3 border red">
+
+                            </div>
+                            <div id="pos-63" class="row-1-3 border white">
+                                <span class="safe">&star;</span>
+                            </div>
+                        </div>
+                        <div class="col-1-6 border">
+                            <div id="pos-18" class="row-1-3 border white">
+
+                            </div>
+                            <div id="pos-70" class="row-1-3 border red">
+
+                            </div>
+                            <div id="pos-62" class="row-1-3 border white">
+
+                            </div>
+                        </div>
+                        <div class="col-1-6 border">
+                            <div id="pos-19" class="row-1-3 border white">
+
+                            </div>
+                            <div id="pos-71" class="row-1-3 border red">
+
+                            </div>
+                            <div id="pos-61" class="row-1-3 border white">
+
+                            </div>
+                        </div>
+                        <div class="col-1-6 border">
+                            <div id="pos-20" class="row-1-3 border white">
+
+                            </div>
+                            <div id="pos-72" class="row-1-3 border red">
+
+                            </div>
+                            <div id="pos-60" class="row-1-3 border white">
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row-6-15 border blue" id="Blue_Id">
+                        <div class="start-blue border white">
+                            <div class="start-blue">
+                                <div class="col-2-5 border noBorder">
+                                    <div id="pos-12" class="row-2-5 border blue border-r">
+
+                                    </div>
+                                    <div class="row-1-5 noBorder">
+
+                                    </div>
+                                    <div id="pos-13" class="row-2-5 border blue border-r">
+
+                                    </div>
+                                </div>
+                                <div class="col-1-5 noBorder">
+                                    <div class="row-1-3 border noBorder">
+                                    </div>
+                                </div>
+                                <div class="col-2-5 border noBorder">
+                                    <div id="pos-14" class="row-2-5 border blue border-r">
+
+                                    </div>
+                                    <div class="row-1-5 noBorder">
+
+                                    </div>
+                                    <div id="pos-15" class="row-2-5 border blue border-r">
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="playerText-3" class="blue textPlayer ply1">Player 4</div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="col-3-15">
+                    <div class="row-6-15 border">
+                        <div class="col-1-3 border">
+                            <div id="pos-26" class="row-1-6 border white">
+
+                            </div>
+                            <div id="pos-25" class="row-1-6 border white">
+
+                            </div>
+                            <div id="pos-24" class="row-1-6 border white">
+                                <span class="safe">&star;</span>
+                            </div>
+                            <div id="pos-23" class="row-1-6 border white">
+
+                            </div>
+                            <div id="pos-22" class="row-1-6 border white">
+
+                            </div>
+                            <div id="pos-21" class="row-1-6 border white">
+
+                            </div>
+                        </div>
+                        <div class="col-1-3 border">
+                            <div id="pos-27" class="row-1-6 border white">
+                                <span class="arrow-down" id="arrow-down">&#8595</span>
+                            </div>
+                            <div id="pos-74" class="row-1-6 border green">
+
+                            </div>
+                            <div id="pos-75" class="row-1-6 border green">
+
+                            </div>
+                            <div id="pos-76" class="row-1-6 border green">
+
+                            </div>
+                            <div id="pos-77" class="row-1-6 border green">
+
+                            </div>
+                            <div id="pos-78" class="row-1-6 border green">
+
+                            </div>
+                        </div>
+                        <div class="col-1-3 border">
+                            <div id="pos-28" class="row-1-6 border white">
+
+                            </div>
+                            <div id="pos-29" class="row-1-6 border green">
+
+                            </div>
+                            <div id="pos-30" class="row-1-6 border white">
+
+                            </div>
+                            <div id="pos-31" class="row-1-6 border white">
+
+                            </div>
+                            <div id="pos-32" class="row-1-6 border white">
+
+                            </div>
+                            <div id="pos-33" class="row-1-6 border white">
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row-3-15 border container-triangle">
+                        <div class="contain">
+
+
+                            <svg width="100%" height="100%" viewBox="0 0 500 500">
+                                <polygon points="250,250 500,0 500,500" class="yellow_inbox" id="yellow_inbox" />
+                                <polygon points="250,250 -2,-2 500,-2" class="green_inbox" id="green_inbox" />
+                                <polygon points="250,250 0,0 0,500" class="red_inbox" id="red_inbox" />
+                                <polygon points="250,250 0,502 502,500" class="blue_inbox" id="blue_inbox" />
+                            </svg>
+                        </div>
+                        <div class="contain-over">
+                            <div id="pos-85" class="finalPos" style="position: absolute; right: 0; top: 31%;">
+
+                            </div>
+                        </div>
+                        <div class="contain-over">
+                            <div id="pos-79" class="finalPos" style="position: absolute; top: 0; left: 33.3333%;">
+
+                            </div>
+                        </div>
+                        <div class="contain-over">
+                            <div id="pos-73" class="finalPos" style="position: absolute; left: 0; top: 31%;">
+
+                            </div>
+                        </div>
+                        <div class="contain-over">
+                            <div id="pos-91" class="finalPos" style="position: absolute; bottom: 0; left: 33.3333%;">
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row-6-15 border">
+                        <div class="col-1-3 border">
+                            <div id="pos-59" class="row-1-6 border white">
+
+                            </div>
+                            <div id="pos-58" class="row-1-6 border white">
+
+                            </div>
+                            <div id="pos-57" class="row-1-6 border white">
+
+                            </div>
+                            <div id="pos-56" class="row-1-6 border white">
+
+                            </div>
+                            <div id="pos-55" class="row-1-6 border  blue">
+
+                            </div>
+                            <div id="pos-54" class="row-1-6 border white">
+
+                            </div>
+                        </div>
+                        <div class="col-1-3 border">
+                            <div id="pos-90" class="row-1-6 border blue">
+
+                            </div>
+                            <div id="pos-89" class="row-1-6 border blue">
+
+                            </div>
+                            <div id="pos-88" class="row-1-6 border blue">
+
+                            </div>
+                            <div id="pos-87" class="row-1-6 border blue">
+
+                            </div>
+                            <div id="pos-86" class="row-1-6 border blue">
+
+                            </div>
+                            <div id="pos-53" class="row-1-6 border white">
+                                <span class="arrow-up" id="arrow-up">&#8593</span>
+                            </div>
+                        </div>
+                        <div class="col-1-3 border">
+                            <div id="pos-47" class="row-1-6 border white">
+
+                            </div>
+                            <div id="pos-48" class="row-1-6 border white">
+
+                            </div>
+                            <div id="pos-49" class="row-1-6 border white">
+
+                            </div>
+                            <div id="pos-50" class="row-1-6 border white">
+                                <span class="safe">&star;</span>
+                            </div>
+                            <div id="pos-51" class="row-1-6 border white">
+
+                            </div>
+                            <div id="pos-52" class="row-1-6 border white">
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6-15 border">
+                    <div class="row-6-15 border green" id="Green_Id">
+                        <div id="playerText-1" class="green textPlayer ply1">Player 2</div>
+
+                        <div class="start-green border white">
+                            <div class="start-green">
+                                <div class="col-2-5 border noBorder">
+                                    <div id="pos-4" class="row-2-5 border green border-r">
+
+                                    </div>
+                                    <div class="row-1-5 noBorder">
+
+                                    </div>
+                                    <div id="pos-5" class="row-2-5 border green border-r">
+
+                                    </div>
+                                </div>
+                                <div class="col-1-5 noBorder">
+                                    <div class="row-1-3 border noBorder">
+                                    </div>
+                                </div>
+                                <div class="col-2-5 border noBorder">
+                                    <div id="pos-6" class="row-2-5 border green border-r">
+
+                                    </div>
+                                    <div class="row-1-5 noBorder">
+
+                                    </div>
+                                    <div id="pos-7" class="row-2-5 border green border-r">
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row-3-15 border">
+                        <div class="col-1-6 border">
+                            <div id="pos-34" class="row-1-3 border white">
+
+                            </div>
+                            <div id="pos-84" class="row-1-3 border yellow">
+
+                            </div>
+                            <div id="pos-46" class="row-1-3 border white">
+
+                            </div>
+                        </div>
+                        <div class="col-1-6 border">
+                            <div id="pos-35" class="row-1-3 border white">
+
+                            </div>
+                            <div id="pos-83" class="row-1-3 border yellow">
+
+                            </div>
+                            <div id="pos-45" class="row-1-3 border white">
+
+                            </div>
+                        </div>
+                        <div class="col-1-6 border">
+                            <div id="pos-36" class="row-1-3 border white">
+
+                            </div>
+                            <div id="pos-82" class="row-1-3 border yellow">
+
+                            </div>
+                            <div id="pos-44" class="row-1-3 border white">
+
+                            </div>
+                        </div>
+                        <div class="col-1-6 border">
+                            <div id="pos-37" class="row-1-3 border white">
+                                <span class="safe">&star;</span>
+                            </div>
+                            <div id="pos-81" class="row-1-3 border yellow">
+
+                            </div>
+                            <div id="pos-43" class="row-1-3 border white">
+
+                            </div>
+                        </div>
+                        <div class="col-1-6 border">
+                            <div id="pos-38" class="row-1-3 border white">
+
+                            </div>
+                            <div id="pos-80" class="row-1-3 border yellow">
+
+                            </div>
+                            <div id="pos-42" class="row-1-3 border yellow">
+
+                            </div>
+                        </div>
+                        <div class="col-1-6 border">
+                            <div id="pos-39" class="row-1-3 border white">
+
+                            </div>
+                            <div id="pos-40" class="row-1-3 border white">
+                                <span class="arrow-left" id="arrow-left">&#8592</span>
+                            </div>
+                            <div id="pos-41" class="row-1-3 border white">
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row-6-15  border yellow" id="Yellow_ID">
+                        <div class="start-yellow border white">
+                            <div class="start-yellow">
+                                <div class="col-2-5 border noBorder">
+                                    <div id="pos-8" class="row-2-5 border yellow border-r">
+
+                                    </div>
+                                    <div class="row-1-5 noBorder">
+
+                                    </div>
+                                    <div id="pos-9" class="row-2-5 border yellow border-r">
+
+                                    </div>
+                                </div>
+                                <div class="col-1-5 noBorder">
+                                    <div class="row-1-3 border noBorder">
+
+                                    </div>
+                                </div>
+                                <div class="col-2-5 border noBorder">
+                                    <div id="pos-10" class="row-2-5 border yellow border-r">
+
+                                    </div>
+                                    <div class="row-1-5 noBorder">
+
+                                    </div>
+                                    <div id="pos-11" class="row-2-5 border yellow border-r">
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="playerText-2" class="yellow textPlayer ply1">Player 3</div>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-3" style="float: right;padding-top: 2rem; display: none;">
+            
+            <div class="backdice">
+
+                <img src="assets/img/ludo/leftuser.png" class="injectable" alt="" width="200px">
+            </div>
+            <div id="chatBoxDiv" class="panel panel-warning" style="display: none;">
+                <div class="panel-heading" style="padding:0; margin: 0;">
+                    <h3 style="text-align: center; padding:0; margin: 0;"><i class="fa fa-comments"></i> Chat</h3>
+                </div>
+                <div style="min-height: 300px" class="panel-body" id="chatLog">
+                    <text id="winnersText">Empty chat</text>
+                </div>
+                <div class="panel-footer" style="padding:0; margin: 0;">
+                    <input id="chatTypeBox" type="text" name="Send message" maxlength="80"
+                        style="width: 100%; margin: 0px">
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3 col-xs-12 mt-5">
+        
+            <div class="panel panel-default " style="display: none; ">
+                <div class="panel-heading" style="padding:0; margin: 0;">
+                    <button class="btn btn-danger btn-block" id="leaveGame">To lobby</button>
+                    <div class="panel-body">
+                        <h3 align="center">Turn:
+                            <text id="turn">0</text>
+                        </h3>
+                    </div>
+                </div>
+            </div>
+            <div class="panel panel-primary" style="border: none !important;">
+                <!--<div class="panel-heading" style="padding:0; margin: 0;">
+                                                                                                                                                                                                                                        <h3 style="text-align: center; padding:0; margin: 0;"><i class="fa fa-users"></i> Players</h3>
+                                                                                                                                                                                                                                        </div>-->
+                <div class="panel-body" style="padding:0; margin:0; font-size:180%; outline-color: invert">
+                    <!--<div id="playerText-0" class="red textPlayer">Player 1</div>-->
+                    <!--<div id="playerText-1" class="yellow textPlayer">Player 2</div>-->
+                    <!--<div id="playerText-2" class="green textPlayer">Player 3</div>-->
+                    <!--<div id="playerText-3" class="blue textPlayer">Player 4</div>-->
+                </div>
+            </div>
+            <div id="pos-92" class="panel panel-success " style="background-color: none !important;border: none;">
+                <!--<div class="panel-heading" style="padding:0; margin: 0;">
+                                                                                                                                                                                        <h3 style="text-align: center; padding:0; margin: 0;">Dice jk throws left:
+                                                                                                                                                                                        <text id="throwsLeft"></text>
+                                                                                                                                                                                        </h3>
+                                                                                                                                                                                        </div>-->
+                <div class="panel-body " style="padding:0; margin:0; background-color: none !important;">
+        
+        
+                    <div class="dice-image">
+                        <svg id="dice-1" width="100%" height="100%" viewBox="0 0 100 100">
+                            <rect x="10" y="10" width="80" height="80" rx="15" ry="15" fill="red" stroke='black' />
+                            <circle cx='50' cy='50' r='9' stroke-width='6' fill="white" />
+                        </svg>
+                        <svg id="dice-2" width="100%" height="100%" viewBox="0 0 100 100">
+                            <rect x="10" y="10" width="80" height="80" rx="15" ry="15" fill="red" stroke='black' />
+                            <circle cx='30' cy='30' r='9' stroke-width='6' fill="white" />
+                            <circle cx='70' cy='70' r='9' stroke-width='6' fill="white" />
+                        </svg>
+                        <svg id="dice-3" width="100%" height="100%" viewBox="0 0 100 100">
+                            <rect x="10" y="10" width="80" height="80" rx="15" ry="15" fill="red" stroke='black' />
+                            <circle cx='30' cy='30' r='9' stroke-width='6' fill="white" />
+                            <circle cx='50' cy='50' r='9' stroke-width='6' fill="white" />
+                            <circle cx='70' cy='70' r='9' stroke-width='6' fill="white" />
+                        </svg>
+                        <svg id="dice-4" width="100%" height="100%" viewBox="0 0 100 100">
+                            <rect x="10" y="10" width="80" height="80" rx="15" ry="15" fill="red" stroke='black' />
+                            <circle cx='30' cy='30' r='9' stroke-width='6' fill="white" />
+                            <circle cx='30' cy='70' r='9' stroke-width='6' fill="white" />
+                            <circle cx='70' cy='30' r='9' stroke-width='6' fill="white" />
+                            <circle cx='70' cy='70' r='9' stroke-width='6' fill="white" />
+                        </svg>
+                        <svg id="dice-5" width="100%" height="100%" viewBox="0 0 100 100">
+                            <rect x="10" y="10" width="80" height="80" rx="15" ry="15" fill="red" stroke='black' />
+                            <circle cx='30' cy='30' r='9' stroke-width='6' fill="white" />
+                            <circle cx='30' cy='70' r='9' stroke-width='6' fill="white" />
+                            <circle cx='50' cy='50' r='9' stroke-width='6' fill="white" />
+                            <circle cx='70' cy='30' r='9' stroke-width='6' fill="white" />
+                            <circle cx='70' cy='70' r='9' stroke-width='6' fill="white" />
+                        </svg>
+                        <svg id="dice-6" width="100%" height="100%" viewBox="0 0 100 100">
+                            <rect x="10" y="10" width="80" height="80" rx="15" ry="15" fill="red" stroke='black' />
+                            <circle cx='30' cy='30' r='9' stroke-width='6' fill="white" />
+                            <circle cx='30' cy='70' r='9' stroke-width='6' fill="white" />
+                            <circle cx='30' cy='50' r='9' stroke-width='6' fill="white" />
+                            <circle cx='70' cy='50' r='9' stroke-width='6' fill="white" />
+                            <circle cx='70' cy='30' r='9' stroke-width='6' fill="white" />
+                            <circle cx='70' cy='70' r='9' stroke-width='6' fill="white" />
+                        </svg>
+                    </div>
+                    <div class="redd">
+        
+        
+        
+                        <div class="backdice">
+        
+                            <img src="assets/img/ludo/ludo-btn.png" class="injectable bootam-img" alt="">
+                        </div>
+        
+                    </div>
+        
+        
+        
+                </div>
+            </div>
+        
+            <!-- <button id="runGame"> Autoplay</button> -->
+            <div id="timeLeftDiv" class="panel panel-danger" style="display: none;">
+                <div class="panel-heading" style="padding:0; margin: 0;">
+                    <h3 style="text-align: center; padding:0; margin: 0;"><i class="fa fa-clock-o"></i> Time remaining
+                    </h3>
+                </div>
+                <div class="panel-body" style="padding:0; margin:0;">
+                    <text id="timeLeftText" style="font-size:180%">test</text>
+                </div>
+            </div>
+        
+            <div id="winnersDiv1" class="panel panel-default" style="display: none;">
+                <div class="panel-heading" style="padding:0; margin: 0;">
+                    <h3 style="text-align: center; padding:0; margin: 0;">Winners</h3>
+                </div>
+                <div class="panel-body" style="padding:0; margin:0;">
+                    <text id="winnersText" style="font-size:180%">test</text>
+                </div>
+            </div>
+        </div>
+        <!-- <div class="col-md-12 mt-5">
+            <div class="dropup">
+            <a class="btn  dropdown-toggle" type="button" id="about-us" data-toggle="dropdown" aria-haspopup="true"
+                    aria-expanded="false">
+                    <img src="assets/img/ludo/bar-menu.png" class="injectable " alt="" width="100px">
+                    <span class="caret"></span>
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="about-us">
+                    <li><a class="dropdown-item d-flex" href="#" data-toggle="modal" data-target="#flipFlop"><img
+                                src="assets/img/ludo/cross.png" width="60px"> <span class="exit">Exit</span></a></li>
+
+                </ul>
+            </div>
+        </div>-->
+
+
+        <!-- The modal -->
+        <div class="modal fade" id="flipFlop" tabindex="-1" role="dialog" aria-labelledby="modalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog modal-dialog-center" role="document" style="margin-top: 60%;">
+                <div class="modal-content">
+
+
+                </div>
+                <div class="modal-body popup-border">
+                    <div
+                        class="product-color-picker space-pt--25 space-pb--25   text-center mb-3 justify-content-center">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-12 ">
+                                    <h3 class="space-mb--20 "><img src="assets/img/ludo/quitgame.png" alt="" width="550"
+                                            style="margin-left: 8rem;">
+                                    </h3>
+                                    <div class="row mt-3" style="margin-left: 6rem;padding-top: 2rem;">
+                                        <div class="col-4 mp-quit">
+                                            <button type="button" class="yes-btn btn" onclick="pageRedirect()"
+                                                style="background-color: unset;"><img src="assets/img/ludo/yes.png"
+                                                    alt="" width="150px" height="80px"></button>
+                                        </div>
+                                        <div class="col-2 mp-quit">
+                                            <img src="assets/img/ludo/volume.png" alt="" width="100">
+                                        </div>
+                                        <div class="col-2 mp-quit">
+                                            <img src="assets/img/ludo/music.png" alt="" width="100">
+                                        </div>
+                                        <div class="col-4 mp-quit">
+                                            <a type="button" class="yes-btn" data-dismiss="modal"
+                                                aria-label="Close"><img src="assets/img/ludo/no.png" alt=""
+                                                    width="150px" height="80px"></a>
+
+
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--<div class="modal-footer">
+<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+</div>-->
+            </div>
+        </div>
+    </div>
+
+
+    </div>
+
+
+
+
+
+
+    <script>
+        
+        function set_lobby_clr() {
+            let get_player_ID = localStorage.getItem("playerId")
+            let get_clr = localStorage.getItem("color")
+
+            if (get_player_ID == 0 && get_clr == "Blue") {
+                $(".red").addClass("blue").removeClass("red");
+                $("#pos-73").addClass("blue").removeClass("red")
+
+
+                //Blue_Id
+                $("#Blue_Id").addClass("red").removeClass("blue")
+                $("#pos-12").addClass("red").removeClass("blue")
+                $("#pos-13").addClass("red").removeClass("blue")
+                $("#pos-14").addClass("red").removeClass("blue")
+                $("#pos-15").addClass("red").removeClass("blue")
+                $("#pos-55").addClass("red").removeClass("blue")
+                $("#pos-86").addClass("red").removeClass("blue")
+                $("#pos-87").addClass("red").removeClass("blue")
+                $("#pos-88").addClass("red").removeClass("blue")
+                $("#pos-89").addClass("red").removeClass("blue")
+                $("#pos-90").addClass("red").removeClass("blue")
+                $("#pos-91").addClass("red").removeClass("blue")
+                $("#red_inbox").addClass("blue_inbox").removeClass("red_inbox")
+                $("#blue_inbox").addClass("red_inbox").removeClass("blue_inbox")
+                $("#arrow-right").addClass("arrow-up1 ").removeClass("arrow-right")
+                $("#arrow-up").addClass("arrow-right1").removeClass("arrow-up")
+
+                //$("#pos-92").addClass("red").removeClass("blue")
+
+
+
+            }
+
+            let yellow = 0
+            if (get_player_ID == 0 && get_clr == "Yellow") {
+
+                $(".red").addClass("yellow").removeClass("red")
+                $("#Yellow_ID").addClass("red").removeClass("yellow")
+                $("#pos-8").addClass("red").removeClass("yellow")
+                $("#pos-9").addClass("red").removeClass("yellow")
+                $("#pos-10").addClass("red").removeClass("yellow")
+                $("#pos-11").addClass("red").removeClass("yellow")
+                $("#pos-42").addClass("red").removeClass("yellow")
+                $("#pos-80").addClass("red").removeClass("yellow")
+                $("#pos-81").addClass("red").removeClass("yellow")
+                $("#pos-82").addClass("red").removeClass("yellow")
+                $("#pos-83").addClass("red").removeClass("yellow")
+                $("#pos-84").addClass("red").removeClass("yellow")
+                $("#pos-84").addClass("red").removeClass("yellow")
+                $("#red_inbox").addClass("yellow_inbox").removeClass("red_inbox")
+                $("#yellow_inbox").addClass("red_inbox").removeClass("yellow_inbox")
+                $("#arrow-right").addClass("arrow-left").removeClass("arrow-right")
+                $("#arrow-left").addClass("arrow-right").removeClass("arrow-left")
+            }
+
+
+
+            if (get_player_ID == 0 && get_clr == "Green") {
+                $(".red").addClass("green").removeClass("red");
+                //Green_Id
+                $("#Green_Id").addClass("red").removeClass("green")
+                $("#pos-4").addClass("red").removeClass("green")
+                $("#pos-5").addClass("red").removeClass("green")
+                $("#pos-6").addClass("red").removeClass("green")
+                $("#pos-7").addClass("red").removeClass("green")
+                $("#pos-29").addClass("red").removeClass("green")
+                $("#pos-74").addClass("red").removeClass("green")
+                $("#pos-75").addClass("red").removeClass("green")
+                $("#pos-76").addClass("red").removeClass("green")
+                $("#pos-77").addClass("red").removeClass("green")
+                $("#pos-78").addClass("red").removeClass("green")
+                $("#pos-79").addClass("red").removeClass("green")
+                $("#red_inbox").addClass("green_inbox").removeClass("red_inbox")
+                $("#green_inbox").addClass("red_inbox").removeClass("green_inbox")
+                $("#arrow-right").addClass("arrow-down1").removeClass("arrow-right")
+                $("#arrow-down").addClass("arrow-right1").removeClass("arrow-down")
+
+            }
+
+            if (get_player_ID == 1 && get_clr == "Blue") {
+                $(".green").addClass("blue").removeClass("green");
+                //Blue_Id
+                $("#Blue_Id").addClass("green").removeClass("blue")
+                $("#pos-12").addClass("green").removeClass("blue")
+                $("#pos-13").addClass("green").removeClass("blue")
+                $("#pos-14").addClass("green").removeClass("blue")
+                $("#pos-15").addClass("green").removeClass("blue")
+                $("#pos-55").addClass("green").removeClass("blue")
+                $("#pos-86").addClass("green").removeClass("blue")
+                $("#pos-87").addClass("green").removeClass("blue")
+                $("#pos-88").addClass("green").removeClass("blue")
+                $("#pos-89").addClass("green").removeClass("blue")
+                $("#pos-90").addClass("green").removeClass("blue")
+                $("#pos-91").addClass("green").removeClass("blue")
+                $("#green_inbox").addClass("blue_inbox").removeClass("green_inbox")
+                $("#blue_inbox").addClass("green_inbox").removeClass("blue_inbox")
+                $("#arrow-down").addClass("arrow-up").removeClass("arrow-down")
+                $("#arrow-up").addClass("arrow-down").removeClass("arrow-up")
+            }
+
+
+            if (get_player_ID == 1 && get_clr == "Red") {
+                $(".green").addClass("red").removeClass("green");
+                //Blue_Id
+                $("#red").addClass("green").removeClass("red")
+                $("#pos-0").addClass("green").removeClass("red")
+                $("#pos-1").addClass("green").removeClass("red")
+                $("#pos-2").addClass("green").removeClass("red")
+                $("#pos-3").addClass("green").removeClass("red")
+                $("#pos-16").addClass("green").removeClass("red")
+                $("#pos-68").addClass("green").removeClass("red")
+                $("#pos-69").addClass("green").removeClass("red")
+                $("#pos-70").addClass("green").removeClass("red")
+                $("#pos-71").addClass("green").removeClass("red")
+                $("#pos-72").addClass("green").removeClass("red")
+                $("#pos-73").addClass("green").removeClass("red")
+                $("#green_inbox").addClass("red_inbox").removeClass("green_inbox")
+                $("#red_inbox").addClass("green_inbox").removeClass("red_inbox")
+                $("#arrow-down").addClass("arrow-right1").removeClass("arrow-down")
+                $("#arrow-right").addClass("arrow-down1").removeClass("arrow-right")
+            }
+
+            if (get_player_ID == 1 && get_clr == "Yellow") {
+                $(".green").addClass("yellow").removeClass("green")
+
+                $("#Yellow_ID").addClass("green").removeClass("yellow")
+                $("#pos-8").addClass("green").removeClass("yellow")
+                $("#pos-9").addClass("green").removeClass("yellow")
+                $("#pos-10").addClass("green").removeClass("yellow")
+                $("#pos-11").addClass("green").removeClass("yellow")
+                $("#pos-42").addClass("green").removeClass("yellow")
+                $("#pos-80").addClass("green").removeClass("yellow")
+                $("#pos-81").addClass("green").removeClass("yellow")
+                $("#pos-82").addClass("green").removeClass("yellow")
+                $("#pos-83").addClass("green").removeClass("yellow")
+                $("#pos-84").addClass("green").removeClass("yellow")
+                $("#pos-84").addClass("green").removeClass("yellow")
+                $("#pos-85").addClass("green").removeClass("yellow")
+                $("#green_inbox").addClass("yellow_inbox").removeClass("green_inbox")
+                $("#yellow_inbox").addClass("green_inbox").removeClass("yellow_inbox")
+                $("#arrow-down").addClass("arrow-left1").removeClass("arrow-down")
+                $("#arrow-left").addClass("arrow-down1").removeClass("arrow-left")
+            }
+
+           
+
+        }
+        set_lobby_clr()
+    </script>
+
+    <script>
+
+
+        function pageRedirect() {
+            window.location.href = `/index`;
+        }
+
+
+
+
+
+
+
+
+
+
+    </script>
+
+
+
+</body>
