@@ -10,7 +10,7 @@ const {getDishNum } = require('./helper/game_fun_helper');
 	
 	gameLogic: async function (game, playerId, pos, chipsToMove) {
 	
-        console.log("Player " + game.playerTurn + " clicked " + pos);
+		console.log("Player " + game.playerTurn + " clicked " + pos);
     
 		if (game.status != 1 || game.isProcessing || game.players[game.playerTurn].playerId != playerId) return false;
 		
