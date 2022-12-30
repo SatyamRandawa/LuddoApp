@@ -2,7 +2,7 @@
 	"name": "ProLudoClub",
 	"version": "0.1.0",
 	"scripts": {
-		"dev": "nodemon main.js"
+		"start": "nodemon main.js"
 	},
 	"main": "main.js",
 	"description": "Online multiplayer Ludo made with Node.js.",
