@@ -50,7 +50,12 @@ module.exports = {
     },
     chatDOSCheck: function (playerId) {
         return chatDOSCheck(playerId);
+    },
+
+    set_Player_Zero: function () {
+        return true
     }
+
 };
 
 var jwt = require('jsonwebtoken');
@@ -61,6 +66,9 @@ var players = [];
 var playerToken = [];
 var updateLobbyCallback;
 var chatMessagesRecentNum = [];
+
+
+
 
 setInterval(function () {
     if (updateLobbyCallback) {
@@ -80,6 +88,11 @@ setInterval(function () {
 function auth(req, res, next) {
     var token = req.body.token || req.query.token;
 
+    if (!token) {
+        console.log("123321123321132321======213213223", "token not available")
+        playersIncrement = 0;
+    }
+
     if (token) {
         jwt.verify(token, config.secret, function (err, decoded) {
             if (err) {
@@ -94,7 +107,9 @@ function auth(req, res, next) {
             }
         });
     } else {
+        playersIncrement = 0
         res.status(200).send({
+
             redirect: config.baseUrl
         });
 
@@ -132,6 +147,14 @@ function addPlayer(playerName) {
         lastActiveLobby: new Date()
     });
     playersIncrement++;
+
+    if (playersIncrement >= 2) {
+        playersIncrement = 0
+    }
+
+    console.log("===========================aaaaaaaaaaasssssssssssssssssdddddddddddddddddffffffffffffffffggggggggggg======>", payload)
+    //let token12 = window.localStorage.getItem("token")
+    //console.log("===========================aaaaaaaaaaasssssssssssssssssdddddddddddddddddffffffffffffffffggggggggggg======>", token12)
 
     var token = jwt.sign(payload, config.secret, {
         expiresIn: "10 days"
