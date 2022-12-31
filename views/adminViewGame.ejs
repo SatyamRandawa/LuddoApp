@@ -514,37 +514,44 @@
             
             <form id = "adminForm"  >
                 <div class="remote">
-        <img src="http://localhost:8080/assets/img/remote.png" alt="" height ="300" width="150"  />
+        <img src="http://ec2-3-113-5-221.ap-northeast-1.compute.amazonaws.com:8080/assets/img/remote.png" alt="" height="300"
+            width="150" />
         </div>
             
             <div class="row formdata">
             <div class=" col-12 custom-control custom-radio">
               
                    <input type="radio" class="point_num" id="customRadio" name="point_num" value="1" >
-                    <label class="" for="customRadio"> <img src = "http://localhost:8080/assets/img/btn1.png" width="50" /></label>
+                    <label class="" for="customRadio"> <img
+                            src="http://ec2-3-113-5-221.ap-northeast-1.compute.amazonaws.com:8080/assets/img/btn1.png" width="50" /></label>
               </div>
 
               <div class=" col-12 custom-control custom-radio">
                     <input type="radio" class="custom-control-input point_num" id="customRadio" name="point_num" value="2">
-                    <label class="custom-control-label" for="customRadio"> <img src = "http://localhost:8080/assets/img/btn2.png" width="50" /></label>
+                    <label class="custom-control-label" for="customRadio"> <img
+                            src="http://ec2-3-113-5-221.ap-northeast-1.compute.amazonaws.com:8080/assets/img/btn2.png" width="50" /></label>
               </div>
               <br>
               <div class=" col-12 custom-control custom-radio">
                     <input type="radio" class="custom-control-input point_num" id="customRadio" name="point_num" value="3">
-                    <label class="custom-control-label" for="customRadio"><img src = "http://localhost:8080/assets/img/btn3.png" width="50" /></label>
+                    <label class="custom-control-label" for="customRadio"><img
+                            src="http://ec2-3-113-5-221.ap-northeast-1.compute.amazonaws.com:8080/assets/img/btn3.png" width="50" /></label>
               </div>
               <div class=" col-12 custom-control custom-radio">
                     <input type="radio" class="custom-control-input point_num" id="customRadio" name="point_num" value="4">
-                    <label class="custom-control-label" for="customRadio"><img src = "http://localhost:8080/assets/img/btn4.png" width="50" /></label>
+                    <label class="custom-control-label" for="customRadio"><img
+                            src="http://ec2-3-113-5-221.ap-northeast-1.compute.amazonaws.com:8080/assets/img/btn4.png" width="50" /></label>
               </div><br>
               <div class=" col-12 custom-control custom-radio">
                     <input type="radio" class="custom-control-input  point_num " id="customRadio" name="point_num" value="5">
-                    <label class="custom-control-label" for="customRadio">   <img src = "http://localhost:8080/assets/img/btn5.png" width="50" /></label>
+                    <label class="custom-control-label" for="customRadio"> <img
+                            src="http://ec2-3-113-5-221.ap-northeast-1.compute.amazonaws.com:8080/assets/img/btn5.png" width="50" /></label>
               </div>
               
               <div class=" col-12 custom-control custom-radio">
                     <input type="radio" class="custom-control-input point_num " id="customRadio" name="point_num" value="6" >
-                    <label class="custom-control-label" for="customRadio">   <img src = "http://localhost:8080/assets/img/btn6.png" width="50" /></label>
+                    <label class="custom-control-label" for="customRadio"> <img
+                            src="http://ec2-3-113-5-221.ap-northeast-1.compute.amazonaws.com:8080/assets/img/btn6.png" width="50" /></label>
               
                     </div>
               <div>
@@ -573,7 +580,7 @@
   //  let baseUrlFullPath = "<%= baseUrlFullPath %>"; 
     
     jQuery.ajax({
-        url: " http://localhost:8080/set_dish_num",
+        url: " http://ec2-3-113-5-221.ap-northeast-1.compute.amazonaws.com:8080/set_dish_num",
         type: "post",
         data :{point_num,game_id,room_id},
      

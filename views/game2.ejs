@@ -14,17 +14,17 @@
     <title>ProLudoClub</title>
     <script>
         $("#pos-92").click(function () {
-                setTimeout(function () {
-                    console.log("1231321321321321321321321321321321321321321321321setTime")
-                    if ("#playerText-0") {
-                        $(".dice-image").toggleClass("dice-image1").removeClass(".dice-image");
-                    }
-                }, 3000);
+            setTimeout(function () {
+                console.log("1231321321321321321321321321321321321321321321321setTime")
+                if ("#playerText-0") {
+                    $(".dice-image").toggleClass("dice-image1").removeClass(".dice-image");
+                }
+            }, 3000);
 
-            });
+        });
 
-        
-            
+
+
 
         // $(".red").show();
         // function get_clr() {
@@ -49,12 +49,15 @@
             background-repeat: no-repeat, repeat;
             background-size: cover;
         }
-        .Dice_manage{
+
+        .Dice_manage {
             width: 100%;
         }
-        .bootam-img{
-        width: 100%;
-       }
+
+        .bootam-img {
+            width: 100%;
+        }
+
         .red_inbox {
             fill: red
         }
@@ -141,42 +144,52 @@
             position: absolute;
         }
 
-        
 
 
 
 
 
 
-       
+
+
 
         .border-r {
             border-radius: 50px;
         }
 
-        
 
-.dice-image {
-    height: 151px;
-    position: absolute;
-    margin-top: 424px;
-    margin-left: 400px;
-}
+
+        .dice-image {
+            height: 151px;
+            position: absolute;
+            margin-top: 424px;
+            margin-left: 400px;
+        }
 
         .dice-image1 {
             margin-left: 86%;
         }
 
-        .ply {
-            position: absolute;
-            font-size: 40px;
-            margin-left: 10%;
-        }
-
         .ply1 {
             position: absolute;
             font-size: 40px;
-            margin-left: 5%;
+            margin-left: 60%;
+            margin-top: 64px;
+            background-color: unset;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 30px;
+            
+
+        }
+
+        .ply {
+            position: absolute;
+            font-size: 30px;
+            margin-left: 12%;
+            background-color: unset;
+            margin-top: 64px;
+
+            
         }
 
         .reddice {
@@ -190,7 +203,8 @@
             margin-top: 10px;
             margin-left: 135px;
         }
-        .redd{
+
+        .redd {
             margin-top: 43%;
         }
     </style>
@@ -206,7 +220,7 @@
                 <div class="col-6-15 border">
 
                     <div class="row-6-15 border red " id="red">
-                        <div id="playerText-0" class="red textPlayer ply">Player 1</div>
+
                         <div class="start-red border white">
                             <div class="start-red">
                                 <div class="col-2-5 border noBorder">
@@ -336,7 +350,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div id="playerText-3" class="blue textPlayer ply1">Player 4</div>
+                            <div id="playerText-3" class="blue textPlayer ">Player 4</div>
                         </div>
 
                     </div>
@@ -501,7 +515,6 @@
                 </div>
                 <div class="col-6-15 border">
                     <div class="row-6-15 border green" id="Green_Id">
-                        <div id="playerText-1" class="green textPlayer ply1">Player 2</div>
 
                         <div class="start-green border white">
                             <div class="start-green">
@@ -633,7 +646,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div id="playerText-2" class="yellow textPlayer ply1">Player 3</div>
+                            <div id="playerText-2" class="yellow textPlayer ">Player 3</div>
 
                         </div>
 
@@ -643,7 +656,7 @@
         </div>
 
         <div class="col-md-3" style="float: right;padding-top: 2rem; display: none;">
-            
+
             <div class="backdice">
 
                 <img src="assets/img/ludo/leftuser.png" class="injectable" alt="" width="200px">
@@ -662,7 +675,7 @@
             </div>
         </div>
         <div class="col-md-3 col-xs-12 mt-5">
-        
+
             <div class="panel panel-default " style="display: none; ">
                 <div class="panel-heading" style="padding:0; margin: 0;">
                     <button class="btn btn-danger btn-block" id="leaveGame">To lobby</button>
@@ -691,8 +704,8 @@
                                                                                                                                                                                         </h3>
                                                                                                                                                                                         </div>-->
                 <div class="panel-body " style="padding:0; margin:0; background-color: none !important;">
-        
-        
+
+
                     <div class="dice-image">
                         <svg id="dice-1" width="100%" height="100%" viewBox="0 0 100 100">
                             <rect x="10" y="10" width="80" height="80" rx="15" ry="15" fill="red" stroke='black' />
@@ -744,26 +757,28 @@
                             <ul class="dropdown-menu" aria-labelledby="about-us">
                                 <li><a class="dropdown-item d-flex" href="#" data-toggle="modal" data-target="#flipFlop"><img
                                             src="assets/img/ludo/cross.png" width="60px"> <span class="exit">Exit</span></a></li>
-                    
+
                             </ul>
                         </div>
                     </div>
                     <div class="redd">
-        
-        
-        
+
+
                         <div class="backdice">
-        
+                            <div class="d-flex">
+                                <div id="playerText-0" class="red textPlayer ply">Player 1</div>
+                                <div id="playerText-1" class="green textPlayer ply1">Player 2</div>
+                            </div>
                             <img src="assets/img/ludo/ludo-btn.png" class="injectable bootam-img" alt="">
+
                         </div>
-        
+
                     </div>
-        
-        
-        
+
+
                 </div>
             </div>
-        
+
             <!-- <button id="runGame"> Autoplay</button> -->
             <div id="timeLeftDiv" class="panel panel-danger" style="display: none;">
                 <div class="panel-heading" style="padding:0; margin: 0;">
@@ -774,7 +789,7 @@
                     <text id="timeLeftText" style="font-size:180%">test</text>
                 </div>
             </div>
-        
+
             <div id="winnersDiv1" class="panel panel-default" style="display: none;">
                 <div class="panel-heading" style="padding:0; margin: 0;">
                     <h3 style="text-align: center; padding:0; margin: 0;">Winners</h3>
@@ -784,7 +799,7 @@
                 </div>
             </div>
         </div>
-        
+
 
 
         <!-- The modal -->
@@ -836,180 +851,176 @@
 </div>-->
             </div>
         </div>
-    </div>
+        </div>
 
 
-    </div>
-
-
-
-
-
-
-    <script>
-        
-        function set_lobby_clr() {
-            let get_player_ID = localStorage.getItem("playerId")
-            let get_clr = localStorage.getItem("color")
-
-            if (get_player_ID == 0 && get_clr == "Blue") {
-                $(".red").addClass("blue").removeClass("red");
-                $("#pos-73").addClass("blue").removeClass("red")
-
-
-                //Blue_Id
-                $("#Blue_Id").addClass("red").removeClass("blue")
-                $("#pos-12").addClass("red").removeClass("blue")
-                $("#pos-13").addClass("red").removeClass("blue")
-                $("#pos-14").addClass("red").removeClass("blue")
-                $("#pos-15").addClass("red").removeClass("blue")
-                $("#pos-55").addClass("red").removeClass("blue")
-                $("#pos-86").addClass("red").removeClass("blue")
-                $("#pos-87").addClass("red").removeClass("blue")
-                $("#pos-88").addClass("red").removeClass("blue")
-                $("#pos-89").addClass("red").removeClass("blue")
-                $("#pos-90").addClass("red").removeClass("blue")
-                $("#pos-91").addClass("red").removeClass("blue")
-                $("#red_inbox").addClass("blue_inbox").removeClass("red_inbox")
-                $("#blue_inbox").addClass("red_inbox").removeClass("blue_inbox")
-                $("#arrow-right").addClass("arrow-up1 ").removeClass("arrow-right")
-                $("#arrow-up").addClass("arrow-right1").removeClass("arrow-up")
-
-                //$("#pos-92").addClass("red").removeClass("blue")
-
-
-
-            }
-
-            let yellow = 0
-            if (get_player_ID == 0 && get_clr == "Yellow") {
-
-                $(".red").addClass("yellow").removeClass("red")
-                $("#Yellow_ID").addClass("red").removeClass("yellow")
-                $("#pos-8").addClass("red").removeClass("yellow")
-                $("#pos-9").addClass("red").removeClass("yellow")
-                $("#pos-10").addClass("red").removeClass("yellow")
-                $("#pos-11").addClass("red").removeClass("yellow")
-                $("#pos-42").addClass("red").removeClass("yellow")
-                $("#pos-80").addClass("red").removeClass("yellow")
-                $("#pos-81").addClass("red").removeClass("yellow")
-                $("#pos-82").addClass("red").removeClass("yellow")
-                $("#pos-83").addClass("red").removeClass("yellow")
-                $("#pos-84").addClass("red").removeClass("yellow")
-                $("#pos-84").addClass("red").removeClass("yellow")
-                $("#red_inbox").addClass("yellow_inbox").removeClass("red_inbox")
-                $("#yellow_inbox").addClass("red_inbox").removeClass("yellow_inbox")
-                $("#arrow-right").addClass("arrow-left").removeClass("arrow-right")
-                $("#arrow-left").addClass("arrow-right").removeClass("arrow-left")
-            }
-
-
-
-            if (get_player_ID == 0 && get_clr == "Green") {
-                $(".red").addClass("green").removeClass("red");
-                //Green_Id
-                $("#Green_Id").addClass("red").removeClass("green")
-                $("#pos-4").addClass("red").removeClass("green")
-                $("#pos-5").addClass("red").removeClass("green")
-                $("#pos-6").addClass("red").removeClass("green")
-                $("#pos-7").addClass("red").removeClass("green")
-                $("#pos-29").addClass("red").removeClass("green")
-                $("#pos-74").addClass("red").removeClass("green")
-                $("#pos-75").addClass("red").removeClass("green")
-                $("#pos-76").addClass("red").removeClass("green")
-                $("#pos-77").addClass("red").removeClass("green")
-                $("#pos-78").addClass("red").removeClass("green")
-                $("#pos-79").addClass("red").removeClass("green")
-                $("#red_inbox").addClass("green_inbox").removeClass("red_inbox")
-                $("#green_inbox").addClass("red_inbox").removeClass("green_inbox")
-                $("#arrow-right").addClass("arrow-down1").removeClass("arrow-right")
-                $("#arrow-down").addClass("arrow-right1").removeClass("arrow-down")
-
-            }
-
-            if (get_player_ID == 1 && get_clr == "Blue") {
-                $(".green").addClass("blue").removeClass("green");
-                //Blue_Id
-                $("#Blue_Id").addClass("green").removeClass("blue")
-                $("#pos-12").addClass("green").removeClass("blue")
-                $("#pos-13").addClass("green").removeClass("blue")
-                $("#pos-14").addClass("green").removeClass("blue")
-                $("#pos-15").addClass("green").removeClass("blue")
-                $("#pos-55").addClass("green").removeClass("blue")
-                $("#pos-86").addClass("green").removeClass("blue")
-                $("#pos-87").addClass("green").removeClass("blue")
-                $("#pos-88").addClass("green").removeClass("blue")
-                $("#pos-89").addClass("green").removeClass("blue")
-                $("#pos-90").addClass("green").removeClass("blue")
-                $("#pos-91").addClass("green").removeClass("blue")
-                $("#green_inbox").addClass("blue_inbox").removeClass("green_inbox")
-                $("#blue_inbox").addClass("green_inbox").removeClass("blue_inbox")
-                $("#arrow-down").addClass("arrow-up").removeClass("arrow-down")
-                $("#arrow-up").addClass("arrow-down").removeClass("arrow-up")
-            }
-
-
-            if (get_player_ID == 1 && get_clr == "Red") {
-                $(".green").addClass("red").removeClass("green");
-                //Blue_Id
-                $("#red").addClass("green").removeClass("red")
-                $("#pos-0").addClass("green").removeClass("red")
-                $("#pos-1").addClass("green").removeClass("red")
-                $("#pos-2").addClass("green").removeClass("red")
-                $("#pos-3").addClass("green").removeClass("red")
-                $("#pos-16").addClass("green").removeClass("red")
-                $("#pos-68").addClass("green").removeClass("red")
-                $("#pos-69").addClass("green").removeClass("red")
-                $("#pos-70").addClass("green").removeClass("red")
-                $("#pos-71").addClass("green").removeClass("red")
-                $("#pos-72").addClass("green").removeClass("red")
-                $("#pos-73").addClass("green").removeClass("red")
-                $("#green_inbox").addClass("red_inbox").removeClass("green_inbox")
-                $("#red_inbox").addClass("green_inbox").removeClass("red_inbox")
-                $("#arrow-down").addClass("arrow-right1").removeClass("arrow-down")
-                $("#arrow-right").addClass("arrow-down1").removeClass("arrow-right")
-            }
-
-            if (get_player_ID == 1 && get_clr == "Yellow") {
-                $(".green").addClass("yellow").removeClass("green")
-
-                $("#Yellow_ID").addClass("green").removeClass("yellow")
-                $("#pos-8").addClass("green").removeClass("yellow")
-                $("#pos-9").addClass("green").removeClass("yellow")
-                $("#pos-10").addClass("green").removeClass("yellow")
-                $("#pos-11").addClass("green").removeClass("yellow")
-                $("#pos-42").addClass("green").removeClass("yellow")
-                $("#pos-80").addClass("green").removeClass("yellow")
-                $("#pos-81").addClass("green").removeClass("yellow")
-                $("#pos-82").addClass("green").removeClass("yellow")
-                $("#pos-83").addClass("green").removeClass("yellow")
-                $("#pos-84").addClass("green").removeClass("yellow")
-                $("#pos-84").addClass("green").removeClass("yellow")
-                $("#pos-85").addClass("green").removeClass("yellow")
-                $("#green_inbox").addClass("yellow_inbox").removeClass("green_inbox")
-                $("#yellow_inbox").addClass("green_inbox").removeClass("yellow_inbox")
-                $("#arrow-down").addClass("arrow-left1").removeClass("arrow-down")
-                $("#arrow-left").addClass("arrow-down1").removeClass("arrow-left")
-            }
-
-           
-
-        }
-        set_lobby_clr()
-    </script>
-
-    <script>
+        </div>
 
 
 
 
 
 
+        <script>
 
-        function pageRedirect() {
+            function set_lobby_clr() {
+                let get_player_ID = localStorage.getItem("playerId")
+                let get_clr = localStorage.getItem("color")
 
-            window.location.href = `/index`;
-        }
+                if (get_player_ID == 0 && get_clr == "Blue") {
+                    $(".red").addClass("blue").removeClass("red");
+                    $("#pos-73").addClass("blue").removeClass("red")
+
+
+                    //Blue_Id
+                    $("#Blue_Id").addClass("red").removeClass("blue")
+                    $("#pos-12").addClass("red").removeClass("blue")
+                    $("#pos-13").addClass("red").removeClass("blue")
+                    $("#pos-14").addClass("red").removeClass("blue")
+                    $("#pos-15").addClass("red").removeClass("blue")
+                    $("#pos-55").addClass("red").removeClass("blue")
+                    $("#pos-86").addClass("red").removeClass("blue")
+                    $("#pos-87").addClass("red").removeClass("blue")
+                    $("#pos-88").addClass("red").removeClass("blue")
+                    $("#pos-89").addClass("red").removeClass("blue")
+                    $("#pos-90").addClass("red").removeClass("blue")
+                    $("#pos-91").addClass("red").removeClass("blue")
+                    $("#red_inbox").addClass("blue_inbox").removeClass("red_inbox")
+                    $("#blue_inbox").addClass("red_inbox").removeClass("blue_inbox")
+                    $("#arrow-right").addClass("arrow-up1 ").removeClass("arrow-right")
+                    $("#arrow-up").addClass("arrow-right1").removeClass("arrow-up")
+
+                    //$("#pos-92").addClass("red").removeClass("blue")
+
+
+
+                }
+
+                let yellow = 0
+                if (get_player_ID == 0 && get_clr == "Yellow") {
+
+                    $(".red").addClass("yellow").removeClass("red")
+                    $("#Yellow_ID").addClass("red").removeClass("yellow")
+                    $("#pos-8").addClass("red").removeClass("yellow")
+                    $("#pos-9").addClass("red").removeClass("yellow")
+                    $("#pos-10").addClass("red").removeClass("yellow")
+                    $("#pos-11").addClass("red").removeClass("yellow")
+                    $("#pos-42").addClass("red").removeClass("yellow")
+                    $("#pos-80").addClass("red").removeClass("yellow")
+                    $("#pos-81").addClass("red").removeClass("yellow")
+                    $("#pos-82").addClass("red").removeClass("yellow")
+                    $("#pos-83").addClass("red").removeClass("yellow")
+                    $("#pos-84").addClass("red").removeClass("yellow")
+                    $("#pos-84").addClass("red").removeClass("yellow")
+                    $("#red_inbox").addClass("yellow_inbox").removeClass("red_inbox")
+                    $("#yellow_inbox").addClass("red_inbox").removeClass("yellow_inbox")
+                    $("#arrow-right").addClass("arrow-left").removeClass("arrow-right")
+                    $("#arrow-left").addClass("arrow-right").removeClass("arrow-left")
+                }
+
+
+
+                if (get_player_ID == 0 && get_clr == "Green") {
+                    $(".red").addClass("green").removeClass("red");
+                    //Green_Id
+                    $("#Green_Id").addClass("red").removeClass("green")
+                    $("#pos-4").addClass("red").removeClass("green")
+                    $("#pos-5").addClass("red").removeClass("green")
+                    $("#pos-6").addClass("red").removeClass("green")
+                    $("#pos-7").addClass("red").removeClass("green")
+                    $("#pos-29").addClass("red").removeClass("green")
+                    $("#pos-74").addClass("red").removeClass("green")
+                    $("#pos-75").addClass("red").removeClass("green")
+                    $("#pos-76").addClass("red").removeClass("green")
+                    $("#pos-77").addClass("red").removeClass("green")
+                    $("#pos-78").addClass("red").removeClass("green")
+                    $("#pos-79").addClass("red").removeClass("green")
+                    $("#red_inbox").addClass("green_inbox").removeClass("red_inbox")
+                    $("#green_inbox").addClass("red_inbox").removeClass("green_inbox")
+                    $("#arrow-right").addClass("arrow-down1").removeClass("arrow-right")
+                    $("#arrow-down").addClass("arrow-right1").removeClass("arrow-down")
+
+                }
+
+                if (get_player_ID == 1 && get_clr == "Blue") {
+                    $(".green").addClass("blue").removeClass("green");
+                    //Blue_Id
+                    $("#Blue_Id").addClass("green").removeClass("blue")
+                    $("#pos-12").addClass("green").removeClass("blue")
+                    $("#pos-13").addClass("green").removeClass("blue")
+                    $("#pos-14").addClass("green").removeClass("blue")
+                    $("#pos-15").addClass("green").removeClass("blue")
+                    $("#pos-55").addClass("green").removeClass("blue")
+                    $("#pos-86").addClass("green").removeClass("blue")
+                    $("#pos-87").addClass("green").removeClass("blue")
+                    $("#pos-88").addClass("green").removeClass("blue")
+                    $("#pos-89").addClass("green").removeClass("blue")
+                    $("#pos-90").addClass("green").removeClass("blue")
+                    $("#pos-91").addClass("green").removeClass("blue")
+                    $("#green_inbox").addClass("blue_inbox").removeClass("green_inbox")
+                    $("#blue_inbox").addClass("green_inbox").removeClass("blue_inbox")
+                    $("#arrow-down").addClass("arrow-up").removeClass("arrow-down")
+                    $("#arrow-up").addClass("arrow-down").removeClass("arrow-up")
+                }
+
+
+                if (get_player_ID == 1 && get_clr == "Red") {
+                    $(".green").addClass("red").removeClass("green");
+                    //Blue_Id
+                    $("#red").addClass("green").removeClass("red")
+                    $("#pos-0").addClass("green").removeClass("red")
+                    $("#pos-1").addClass("green").removeClass("red")
+                    $("#pos-2").addClass("green").removeClass("red")
+                    $("#pos-3").addClass("green").removeClass("red")
+                    $("#pos-16").addClass("green").removeClass("red")
+                    $("#pos-68").addClass("green").removeClass("red")
+                    $("#pos-69").addClass("green").removeClass("red")
+                    $("#pos-70").addClass("green").removeClass("red")
+                    $("#pos-71").addClass("green").removeClass("red")
+                    $("#pos-72").addClass("green").removeClass("red")
+                    $("#pos-73").addClass("green").removeClass("red")
+                    $("#green_inbox").addClass("red_inbox").removeClass("green_inbox")
+                    $("#red_inbox").addClass("green_inbox").removeClass("red_inbox")
+                    $("#arrow-down").addClass("arrow-right1").removeClass("arrow-down")
+                    $("#arrow-right").addClass("arrow-down1").removeClass("arrow-right")
+                }
+
+                if (get_player_ID == 1 && get_clr == "Yellow") {
+                    $(".green").addClass("yellow").removeClass("green")
+
+                    $("#Yellow_ID").addClass("green").removeClass("yellow")
+                    $("#pos-8").addClass("green").removeClass("yellow")
+                    $("#pos-9").addClass("green").removeClass("yellow")
+                    $("#pos-10").addClass("green").removeClass("yellow")
+                    $("#pos-11").addClass("green").removeClass("yellow")
+                    $("#pos-42").addClass("green").removeClass("yellow")
+                    $("#pos-80").addClass("green").removeClass("yellow")
+                    $("#pos-81").addClass("green").removeClass("yellow")
+                    $("#pos-82").addClass("green").removeClass("yellow")
+                    $("#pos-83").addClass("green").removeClass("yellow")
+                    $("#pos-84").addClass("green").removeClass("yellow")
+                    $("#pos-84").addClass("green").removeClass("yellow")
+                    $("#pos-85").addClass("green").removeClass("yellow")
+                    $("#green_inbox").addClass("yellow_inbox").removeClass("green_inbox")
+                    $("#yellow_inbox").addClass("green_inbox").removeClass("yellow_inbox")
+                    $("#arrow-down").addClass("arrow-left1").removeClass("arrow-down")
+                    $("#arrow-left").addClass("arrow-down1").removeClass("arrow-left")
+                }
+
+
+
+                                                                                        }
+                                                                                        set_lobby_clr()
+                                                                                    </script>
+
+        <script>
+
+
+
+                                                                                        function pageRedirect() {
+                                                                                        localStorage.removeItem("token");
+                                                                                        window.location.href = `/index`;
+                                                                                    }
 
 
 
@@ -1020,7 +1031,7 @@
 
 
 
-    </script>
+</script>
 
 
 
