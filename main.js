@@ -299,6 +299,7 @@ router.get('/rest/login', function (req, res) {
 
  router.post('/getGameData/:inner_game_id?/:c_game_id?', GameController.getGameData ); 
  router.get('/game_list', GameController.game_list ); 
+router.get("/game_list_react", GameController.game_list_react)
 
      playerAuth.setLobbyCallback(function () {
               io.emit('lobby', ""); });

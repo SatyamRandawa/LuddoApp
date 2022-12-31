@@ -1,6 +1,6 @@
 <html>
+
 <head>
-    
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script language="JavaScript">var baseUr = "<%= baseUrl %>"</script>
     <script type="text/javascript" src="<%= baseUrl %>public/libs/jquery.min.js"></script>
@@ -9,670 +9,750 @@
     <script type="text/javascript" src="<%= baseUrl %>public/libs/bootstrap.min.js"></script>
     <script type="text/javascript" src="<%= baseUrl %>public/libs/fast-json-patch.min.js"></script>
     <link rel="stylesheet" type="text/css" href="<%= baseUrl %>public/libs/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="<%= baseUrl %>public/game.css"/>
-    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="<%= baseUrl %>public/game.css" />
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
+        integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
     <title>ProLudoClub</title>
     <style>
-        body{
+        body {
             background-color: #31b0d5;
-                }
+        }
 
         .custom-control {
-    position: relative;
-    z-index: 1;
-    display: block;
-    min-height: 1.5rem;
-    padding-left: 1.5rem;
-    -webkit-print-color-adjust: exact;
-   
-    print-color-adjust: exact;
-}
+            position: relative;
+            z-index: 1;
+            display: block;
+            min-height: 1.5rem;
+            padding-left: 1.5rem;
+            -webkit-print-color-adjust: exact;
+
+            print-color-adjust: exact;
+        }
 
 
-#adminForm{ 
-   
-    text-align: center;
-    margin-top: 5px;
-    
-}
-.remote{
-    position: absolute;
-    margin-left: 30%;
-}
-.formdata{
-    position: absolute;
-   
-    margin-left: 30.5%;
-    margin-top: 4rem;
-}
+        #adminForm {
 
-[type=radio] { 
-  position: absolute;
-  opacity: 0;
-  width: 50;
-  height: 50;
-}
+            text-align: center;
+            margin-top: 5px;
 
+        }
 
-[type=radio] + img {
-  cursor: pointer;
-}
+        .remote {
+            position: absolute;
+            margin-left: 30%;
+        }
+
+        .formdata {
+            position: absolute;
+
+            margin-left: 30.5%;
+            margin-top: 4rem;
+        }
+
+        [type=radio] {
+            position: absolute;
+            opacity: 0;
+            width: 50;
+            height: 50;
+        }
 
 
-
-[type=radio]:checked + img {
-  outline: 2px solid #f00;
-  
-}
+        [type=radio]+img {
+            cursor: pointer;
+        }
 
 
 
+        [type=radio]:checked+img {
+            outline: 2px solid #f00;
+
+        }
     </style>
 </head>
+
 <body>
-<div class="row" >
-    <div class="col-md-6 col-xs-12 " style="margin-right: 0px;padding-right: 0px">
-        <div class="grid">
-            <div class="col-6-15 border">
-                <div class="row-6-15 border red">
-                    <div class="start-red border white">
-                        <div class="start-red">
-                            <div class="col-2-5 border noBorder">
-                                <div id="pos-0" role="button" class="row-2-5 border red border-r">
+    <div class="row">
+        <div class="col-md-6 col-xs-12 " style="margin-right: 0px;padding-right: 0px">
+            <div class="grid">
+                <div class="col-6-15 border">
+                    <div class="row-6-15 border red">
+                        <div class="start-red border white">
+                            <div class="start-red">
+                                <div class="col-2-5 border noBorder">
+                                    <div id="pos-0" role="button" class="row-2-5 border red border-r">
 
-                                </div>
-                                <div class="row-1-5 noBorder">
+                                    </div>
+                                    <div class="row-1-5 noBorder">
 
-                                </div>
-                                <div id="pos-1" class="row-2-5 border red  border-r">
-                                        
-                                </div>
+                                    </div>
+                                    <div id="pos-1" class="row-2-5 border red  border-r">
+                                    
+                                    </div>
+                                    </div>
+                                    <div class="col-1-5 noBorder">
+                                        <div class="row-1-3 border noBorder">
+                                        </div>
+                                    </div>
+                                    <div class="col-2-5 border noBorder">
+                                        <div id="pos-2" class="row-2-5 border red border-r">
+                                        </div>
+                                        <div class="row-1-5 noBorder">
+
+                                    </div>
+                                    <div id="pos-3" class="row-2-5 border red border-r">
+
+                                    </div>
+                                    </div>
+                                    </div>
+                                    </div>
+                                    </div>
+                                    <div class="row-3-15 border">
+                                        <div class="col-1-6 border">
+                                            <div id="pos-67" class="row-1-3 border white">
+
                             </div>
-                            <div class="col-1-5 noBorder">
-                                <div class="row-1-3 border noBorder">
-                                </div>
+                            <div id="pos-66" class="row-1-3 border white">
+
                             </div>
-                            <div class="col-2-5 border noBorder">
-                                <div id="pos-2" class="row-2-5 border red border-r">
-                                     </div>
-                                <div class="row-1-5 noBorder">
+                            <div id="pos-65" class="row-1-3 border white">
 
-                                </div>
-                                <div id="pos-3" class="row-2-5 border red border-r">
-
-                                </div>
                             </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="row-3-15 border">
-                    <div class="col-1-6 border">
-                        <div id="pos-67" class="row-1-3 border white">
-
-                        </div>
-                        <div id="pos-66" class="row-1-3 border white">
-
-                        </div>
-                        <div id="pos-65" class="row-1-3 border white">
-
-                        </div>
-                    </div>
-                    <div class="col-1-6 border">
-                        <div id="pos-16" class="row-1-3 border red">
-                                        
-                        </div>
-                        <div id="pos-68" class="row-1-3 border red">
-
-                        </div>
-                        <div id="pos-64" class="row-1-3 border white">
-                              
-                        </div>
-                    </div>
-                    <div class="col-1-6 border">
-                        <div id="pos-17" class="row-1-3 border white">
-
-                        </div>
-                        <div id="pos-69" class="row-1-3 border red">
-
-                        </div>
-                        <div id="pos-63" class="row-1-3 border white">
-
-                        </div>
-                    </div>
-                    <div class="col-1-6 border">
-                        <div id="pos-18" class="row-1-3 border white">
-
-                        </div>
-                        <div id="pos-70" class="row-1-3 border red">
-
-                        </div>
-                        <div id="pos-62" class="row-1-3 border white">
-
-                        </div>
-                    </div>
-                    <div class="col-1-6 border">
-                        <div id="pos-19" class="row-1-3 border white">
-
-                        </div>
-                        <div id="pos-71" class="row-1-3 border red">
-
-                        </div>
-                        <div id="pos-61" class="row-1-3 border white">
-
-                        </div>
-                    </div>
-                    <div class="col-1-6 border">
-                        <div id="pos-20" class="row-1-3 border white">
-
-                        </div>
-                        <div id="pos-72" class="row-1-3 border red">
-
-                        </div>
-                        <div id="pos-60" class="row-1-3 border white">
-
-                        </div>
-                    </div>
-                </div>
-                <div class="row-6-15 border blue">
-                    <div class="start-blue border white">
-                        <div class="start-blue">
-                            <div class="col-2-5 border noBorder">
-                                <div id="pos-12" class="row-2-5 border blue border-r">
-
-                                </div>
-                                <div class="row-1-5 noBorder">
-
-                                </div>
-                                <div id="pos-13" class="row-2-5 border blue border-r">
-
-                                </div>
                             </div>
-                            <div class="col-1-5 noBorder">
-                                <div class="row-1-3 border noBorder">
+                            <div class="col-1-6 border">
+                                <div id="pos-16" class="row-1-3 border red">
+                            
                                 </div>
+                                <div id="pos-68" class="row-1-3 border red">
+
                             </div>
-                            <div class="col-2-5 border noBorder">
-                                <div id="pos-14" class="row-2-5 border blue border-r">
-
-                                </div>
-                                <div class="row-1-5 noBorder">
-
-                                </div>
-                                <div id="pos-15" class="row-2-5 border blue border-r">
-
-                                </div>
+                            <div id="pos-64" class="row-1-3 border white">
+                            
                             </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-3-15">
-                <div class="row-6-15 border">
-                    <div class="col-1-3 border">
-                        <div id="pos-26" class="row-1-6 border white">
-
-                        </div>
-                        <div id="pos-25" class="row-1-6 border white">
-
-                        </div>
-                        <div id="pos-24" class="row-1-6 border white">
-
-                        </div>
-                        <div id="pos-23" class="row-1-6 border white">
-
-                        </div>
-                        <div id="pos-22" class="row-1-6 border white">
-
-                        </div>
-                        <div id="pos-21" class="row-1-6 border white">
-
-                        </div>
-                    </div>
-                    <div class="col-1-3 border">
-                        <div id="pos-27" class="row-1-6 border white">
-
-                        </div>
-                        <div id="pos-74" class="row-1-6 border green">
-
-                        </div>
-                        <div id="pos-75" class="row-1-6 border green">
-
-                        </div>
-                        <div id="pos-76" class="row-1-6 border green">
-
-                        </div>
-                        <div id="pos-77" class="row-1-6 border green">
-
-                        </div>
-                        <div id="pos-78" class="row-1-6 border green">
-
-                        </div>
-                    </div>
-                    <div class="col-1-3 border">
-                        <div id="pos-28" class="row-1-6 border white">
-
-                        </div>
-                        <div id="pos-29" class="row-1-6 border green">
-
-                        </div>
-                        <div id="pos-30" class="row-1-6 border white">
-
-                        </div>
-                        <div id="pos-31" class="row-1-6 border white">
-
-                        </div>
-                        <div id="pos-32" class="row-1-6 border white">
-
-                        </div>
-                        <div id="pos-33" class="row-1-6 border white">
-
-                        </div>
-                    </div>
-                </div>
-                <div class="row-3-15 border container-triangle">
-                    <div class="contain">
-                        <svg width="100%" height="100%" viewBox="0 0 500 500">
-                            <polygon points="250,250 500,0 500,500" style="fill:yellow;stroke:black;stroke-width:2"/>
-                            <polygon points="250,250 -2,-2 500,-2" style="fill:green;stroke:black;stroke-width:2"/>
-                            <polygon points="250,250 0,0 0,500" style="fill:red;stroke:black;stroke-width:2"/>
-                            <polygon points="250,250 0,502 502,500" style="fill:#298cf6;stroke:black;stroke-width:2"/>
-                        </svg>
-                    </div>
-                    <div class="contain-over">
-                        <div id="pos-85" class="finalPos" style="position: absolute; right: 0; top: 31%;">
-
-                        </div>
-                    </div>
-                    <div class="contain-over">
-                        <div id="pos-79" class="finalPos" style="position: absolute; top: 0; left: 33.3333%;">
-
-                        </div>
-                    </div>
-                    <div class="contain-over">
-                        <div id="pos-73" class="finalPos" style="position: absolute; left: 0; top: 31%;">
-
-                        </div>
-                    </div>
-                    <div class="contain-over">
-                        <div id="pos-91" class="finalPos" style="position: absolute; bottom: 0; left: 33.3333%;">
-
-                        </div>
-                    </div>
-                </div>
-                <div class="row-6-15 border">
-                    <div class="col-1-3 border">
-                        <div id="pos-59" class="row-1-6 border white">
-
-                        </div>
-                        <div id="pos-58" class="row-1-6 border white">
-
-                        </div>
-                        <div id="pos-57" class="row-1-6 border white">
-
-                        </div>
-                        <div id="pos-56" class="row-1-6 border white">
-
-                        </div>
-                        <div id="pos-55" class="row-1-6 border  blue">
-
-                        </div>
-                        <div id="pos-54" class="row-1-6 border white">
-
-                        </div>
-                    </div>
-                    <div class="col-1-3 border">
-                        <div id="pos-90" class="row-1-6 border blue">
-
-                        </div>
-                        <div id="pos-89" class="row-1-6 border blue">
-
-                        </div>
-                        <div id="pos-88" class="row-1-6 border blue">
-
-                        </div>
-                        <div id="pos-87" class="row-1-6 border blue">
-
-                        </div>
-                        <div id="pos-86" class="row-1-6 border blue">
-
-                        </div>
-                        <div id="pos-53" class="row-1-6 border white">
-
-                        </div>
-                    </div>
-                    <div class="col-1-3 border">
-                        <div id="pos-47" class="row-1-6 border white">
-                               
-                        </div>
-                        <div id="pos-48" class="row-1-6 border white">
-
-                        </div>
-                        <div id="pos-49" class="row-1-6 border white">
-
-                        </div>
-                        <div id="pos-50" class="row-1-6 border white">
-
-                        </div>
-                        <div id="pos-51" class="row-1-6 border white">
-
-                        </div>
-                        <div id="pos-52" class="row-1-6 border white">
-
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-6-15 border">
-                <div class="row-6-15 border green">
-                    <div class="start-green border white">
-                        <div class="start-green">
-                            <div class="col-2-5 border noBorder">
-                                <div id="pos-4" class="row-2-5 border green border-r">
-
-                                </div>
-                                <div class="row-1-5 noBorder">
-
-                                </div>
-                                <div id="pos-5" class="row-2-5 border green border-r">
-
-                                </div>
                             </div>
-                            <div class="col-1-5 noBorder">
-                                <div class="row-1-3 border noBorder">
-                                </div>
+                            <div class="col-1-6 border">
+                                <div id="pos-17" class="row-1-3 border white">
+
                             </div>
-                            <div class="col-2-5 border noBorder">
-                                <div id="pos-6" class="row-2-5 border green border-r">
+                            <div id="pos-69" class="row-1-3 border red">
 
-                                </div>
-                                <div class="row-1-5 noBorder">
-
-                                </div>
-                                <div id="pos-7" class="row-2-5 border green border-r">
-
-                                </div>
                             </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="row-3-15 border">
-                    <div class="col-1-6 border">
-                        <div id="pos-34" class="row-1-3 border white">
+                            <div id="pos-63" class="row-1-3 border white">
 
-                        </div>
-                        <div id="pos-84" class="row-1-3 border yellow">
-
-                        </div>
-                        <div id="pos-46" class="row-1-3 border white">
-
-                        </div>
-                    </div>
-                    <div class="col-1-6 border">
-                        <div id="pos-35" class="row-1-3 border white">
-
-                        </div>
-                        <div id="pos-83" class="row-1-3 border yellow">
-
-                        </div>
-                        <div id="pos-45" class="row-1-3 border white">
-
-                        </div>
-                    </div>
-                    <div class="col-1-6 border">
-                        <div id="pos-36" class="row-1-3 border white">
-
-                        </div>
-                        <div id="pos-82" class="row-1-3 border yellow">
-
-                        </div>
-                        <div id="pos-44" class="row-1-3 border white">
-
-                        </div>
-                    </div>
-                    <div class="col-1-6 border">
-                        <div id="pos-37" class="row-1-3 border white">
-
-                        </div>
-                        <div id="pos-81" class="row-1-3 border yellow">
-
-                        </div>
-                        <div id="pos-43" class="row-1-3 border white">
-
-                        </div>
-                    </div>
-                    <div class="col-1-6 border">
-                        <div id="pos-38" class="row-1-3 border white">
-
-                        </div>
-                        <div id="pos-80" class="row-1-3 border yellow">
-
-                        </div>
-                        <div id="pos-42" class="row-1-3 border yellow">
-
-                        </div>
-                    </div>
-                    <div class="col-1-6 border">
-                        <div id="pos-39" class="row-1-3 border white">
-
-                        </div>
-                        <div id="pos-40" class="row-1-3 border white">
-
-                        </div>
-                        <div id="pos-41" class="row-1-3 border white">
-
-                        </div>
-                    </div>
-                </div>
-                <div class="row-6-15 border yellow">
-                    <div class="start-yellow border white">
-                        <div class="start-yellow">
-                            <div class="col-2-5 border noBorder">
-                                <div id="pos-8" class="row-2-5 border yellow border-r">
-
-                                </div>
-                                <div class="row-1-5 noBorder">
-
-                                </div>
-                                <div id="pos-9" class="row-2-5 border yellow border-r">
-
-                                </div>
                             </div>
-                            <div class="col-1-5 noBorder">
-                                <div class="row-1-3 border noBorder">
-                                
-                                </div>
                             </div>
-                            <div class="col-2-5 border noBorder">
-                                <div id="pos-10" class="row-2-5 border yellow border-r">
-                                     
-                                </div>
-                                <div class="row-1-5 noBorder">
+                            <div class="col-1-6 border">
+                                <div id="pos-18" class="row-1-3 border white">
 
-                                </div>
-                                <div id="pos-11" class="row-2-5 border yellow border-r">
-
-                                </div>
                             </div>
+                            <div id="pos-70" class="row-1-3 border red">
+
+                            </div>
+                            <div id="pos-62" class="row-1-3 border white">
+
+                            </div>
+                            </div>
+                            <div class="col-1-6 border">
+                                <div id="pos-19" class="row-1-3 border white">
+
+                            </div>
+                            <div id="pos-71" class="row-1-3 border red">
+
+                            </div>
+                            <div id="pos-61" class="row-1-3 border white">
+
+                            </div>
+                            </div>
+                            <div class="col-1-6 border">
+                                <div id="pos-20" class="row-1-3 border white">
+
+                            </div>
+                            <div id="pos-72" class="row-1-3 border red">
+
+                            </div>
+                            <div id="pos-60" class="row-1-3 border white">
+
+                            </div>
+                            </div>
+                            </div>
+                            <div class="row-6-15 border blue">
+                                <div class="start-blue border white">
+                                    <div class="start-blue">
+                                        <div class="col-2-5 border noBorder">
+                                            <div id="pos-12" class="row-2-5 border blue border-r">
+
+                                    </div>
+                                    <div class="row-1-5 noBorder">
+
+                                    </div>
+                                    <div id="pos-13" class="row-2-5 border blue border-r">
+
+                                    </div>
+                                    </div>
+                                    <div class="col-1-5 noBorder">
+                                        <div class="row-1-3 border noBorder">
+                                        </div>
+                                    </div>
+                                    <div class="col-2-5 border noBorder">
+                                        <div id="pos-14" class="row-2-5 border blue border-r">
+
+                                    </div>
+                                    <div class="row-1-5 noBorder">
+
+                                    </div>
+                                    <div id="pos-15" class="row-2-5 border blue border-r">
+
+                                    </div>
+                                    </div>
+                                    </div>
+                                    </div>
+                                    </div>
+                                    </div>
+                                    <div class="col-3-15">
+                                        <div class="row-6-15 border">
+                                            <div class="col-1-3 border">
+                                                <div id="pos-26" class="row-1-6 border white">
+
+                            </div>
+                            <div id="pos-25" class="row-1-6 border white">
+
+                            </div>
+                            <div id="pos-24" class="row-1-6 border white">
+
+                            </div>
+                            <div id="pos-23" class="row-1-6 border white">
+
+                            </div>
+                            <div id="pos-22" class="row-1-6 border white">
+
+                            </div>
+                            <div id="pos-21" class="row-1-6 border white">
+
+                            </div>
+                            </div>
+                            <div class="col-1-3 border">
+                                <div id="pos-27" class="row-1-6 border white">
+
+                            </div>
+                            <div id="pos-74" class="row-1-6 border green">
+
+                            </div>
+                            <div id="pos-75" class="row-1-6 border green">
+
+                            </div>
+                            <div id="pos-76" class="row-1-6 border green">
+
+                            </div>
+                            <div id="pos-77" class="row-1-6 border green">
+
+                            </div>
+                            <div id="pos-78" class="row-1-6 border green">
+
+                            </div>
+                            </div>
+                            <div class="col-1-3 border">
+                                <div id="pos-28" class="row-1-6 border white">
+
+                            </div>
+                            <div id="pos-29" class="row-1-6 border green">
+
+                            </div>
+                            <div id="pos-30" class="row-1-6 border white">
+
+                            </div>
+                            <div id="pos-31" class="row-1-6 border white">
+
+                            </div>
+                            <div id="pos-32" class="row-1-6 border white">
+
+                            </div>
+                            <div id="pos-33" class="row-1-6 border white">
+
+                            </div>
+                            </div>
+                            </div>
+                            <div class="row-3-15 border container-triangle">
+                                <div class="contain">
+                                    <svg width="100%" height="100%" viewBox="0 0 500 500">
+                                <polygon points="250,250 500,0 500,500" style="fill:yellow;stroke:black;stroke-width:2" />
+                                <polygon points="250,250 -2,-2 500,-2" style="fill:green;stroke:black;stroke-width:2" />
+                                <polygon points="250,250 0,0 0,500" style="fill:red;stroke:black;stroke-width:2" />
+                                <polygon points="250,250 0,502 502,500" style="fill:#298cf6;stroke:black;stroke-width:2" />
+                                </svg>
+                                </div>
+                                <div class="contain-over">
+                                    <div id="pos-85" class="finalPos" style="position: absolute; right: 0; top: 31%;">
+
+                            </div>
+                            </div>
+                            <div class="contain-over">
+                                <div id="pos-79" class="finalPos" style="position: absolute; top: 0; left: 33.3333%;">
+
+                            </div>
+                            </div>
+                            <div class="contain-over">
+                                <div id="pos-73" class="finalPos" style="position: absolute; left: 0; top: 31%;">
+
+                            </div>
+                            </div>
+                            <div class="contain-over">
+                                <div id="pos-91" class="finalPos" style="position: absolute; bottom: 0; left: 33.3333%;">
+
+                            </div>
+                            </div>
+                            </div>
+                            <div class="row-6-15 border">
+                                <div class="col-1-3 border">
+                                    <div id="pos-59" class="row-1-6 border white">
+
+                            </div>
+                            <div id="pos-58" class="row-1-6 border white">
+
+                            </div>
+                            <div id="pos-57" class="row-1-6 border white">
+
+                            </div>
+                            <div id="pos-56" class="row-1-6 border white">
+
+                            </div>
+                            <div id="pos-55" class="row-1-6 border  blue">
+
+                            </div>
+                            <div id="pos-54" class="row-1-6 border white">
+
+                            </div>
+                            </div>
+                            <div class="col-1-3 border">
+                                <div id="pos-90" class="row-1-6 border blue">
+
+                            </div>
+                            <div id="pos-89" class="row-1-6 border blue">
+
+                            </div>
+                            <div id="pos-88" class="row-1-6 border blue">
+
+                            </div>
+                            <div id="pos-87" class="row-1-6 border blue">
+
+                            </div>
+                            <div id="pos-86" class="row-1-6 border blue">
+
+                            </div>
+                            <div id="pos-53" class="row-1-6 border white">
+
+                            </div>
+                            </div>
+                            <div class="col-1-3 border">
+                                <div id="pos-47" class="row-1-6 border white">
+                            
+                                </div>
+                                <div id="pos-48" class="row-1-6 border white">
+
+                            </div>
+                            <div id="pos-49" class="row-1-6 border white">
+
+                            </div>
+                            <div id="pos-50" class="row-1-6 border white">
+
+                            </div>
+                            <div id="pos-51" class="row-1-6 border white">
+
+                            </div>
+                            <div id="pos-52" class="row-1-6 border white">
+
+                            </div>
+                            </div>
+                            </div>
+                            </div>
+                            <div class="col-6-15 border">
+                                <div class="row-6-15 border green">
+                                    <div class="start-green border white">
+                                        <div class="start-green">
+                                            <div class="col-2-5 border noBorder">
+                                                <div id="pos-4" class="row-2-5 border green border-r">
+
+                                    </div>
+                                    <div class="row-1-5 noBorder">
+
+                                    </div>
+                                    <div id="pos-5" class="row-2-5 border green border-r">
+
+                                    </div>
+                                    </div>
+                                    <div class="col-1-5 noBorder">
+                                        <div class="row-1-3 border noBorder">
+                                        </div>
+                                    </div>
+                                    <div class="col-2-5 border noBorder">
+                                        <div id="pos-6" class="row-2-5 border green border-r">
+
+                                    </div>
+                                    <div class="row-1-5 noBorder">
+
+                                    </div>
+                                    <div id="pos-7" class="row-2-5 border green border-r">
+
+                                    </div>
+                                    </div>
+                                    </div>
+                                    </div>
+                                    </div>
+                                    <div class="row-3-15 border">
+                                        <div class="col-1-6 border">
+                                            <div id="pos-34" class="row-1-3 border white">
+
+                            </div>
+                            <div id="pos-84" class="row-1-3 border yellow">
+
+                            </div>
+                            <div id="pos-46" class="row-1-3 border white">
+
+                            </div>
+                            </div>
+                            <div class="col-1-6 border">
+                                <div id="pos-35" class="row-1-3 border white">
+
+                            </div>
+                            <div id="pos-83" class="row-1-3 border yellow">
+
+                            </div>
+                            <div id="pos-45" class="row-1-3 border white">
+
+                            </div>
+                            </div>
+                            <div class="col-1-6 border">
+                                <div id="pos-36" class="row-1-3 border white">
+
+                            </div>
+                            <div id="pos-82" class="row-1-3 border yellow">
+
+                            </div>
+                            <div id="pos-44" class="row-1-3 border white">
+
+                            </div>
+                            </div>
+                            <div class="col-1-6 border">
+                                <div id="pos-37" class="row-1-3 border white">
+
+                            </div>
+                            <div id="pos-81" class="row-1-3 border yellow">
+
+                            </div>
+                            <div id="pos-43" class="row-1-3 border white">
+
+                            </div>
+                            </div>
+                            <div class="col-1-6 border">
+                                <div id="pos-38" class="row-1-3 border white">
+
+                            </div>
+                            <div id="pos-80" class="row-1-3 border yellow">
+
+                            </div>
+                            <div id="pos-42" class="row-1-3 border yellow">
+
+                            </div>
+                            </div>
+                            <div class="col-1-6 border">
+                                <div id="pos-39" class="row-1-3 border white">
+
+                            </div>
+                            <div id="pos-40" class="row-1-3 border white">
+
+                            </div>
+                            <div id="pos-41" class="row-1-3 border white">
+
+                            </div>
+                            </div>
+                            </div>
+                            <div class="row-6-15 border yellow">
+                                <div class="start-yellow border white">
+                                    <div class="start-yellow">
+                                        <div class="col-2-5 border noBorder">
+                                            <div id="pos-8" class="row-2-5 border yellow border-r">
+
+                                    </div>
+                                    <div class="row-1-5 noBorder">
+
+                                    </div>
+                                    <div id="pos-9" class="row-2-5 border yellow border-r">
+
+                                    </div>
+                                    </div>
+                                    <div class="col-1-5 noBorder">
+                                        <div class="row-1-3 border noBorder">
+                                    
+                                        </div>
+                                    </div>
+                                    <div class="col-2-5 border noBorder">
+                                        <div id="pos-10" class="row-2-5 border yellow border-r">
+                                    
+                                        </div>
+                                        <div class="row-1-5 noBorder">
+
+                                    </div>
+                                    <div id="pos-11" class="row-2-5 border yellow border-r">
+
+                                    </div>
+                                    </div>
+                                    </div>
+                                    </div>
+                                    </div>
+                                    </div>
+                                    </div>
+                                    </div>
+                                    <div class="col-md-6 col-xs-12 " style="margin-right: 0px;padding-right: 0px; margin-top: 5rem;">
+                                        <a class="btn btn-info" href="<%= baseUrlFullPath %>/game_list_view">Rooms</a>
+                                        <div class="row " style="margin: auto ;">
+                                            <div class="col-12 ">
+                                                <h4>Player names list</h4>
+                                                <ol id="p_list">
+                                                </ol>
+                                            </div>
+                                        </div>
+                                    
+                                    
+                                        <div class="formdta">
+
+                <form id="adminForm">
+                    <div class="remote">
+                        <img src="http://ec2-3-113-5-221.ap-northeast-1.compute.amazonaws.com:8080/assets/img/remote.png" alt="" height="300"
+                            width="150" />
                         </div>
+                        
+                        <div class="row formdata">
+                            <div class=" col-12 custom-control custom-radio">
+
+                            <input type="radio" class="point_num" id="customRadio" name="point_num" value="1">
+                            <label class="" for="customRadio"> <img
+                                    src="http://ec2-3-113-5-221.ap-northeast-1.compute.amazonaws.com:8080/assets/img/btn1.png"
+                                    width="50" /></label>
+                        </div>
+
+                        <div class=" col-12 custom-control custom-radio">
+                            <input type="radio" class="custom-control-input point_num" id="customRadio" name="point_num" value="2">
+                            <label class="custom-control-label" for="customRadio"> <img
+                                    src="http://ec2-3-113-5-221.ap-northeast-1.compute.amazonaws.com:8080/assets/img/btn2.png"
+                                    width="50" /></label>
+                        </div>
+                        <br>
+                        <div class=" col-12 custom-control custom-radio">
+                            <input type="radio" class="custom-control-input point_num" id="customRadio" name="point_num" value="3">
+                            <label class="custom-control-label" for="customRadio"><img
+                                    src="http://ec2-3-113-5-221.ap-northeast-1.compute.amazonaws.com:8080/assets/img/btn3.png"
+                                    width="50" /></label>
+                        </div>
+                        <div class=" col-12 custom-control custom-radio">
+                            <input type="radio" class="custom-control-input point_num" id="customRadio" name="point_num" value="4">
+                            <label class="custom-control-label" for="customRadio"><img
+                                    src="http://ec2-3-113-5-221.ap-northeast-1.compute.amazonaws.com:8080/assets/img/btn4.png"
+                                    width="50" /></label>
+                        </div><br>
+                        <div class=" col-12 custom-control custom-radio">
+                            <input type="radio" class="custom-control-input  point_num " id="customRadio" name="point_num" value="5">
+                            <label class="custom-control-label" for="customRadio"> <img
+                                    src="http://ec2-3-113-5-221.ap-northeast-1.compute.amazonaws.com:8080/assets/img/btn5.png"
+                                    width="50" /></label>
+                        </div>
+
+                        <div class=" col-12 custom-control custom-radio">
+                            <input type="radio" class="custom-control-input point_num " id="customRadio" name="point_num" value="6">
+                            <label class="custom-control-label" for="customRadio"> <img
+                                    src="http://ec2-3-113-5-221.ap-northeast-1.compute.amazonaws.com:8080/assets/img/btn6.png"
+                                    width="50" /></label>
+
+                        </div>
+                        <div>
+
+                        </div>
+
                     </div>
-                </div>
-            </div>
+                    </div>
+
+</form>
         </div>
+
+
+
     </div>
-    <div class="col-md-6 col-xs-12 " style="margin-right: 0px;padding-right: 0px; margin-top: 5rem;">
-      <a class="btn btn-info" href="<%= baseUrlFullPath %>/game_list_view">Rooms</a>
-      <div class="row " style="margin: auto ;">
-            <div class="col-12 ">
-                 <h4>Player names list</h4>
-                 <ol id="p_list">
-                  </ol>   
-               </div>
-        </div>
-    
-      
-        <div class="formdta">
-            
-            <form id = "adminForm"  >
-                <div class="remote">
-        <img src="http://ec2-3-113-5-221.ap-northeast-1.compute.amazonaws.com:8080/assets/img/remote.png" alt="" height="300"
-            width="150" />
-        </div>
-            
-            <div class="row formdata">
-            <div class=" col-12 custom-control custom-radio">
-              
-                   <input type="radio" class="point_num" id="customRadio" name="point_num" value="1" >
-                    <label class="" for="customRadio"> <img
-                            src="http://ec2-3-113-5-221.ap-northeast-1.compute.amazonaws.com:8080/assets/img/btn1.png" width="50" /></label>
-              </div>
-
-              <div class=" col-12 custom-control custom-radio">
-                    <input type="radio" class="custom-control-input point_num" id="customRadio" name="point_num" value="2">
-                    <label class="custom-control-label" for="customRadio"> <img
-                            src="http://ec2-3-113-5-221.ap-northeast-1.compute.amazonaws.com:8080/assets/img/btn2.png" width="50" /></label>
-              </div>
-              <br>
-              <div class=" col-12 custom-control custom-radio">
-                    <input type="radio" class="custom-control-input point_num" id="customRadio" name="point_num" value="3">
-                    <label class="custom-control-label" for="customRadio"><img
-                            src="http://ec2-3-113-5-221.ap-northeast-1.compute.amazonaws.com:8080/assets/img/btn3.png" width="50" /></label>
-              </div>
-              <div class=" col-12 custom-control custom-radio">
-                    <input type="radio" class="custom-control-input point_num" id="customRadio" name="point_num" value="4">
-                    <label class="custom-control-label" for="customRadio"><img
-                            src="http://ec2-3-113-5-221.ap-northeast-1.compute.amazonaws.com:8080/assets/img/btn4.png" width="50" /></label>
-              </div><br>
-              <div class=" col-12 custom-control custom-radio">
-                    <input type="radio" class="custom-control-input  point_num " id="customRadio" name="point_num" value="5">
-                    <label class="custom-control-label" for="customRadio"> <img
-                            src="http://ec2-3-113-5-221.ap-northeast-1.compute.amazonaws.com:8080/assets/img/btn5.png" width="50" /></label>
-              </div>
-              
-              <div class=" col-12 custom-control custom-radio">
-                    <input type="radio" class="custom-control-input point_num " id="customRadio" name="point_num" value="6" >
-                    <label class="custom-control-label" for="customRadio"> <img
-                            src="http://ec2-3-113-5-221.ap-northeast-1.compute.amazonaws.com:8080/assets/img/btn6.png" width="50" /></label>
-              
-                    </div>
-              <div>
-                
-            </div>
-
-            </div>
-        </div>
-
-               
-        </form>
-        </div>
-
-
-
-        </div>
     
     
-</div>
- 
-<script >
-    $("input[name='point_num']").click('#adminForm',function(){
-        var point_num = $(".point_num:checked").val();
-    let room_id = "<%= room_id %>";
-    let game_id = "<%= game_id %>";
-  //  let baseUrlFullPath = "<%= baseUrlFullPath %>"; 
-    
-    jQuery.ajax({
-        url: " http://ec2-3-113-5-221.ap-northeast-1.compute.amazonaws.com:8080/set_dish_num",
-        type: "post",
-        data :{point_num,game_id,room_id},
-     
-        success: function (resultData) {
-            let dx =  resultData ; //jQuery.parseJSON (JSON.stringify(resultData));
-           
-          
+    </div>
 
-         /// console.log("Ajax == ",resultData.details[0].play_game );      
-           console.log("ajax call ==",  dx);
+    <script>
+        $("input[name='point_num']").click('#adminForm', function () {
+            var point_num = $(".point_num:checked").val();
+            let room_id = "<%= room_id %>";
+            let game_id = "<%= game_id %>";
+            //  let baseUrlFullPath = "<%= baseUrlFullPath %>"; 
+
+            jQuery.ajax({
+                url: " http://ec2-3-113-5-221.ap-northeast-1.compute.amazonaws.com:8080/set_dish_num",
+                type: "post",
+                data: { point_num, game_id, room_id },
+
+                success: function (resultData) {
+                    let dx = resultData; //jQuery.parseJSON (JSON.stringify(resultData));
+                    
 
 
-        },
-       
-    });    
-    return false ;  
-});
+                    /// console.log("Ajax == ",resultData.details[0].play_game );      
+                    console.log("ajax call ==", dx);
 
 
-    $(document).ready(function(){
-        console.log("ready fun call");
-       
-   
-    setInterval(() => {
-        getData();
+                },
 
-    }, 5000);
-
- 
- 
-   
-  
-});
-
-function gootAdd(m_R,g_path){
-      //  console.log( m_R +" == gootAdd g_path == "+g_path );
-    const chipColors = ['#f22438', '#f7e81d', '#14913e', '#1968ef'];
-    let newcolor =chipColors[m_R]; 
-
-    $(`#pos-${g_path}`).html( ` <svg class = 'm_bote' width="100%" height="100%" viewBox="0 0 250 250"> 
-                                        <circle cx="125" cy="125" r="80" stroke="black" stroke-width="6" fill="${newcolor}">
-                                            </circle> <circle cx="125" cy="105" r="80" stroke="black" stroke-width="6" fill="${newcolor}">
-                                                </circle> </svg> `);
-        return false;                                         
- }
+            });
+            return false;
+        });
 
 
+            $(document).ready(function () {
+                console.log("ready fun call");
 
-function loopFun(myarray){
-    const colors = ['Red', 'yellow', 'Green', 'Blue'];
-     $('.m_bote').remove();
-    //console.log( " myarray == ",myarray );
-let addTags = ''; 
-let arrLength =  myarray.object.players.length;
 
-for(let R= 0;R < arrLength ; R++){
-         
-    addTags += `<li>${myarray.object.players[R].playerName}  and color code = ${colors[R]} <li>`;
-for(let j = 0 ; j< 4 ; j++ ){
-   gootAdd(R,myarray.object.players[R].chips[j].pos);
+                setInterval(() => {
+                    getData();
 
-}
-}
-$('#p_list').html(addTags);
-
-}
+            }, 5000);
 
 
 
 
 
-function getData(){
+        });
 
-    let baseUrlFullPath = `<%= baseUrlFullPath %>`;
-    let room_id = "<%= room_id %>"; 
-    let game_id = "<%= game_id %>"; 
+            function gootAdd(m_R, g_path) {
+                console.log(m_R + " == gootAdd g_path == " + g_path);
 
 
-    let urls = `${baseUrlFullPath}/getGameData/${room_id}/${game_id}`;
-    
-     jQuery.ajax({
-        url: urls,
-        type: "post",
-        data :{},
-        contentType: 'application/json; charset=utf-8',
-        success: function (resultData) {
-           loopFun(resultData.details[0].play_game);
-        },
-       
-    });    
-    return false ;
-}
+                //--------------------------------------------------
+
+                let first_payer = ""
+                let second_palyer = ""
+                let third_player = ""
+                let fourth_player = ""
+
+
+                let PayerID1 = localStorage.getItem("playerId")
+                let Player_clr1 = localStorage.getItem("color")
+
+                let Image1 = ""
+                let Image = ""
+
+                if (PayerID1 == 0 && Player_clr1 == "Red") {
+                    first_payer = "<img src='http://localhost:8080/assets/img/ludo/redgaot.png' style='margin:-27px 0px 0px 10px' width=40'px'> "
+                    second_palyer = "<img src='http://localhost:8080/assets/img/ludo/greengoat.png'  style='margin:-27px 0px 0px 10px'  width=40'px'>"
+                }
+
+
+
+                else if (PayerID1 == 0 && Player_clr1 == "Green") {
+
+                    first_payer = "<img src='http://localhost:8080/assets/img/ludo/greengoat.png'  style='margin:-27px 0px 0px 10px'  width=40'px'>"
+                    second_palyer = "<img src='http://localhost:8080/assets/img/ludo/redgaot.png' style='margin:-27px 0px 0px 10px' width=40'px'> "
+                }
+
+
+                else if (PayerID1 == 0 && Player_clr1 == "Yellow") {
+
+                    first_payer = "<img src='http://localhost:8080/assets/img/ludo/yellowgoat.png'  style='margin:-27px 0px 0px 10px' width=40'px'>"
+                    second_palyer = "<img src='http://localhost:8080/assets/img/ludo/greengoat.png'  style='margin:-27px 0px 0px 10px'  width=40'px'>"
+                }
+
+                else if (PayerID1 == 0 && Player_clr1 == "Blue") {
+                    first_payer = "<img src='http://localhost:8080/assets/img/ludo/bluegaot.png' style='margin:-27px 0px 0px 10px'  width=40'px'>"
+                    second_palyer = "<img src='http://localhost:8080/assets/img/ludo/greengoat.png'  style='margin:-27px 0px 0px 10px'  width=40'px'>"
+                }
+
+
+                else if (PayerID1 == 1 && Player_clr1 == "Red") {
+                    second_palyer = "<img src='http://localhost:8080/assets/img/ludo/redgaot.png' style='margin:-27px 0px 0px 10px' width=40'px'> "
+                    first_payer = "<img src='http://localhost:8080/assets/img/ludo/greengoat.png'  style='margin:-27px 0px 0px 10px'  width=40'px'>"
+
+
+                }
+
+
+                else if (PayerID1 == 1 && Player_clr1 == "Green") {
+
+                    second_palyer = "<img src='http://localhost:8080/assets/img/ludo/greengoat.png'  style='margin:-27px 0px 0px 10px'  width=40'px'>"
+                    first_payer = "<img src='http://localhost:8080/assets/img/ludo/redgaot.png' style='margin:-27px 0px 0px 10px' width=40'px'> "
+
+                }
+
+
+                else if (PayerID1 == 1 && Player_clr1 == "Yellow") {
+                    second_palyer = "<img src='http://localhost:8080/assets/img/ludo/yellowgoat.png'  style='margin:-27px 0px 0px 10px' width=40'px'>"
+                    first_payer = "<img src='http://localhost:8080/assets/img/ludo/redgaot.png' style='margin:-27px 0px 0px 10px' width=40'px'> "
+
+                }
+
+
+                else if (PayerID1 == 1 && Player_clr1 == "Blue") {
+
+                    second_palyer = "<img src='http://localhost:8080/assets/img/ludo/bluegaot.png' style='margin:-27px 0px 0px 10px'  width=40'px'>"
+                    first_payer = "<img src='http://localhost:8080/assets/img/ludo/redgaot.png' style='margin:-27px 0px 0px 10px' width=40'px'> "
+
+                } else {
+                    first_payer = "<img src='http://localhost:8080/assets/img/ludo/yellowgoat.png'  style='margin:-27px 0px 0px 10px' width=40'px'>"
+                }
+
+                //--------------------------------------------------------------------
+
+
+                const chipColors = ["<img src='http://localhost:8080/assets/img/ludo/redgaot.png' style='margin:-27px 0px 0px 10px' width=40'px'> ",
+                    "<img src='http://localhost:8080/assets/img/ludo/greengoat.png'  style='margin:-27px 0px 0px 10px'  width=40'px'>"];
+                let newcolor = chipColors[m_R];
+
+            $(`#pos-${g_path}`).html(newcolor);
+            return false;
+        }
+
+
+            function loopFun(myarray) {
+                const colors = ['Red', 'yellow', 'Green', 'Blue'];
+                $('.m_bote').remove();
+                //console.log( " myarray == ",myarray );
+                let addTags = '';
+            let arrLength = myarray.object.players.length;
+
+            for (let R = 0; R < arrLength; R++) {
+
+                addTags += `<li>${myarray.object.players[R].playerName}  and color code = ${colors[R]} <li>`;
+                for (let j = 0; j < 4; j++) {
+                    gootAdd(R, myarray.object.players[R].chips[j].pos);
+
+                }
+            }
+            $('#p_list').html(addTags);
+
+        }
+
+
+
+
+
+            function getData() {
+
+            let baseUrlFullPath = `<%= baseUrlFullPath %>`;
+            let room_id = "<%= room_id %>";
+            let game_id = "<%= game_id %>";
+
+
+            let urls = `${baseUrlFullPath}/getGameData/${room_id}/${game_id}`;
+
+            jQuery.ajax({
+                url: urls,
+                type: "post",
+                data: {},
+                contentType: 'application/json; charset=utf-8',
+                success: function (resultData) {
+                    loopFun(resultData.details[0].play_game);
+                },
+
+            });
+            return false;
+        }
 
 
 

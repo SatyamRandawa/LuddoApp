@@ -49,7 +49,45 @@ class GameController{
            return res.status(200).json({"msg": 'user not found',"status": false,"details": ''});
                      }
       }
-  
+
+    static game_list_react = async (req, res) => {
+        try {
+
+            let date = getcurntDate();
+
+            console.log("Date=======================================>>>>>", date)
+            let data = await gameData_tbl.find({ createdAt: { $gte: date } }).sort({ _id: -1 });
+            let result = []
+            data.map((item, index) => {
+                let g_id = item.play_game.object.gameId;
+                let urls = `/admin_view_game/${g_id}/${item._id}`;
+                let p_name = "";
+                let g_time = item.createdAt;
+                item.play_game.object.players.map((p) => {
+                    p_name += `${p.playerName} `;
+                })
+                let m_ul = `${p_name}`;
+                console.log("123", m_ul)
+
+                let obj = {
+                    gameID: g_id,
+                    Player_ID: item._id,
+                    player_name: (p_name != '') ? m_ul : '',
+                    Url: `http://localhost:8080${urls}`,
+                    game_time: g_time,
+                }
+                result.push(obj)
+            })
+
+            return res.status(200).json({ msg: result });
+
+        } catch (error) {
+            console.log(error)
+            return res.status(200).json({ error: error.message, "msg": 'user not found', "status": false, "details": '' });
+
+        }
+    }
+
 
 
    static  add_dish_num = async(req,res)=>{

@@ -4,9 +4,7 @@ const {getDishNum } = require('./helper/game_fun_helper');
 module.exports = {
     dice:  function () {
        
-        console.log( "G start time import js file call line no - 3"); 
-
-
+        console.log("G start time import js file call line no - 3"); 
         return Math.floor(Math.random() * 6) + 1
     },
 

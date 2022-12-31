@@ -77,14 +77,10 @@ function updateGame(cb) {
     });
 }
 
-function getChipSVG(color,chips ) {
-    console.log("dfghjkhgfdsfghjkhgfdghjk=======================>",chips)
-     let chip = [];
-    // chip[0] = "<img src='assets/img/ludo/redgaot.png' width='50px'> ";
-    // chip[1] = "<img src='assets/img/ludo/greengoat.png'  width='50px'>";
-    // chip[2] = "<img src='assets/img/ludo/yellowgoat.png'  width='50px'>";
-    // chip[3] = "<img src='assets/img/ludo/bluegaot.png'  width='50px'>";
-    // return chip[chips - 1].replace(/[?]/g, color);
+function getChipSVG(color, chips) {
+    console.log("dfghjkhgfdsfghjkhgfdghjk=======================>", chips)
+    let chip = [];
+
     return chips;
 }
 
@@ -257,55 +253,55 @@ function draw() {
         first_payer = "<img src='assets/img/ludo/redgaot.png' style='margin:-27px 0px 0px 10px' width='50px'> "
         second_palyer = "<img src='assets/img/ludo/greengoat.png'  style='margin:-27px 0px 0px 10px'  width='50px'>"
     }
- 
+
 
 
     else if (PayerID1 == 0 && Player_clr1 == "Green") {
-       
+
         first_payer = "<img src='assets/img/ludo/greengoat.png'  style='margin:-27px 0px 0px 10px'  width='50px'>"
-        second_palyer =  "<img src='assets/img/ludo/redgaot.png' style='margin:-27px 0px 0px 10px' width='50px'> "
+        second_palyer = "<img src='assets/img/ludo/redgaot.png' style='margin:-27px 0px 0px 10px' width='50px'> "
     }
 
 
     else if (PayerID1 == 0 && Player_clr1 == "Yellow") {
-       
-        first_payer =  "<img src='assets/img/ludo/yellowgoat.png'  style='margin:-27px 0px 0px 10px' width='50px'>"
+
+        first_payer = "<img src='assets/img/ludo/yellowgoat.png'  style='margin:-27px 0px 0px 10px' width='50px'>"
         second_palyer = "<img src='assets/img/ludo/greengoat.png'  style='margin:-27px 0px 0px 10px'  width='50px'>"
     }
 
     else if (PayerID1 == 0 && Player_clr1 == "Blue") {
-        first_payer =  "<img src='assets/img/ludo/bluegaot.png' style='margin:-27px 0px 0px 10px'  width='50px'>"
+        first_payer = "<img src='assets/img/ludo/bluegaot.png' style='margin:-27px 0px 0px 10px'  width='50px'>"
         second_palyer = "<img src='assets/img/ludo/greengoat.png'  style='margin:-27px 0px 0px 10px'  width='50px'>"
-    } 
+    }
 
 
-   else if (PayerID1 == 1 && Player_clr1 == "Red") {
-        second_palyer =  "<img src='assets/img/ludo/redgaot.png' style='margin:-27px 0px 0px 10px' width='50px'> "
-        first_payer =  "<img src='assets/img/ludo/greengoat.png'  style='margin:-27px 0px 0px 10px'  width='50px'>"
+    else if (PayerID1 == 1 && Player_clr1 == "Red") {
+        second_palyer = "<img src='assets/img/ludo/redgaot.png' style='margin:-27px 0px 0px 10px' width='50px'> "
+        first_payer = "<img src='assets/img/ludo/greengoat.png'  style='margin:-27px 0px 0px 10px'  width='50px'>"
 
 
     }
 
 
     else if (PayerID1 == 1 && Player_clr1 == "Green") {
-    
+
         second_palyer = "<img src='assets/img/ludo/greengoat.png'  style='margin:-27px 0px 0px 10px'  width='50px'>"
-        first_payer =   "<img src='assets/img/ludo/redgaot.png' style='margin:-27px 0px 0px 10px' width='50px'> "
+        first_payer = "<img src='assets/img/ludo/redgaot.png' style='margin:-27px 0px 0px 10px' width='50px'> "
 
     }
 
 
     else if (PayerID1 == 1 && Player_clr1 == "Yellow") {
         second_palyer = "<img src='assets/img/ludo/yellowgoat.png'  style='margin:-27px 0px 0px 10px' width='50px'>"
-        first_payer =   "<img src='assets/img/ludo/redgaot.png' style='margin:-27px 0px 0px 10px' width='50px'> "
+        first_payer = "<img src='assets/img/ludo/redgaot.png' style='margin:-27px 0px 0px 10px' width='50px'> "
 
     }
 
 
     else if (PayerID1 == 1 && Player_clr1 == "Blue") {
-     
+
         second_palyer = "<img src='assets/img/ludo/bluegaot.png' style='margin:-27px 0px 0px 10px'  width='50px'>"
-        first_payer =   "<img src='assets/img/ludo/redgaot.png' style='margin:-27px 0px 0px 10px' width='50px'> "
+        first_payer = "<img src='assets/img/ludo/redgaot.png' style='margin:-27px 0px 0px 10px' width='50px'> "
 
     } else {
         first_payer = "<img src='assets/img/ludo/yellowgoat.png'  style='margin:-27px 0px 0px 10px' width='50px'>"
@@ -349,22 +345,22 @@ function draw() {
 
     if (!game.waitingForMove && game.status == 1 && isTurn()) $("#pos-92").addClass("possiblePos");
     else $("#pos-92").removeClass("possiblePos");
- 
-    if(!game.waitingForMove && game.status == 1 && isTurn())
-   
-    
 
- 
+    if (!game.waitingForMove && game.status == 1 && isTurn())
 
-    for (var i = 0; i < 4; i++) {
-        if (game.players[i] == null) {
-            $("#playerText-" + i).hide();
-        } else {
-            $("#playerText-" + i).html(game.players[i].playerName );
-            if (game.playerTurn == i && game.status == 1) $("#playerText-" + i).addClass("possiblePos");
-            else $("#playerText-" + i).removeClass("possiblePos");  
-        }               
-    }
+
+
+
+
+        for (var i = 0; i < 4; i++) {
+            if (game.players[i] == null) {
+                $("#playerText-" + i).hide();
+            } else {
+                $("#playerText-" + i).html(game.players[i].playerName);
+                if (game.playerTurn == i && game.status == 1) $("#playerText-" + i).addClass("possiblePos");
+                else $("#playerText-" + i).removeClass("possiblePos");
+            }
+        }
 
 
 
@@ -468,11 +464,11 @@ function isTurn() {
 
 function isActivePlayer() {
 
-    
+
     for (var i = 0; i < game.players.length; i++)
-    
+
         if (game.players[i].playerId == localStorage.playerId && game.players[i].status === 0 && game.status === 1)
-    
+
             return true;
 
     return false;
@@ -492,7 +488,7 @@ function getUrlVars() {
 function autoPlay() {
     setInterval(function () {
         if (isTurn()) ludoAI();
-       
+
     }, 80);
 }
 
