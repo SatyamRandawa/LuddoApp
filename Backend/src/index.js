@@ -40,8 +40,8 @@ app.use('/', userRoutes);
 
 
 
-app.listen(process.env.Port || 3400, function () {
-    console.log('App running on port ' + (process.env.PORT || 3400))
+app.listen(process.env.Port || 8080, function () {
+    console.log('App running on port ' + (process.env.PORT || 8080))
 });
 
 
