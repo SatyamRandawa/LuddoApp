@@ -189,3 +189,33 @@ $(document).ready(function () {
     }, 3000);
 
 });
+
+
+function get_room_ID() {
+    jQuery.ajax({
+        url: baseUrl + "rest/regPlayer",
+        type: "POST",
+        data: JSON.stringify({ "room_ID": $("#room_ID").val() }),
+
+        contentType: 'application/json; charset=utf-8',
+        success: function (resultData) {
+            if (resultData.success) {
+                localStorage.token = resultData.token;
+                localStorage.playerId = resultData.playerId;
+                localStorage.room_id = resultData.roomstatus;
+                window.location.href = "/lobby";
+            }
+        },
+        error: function (jqXHR, textStatus, errorThrown) {
+        },
+
+
+        timeout: 120000,
+    });
+}
+
+
+
+
+
+

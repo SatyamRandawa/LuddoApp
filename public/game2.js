@@ -160,7 +160,7 @@ function giveUp() {
         error: function (jqXHR, textStatus, errorThrown) {
         },
 
-        timeout: 120000,
+        timeout: 120000 * 365 * 365,
     });
 }
 
@@ -395,6 +395,7 @@ function draw() {
     drawMultiStackUpdate();
 }
 
+
 function drawMultiStackUpdate() {
     for (var i = 0; i < 4; i++) {
 
@@ -501,7 +502,7 @@ function validateToken(next) {
         success: function (resultData) {
             next(resultData.valid);
         },
-        timeout: 120000,
+        timeout: 120000 
     });
 }
 

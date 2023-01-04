@@ -177,6 +177,7 @@ module.exports = {
         game.version = 0;
         game.currentCombo = 0;
         game.colors = colors;
+       // game.roomID = room_ID()
 
         for(let i = 0; i < players.length; i++) {
             game.players[i] = {};
@@ -211,9 +212,7 @@ module.exports = {
 
 
         setIdleTimeout(game);
-
         gameIdIncrement++;
-
         return game;
     },
     postChatMessage: function (game, player, text, color) {
@@ -426,6 +425,10 @@ function nextPlayer(game) {
 function dice_2() {
       return  Math.floor(Math.random() * 5) + 1;
     }
+
+// function room_ID() {
+//     return Math.floor(Math.random() * 800000) + 100000;
+// }
 
 function recalcSumDistance(game, playerIndex) {
     game.players[playerIndex].stats.sumDistance = 0;

@@ -1,248 +1,290 @@
 <html>
+
 <head>
     <script language="JavaScript">var baseUrl = "<%= baseUrl %>"</script>
     <script src="<%= baseUrl %>libs/jquery.min.js"></script>
     <script src="<%= baseUrl %>libs/socket.io.js"></script>
     <script type="text/javascript" src="<%= baseUrl %>lobby.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"
-            integrity="sha384-xrRywqdh3PHs8keKZN+8zzc5TX0GRTLCcmivcbNJWm2rs5C8PRhcEn3czEjhAO9o"
-            crossorigin="anonymous"></script>
+        integrity="sha384-xrRywqdh3PHs8keKZN+8zzc5TX0GRTLCcmivcbNJWm2rs5C8PRhcEn3czEjhAO9o"
+        crossorigin="anonymous"></script>
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet"
-          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
     <link rel="stylesheet" href="<%= baseUrl %>assets/css/style.css">
-     <title>LudoClub</title>
+    <title>LudoClub</title>
     <style>
         body {
-            
+
             background-image: url("assets/img/playersearch.jpg");
-    background-repeat: no-repeat, repeat;
-    background-size: cover;
+            background-repeat: no-repeat, repeat;
+            background-size: cover;
         }
-        .card{
+
+        .card {
             background-color: unset;
         }
-       
-        #players,#readyPlayers{
+
+        #players,
+        #readyPlayers {
             color: #ffffff;
             font-size: 35px;
         }
+
         .well img {
-    width: 280px;
-    height: 75px;
-    position: absolute;
-    z-index: -1;
-    margin-left: -57px;
-    margin-top: -5px;
-}
-#readyPlayers .well img {
-    margin-left: -152px;
-}
-.uper-top{
-    margin-top: -3rem;
-}
-#time {
-    color: #ffffff;
-    margin-top: -64px;
-}
-.user-tow{
-    margin-top: -25px;
-}
-    </style>
-</head>
-<body>
-    
-        
-       
+            width: 280px;
+            height: 75px;
+            position: absolute;
+            z-index: -1;
+            margin-left: -57px;
+            margin-top: -5px;
+        }
 
-<div class="container" id="container">
-    <div class="row" style="padding-top:3rem">
-    <div class="col-8">
-        <button class="btn" onclick="pageRedirect()"><img src="assets\img\ludo\Backbutton.png" class="img-fluid" alt="" width="100px"></button>
-    </div>
-    <div class=" col-4 d-flex handle_sound justify-content-end">
-        <h5 class="modal-title" id="staticBackdropLabel"><img src="assets\img\ludo\music.png" class="img-fluid" alt="" width="100px"></h5>
-        <h5 class="modal-title" id="staticBackdropLabel"><img src="assets\img\ludo\sound.png" class="img-fluid" alt="" width="100px"></h5>
-        </div>
-        
-    </div>
-    <div class="row">
-        <div class="col-md-2"></div>
-        <div class="col-md-8">
-           <div class="logo-img-center">
-            
-              <img src="assets\img\ludo\logo.png" class="img-fluid" alt="" >
-            </div>
-        </div>
-        <div class="col-md-2"></div>
-    </div>
-    <div class="row">
-        <div class="col-2"></div>
-        <div class="col-8 mb-4"> <img src="assets\img\ludo\real_time_player.png" class="img-fluid uper-top" alt="" ></div>
-        <div class="col-2"></div>
-    </div>
-    <div class="row">
-        <div class="col-1"></div>
-        <div class="col-10 mb-4"> <img src="assets\img\ludo\EntryAmount.png" class="img-fluid" alt="" ></div>
-        <div class="col-1"></div>
-    </div>
-    <div class="row">
-        <div class="col-md-5">
-            <div class="card card-default">
-                
-                <div class="card-header text-right">
-                   <div class="">
-                    <img src="assets/img/ludo/user1.png" width="220" class="b_color">
-                    </div>
-                </div>
-                <div class="card-body text-center">
-                    <div id="players"></div>
-                </div>
-            </div>
-        </div>
-       
-        <div class="col-md-2 col-xs-12">
-            <div class="card card-default">
-                <div class="card-header  mt-5" style="margin-left: -30px;"><img  width="150px" src="assets/img/ludo/vs-img.png">
-                    </div>
-                <div id="ongoingGames1" class="card-body">
+        #readyPlayers .well img {
+            margin-left: -152px;
+        }
 
-                </div>
-                <div class="card-footer">
-                    
-                </div>
-            </div>
-        </div>
+        .uper-top {
+            margin-top: -3rem;
+        }
 
-        <div class="col-md-5 col-xs-12">
-            <div class="card card-default">
-                <div class="card-header text-left"><img src="assets/img/ludo/user2.png" width="220" class="b_color"> </div>
-                <div class="card-body text-center">
-                    <div id="readyPlayers"></div>
-                </div>
-               
-                <div class="card-footer">
-                    <div>
-                        <button class="btn btn-success" id="startGame" style="display: none;">Start Game</button>
-                        <button class="btn btn-primary" id="readyBtn" style="display: none;" >Ready</button>
-                    </div>
-                </div>
-            </div>
-        </div>
+        #time {
+            color: #ffffff;
+            margin-top: -64px;
+        }
 
-        
-    </div>
-    <div class="row mb-5">
-        <div class="col-4"></div>
-        <div class="col-4 mb-5 mt-5"> 
-            <img src="assets\img\ludo\gametime.png" class="img-fluid" alt="" >
-            <h1 id="time" style="text-align: center"></h1>
-            </div>
-        <div class="col-4"></div>
-    </div>
-    <div class="row ">
-        <div class="col-2"></div>
-        <div class="col-8"> <img src="assets\img\ludo\Searching.png" class="img-fluid" alt=""></div>
-        <div class="col-2"></div>
-    </div>
+        .user-tow {
+            margin-top: -25px;
+        }
 
-    <div class="row">
-
-    </div>
-</div>
-
-
-<div class="modal fade" id="previousGamesModal" tabindex="-1" role="dialog">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title">Previous Games</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                <div class="col-md-12 col-xs-12">
-                    <div class="card card-default">
-                        <div id="previousGames" class="card-body">
-
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-            </div>
-        </div>
-    </div>
-</div>
-<script type="text/javascript">
-  var timeoutHandle;
-
-  function countdown(minutes, seconds) {
-    var seconds = 30;
-    var mins = 30-29
-
-    function tick() {
-      var counter = document.getElementById("time");
-      var current_minutes = mins - 1
-      seconds--;
-      counter.innerHTML =
-        current_minutes.toString() + ":" + (seconds < 10 ? "0" : "") + String(seconds);
-      if (seconds > 0) {
-        timeoutHandle = setTimeout(tick, 1000);
-      } else {
-
-        if (mins > 0.5) {
-
-          // countdown(mins-1);   never reach “00″ issue solved:Contributed by Victor Streithorst
-          setTimeout(function() {
-            countdown(mins - 0.5);
-           
-          }, 1000);
+        #room_ID {
+            font-size: 50px;
+            color: #f7c021;
+            font-weight: 900;
+            width: 350px;
+            border: 5px solid #ffb701;
+            margin-left: 285px;
+            background-color: #022a92;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            border-radius: 32px;
 
         }
-      }
-    }
-    tick();
-  }
+    </style>
+</head>
 
-  countdown(0.5);
+<body>
+
+
+    <div class="container" id="container">
+        <div class="row" style="padding-top:3rem">
+            <div class="col-8">
+                <button class="btn" onclick="pageRedirect()"><img src="assets\img\ludo\Backbutton.png" class="img-fluid" alt=""
+                        width="100px"></button>
+                </div>
+                <div class=" col-4 d-flex handle_sound justify-content-end">
+                <h5 class="modal-title" id="staticBackdropLabel"><img src="assets\img\ludo\music.png" class="img-fluid" alt=""
+                        width="100px"></h5>
+                <h5 class="modal-title" id="staticBackdropLabel"><img src="assets\img\ludo\sound.png" class="img-fluid" alt=""
+                        width="100px"></h5>
+                </div>
+                
+                </div>
+                <div class="row">
+                    <div class="col-md-2"></div>
+                    <div class="col-md-8">
+                        <div class="logo-img-center">
+
+                    <img src="assets\img\ludo\logo.png" class="img-fluid" alt="">
+                    </div>
+                    </div>
+                    <div class="col-md-2"></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-2"></div>
+            <div class="col-8 mb-4"> <img src="assets\img\ludo\real_time_player.png" class="img-fluid uper-top" alt="">
+            </div>
+            <div class="col-2"></div>
+            </div>
+            <div class="row">
+                <div class="col-1"></div>
+            <div class="col-10 mb-4"> <img src="assets\img\ludo\EntryAmount.png" class="img-fluid" alt=""></div>
+            <div class="col-1"></div>
+            </div>
+        <div class="text-center">
+            <h1 id="room_ID"></h1>
+        </div>
+        <div class="row">
+            <div class="col-md-5">
+                <div class="card card-default">
+        
+                    <div class="card-header text-right">
+                        <div class="">
+                            <img src="assets/img/ludo/user1.png" width="220" class="b_color">
+                        </div>
+                    </div>
+                    <div class="card-body text-center">
+                        <div id="players"></div>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="col-md-2 col-xs-12">
+                <div class="card card-default">
+                    <div class="card-header  mt-5" style="margin-left: -30px;"><img width="150px" src="assets/img/ludo/vs-img.png">
+                    </div>
+                    <div id="ongoingGames1" class="card-body">
+
+                    </div>
+                    <div class="card-footer">
+                    
+                    </div>
+                    </div>
+                    </div>
+
+            <div class="col-md-5 col-xs-12">
+                <div class="card card-default">
+                    <div class="card-header text-left"><img src="assets/img/ludo/user2.png" width="220" class="b_color">
+                    </div>
+                    <div class="card-body text-center">
+                        <div id="readyPlayers"></div>
+                    </div>
+                    
+                    <div class="card-footer">
+                        <div>
+                            <button class="btn btn-success" id="startGame" style="display: none;">Start Game</button>
+                            <button class="btn btn-primary" id="readyBtn" style="display: none;">Ready</button>
+                            </div>
+                            </div>
+                            </div>
+                            </div>
+
+        </div>
+        <div class="row mb-5">
+            <div class="col-4"></div>
+            <div class="col-4 mb-5 mt-5">
+                <img src="assets\img\ludo\gametime.png" class="img-fluid" alt="">
+                <h1 id="time" style="text-align: center"></h1>
+            </div>
+            <div class="col-4"></div>
+            </div>
+            <div class="row ">
+                <div class="col-2"></div>
+                <div class="col-8"> <img src="assets\img\ludo\Searching.png" class="img-fluid" alt=""></div>
+                <div class="col-2"></div>
+            </div>
+
+        <div class="row">
+
+        </div>
+        </div>
+
+
+    <div class="modal fade" id="previousGamesModal" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Previous Games</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="col-md-12 col-xs-12">
+                        <div class="card card-default">
+                            <div id="previousGames" class="card-body">
+
+                            </div>
+                            </div>
+                            </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            </div>
+                            </div>
+                            </div>
+                            </div>
+                            <script type="text/javascript">
+                                var timeoutHandle;
+
+                function countdown(minutes, seconds) {
+                    var seconds = 30;
+                var mins = 30 - 29
+
+                function tick() {
+                    var counter = document.getElementById("time");
+                    var current_minutes = mins - 1
+                    seconds--;
+                    counter.innerHTML =
+                        current_minutes.toString() + ":" + (seconds < 10 ? "0" : "") + String(seconds);
+                    if (seconds > 0) {
+                        timeoutHandle = setTimeout(tick, 1000);
+                    } else {
+
+                    if (mins > 0.5) {
+
+                        // countdown(mins-1);   never reach “00″ issue solved:Contributed by Victor Streithorst
+                        setTimeout(function () {
+                            countdown(mins - 0.5);
+
+                        }, 1000);
+
+                        }
+                    }
+                }
+                tick();
+            }
+
+                countdown(0.5);
+</script>
+        <script>
+
+
+
+    let token = localStorage.getItem("room_id")
+    $("#room_ID").html(token)
+
+
+
+
+
 </script>
 <script>
-    setTimeout(function() {
-    $(document).ready(function(){ 
-  $('#readyBtn').trigger('click'); 
-});   
-}, 1000);
+    setTimeout(function () {
+        $(document).ready(function () {
+            $('#readyBtn').trigger('click');
+        });
+    }, 1000);
+
+
 </script>
-<script>
-    setTimeout(function() {
-    $(document).ready(function(){ 
-  $('#startGame').trigger('click'); 
-});   
-}, 1000);
-</script>
-<script>
+    <script>
+                setTimeout(function () {
+                    $(document).ready(function () {
+                        $('#startGame').trigger('click');
+                    });
+                }, 1000);
+            </script>
+        <script>
 
 
 
 
 
-    function pageRedirect() {
+                function pageRedirect() {
 
 
 
 
-                                                                                                                                                                                                                                                                                      localStorage.removeItem("token")
+                localStorage.removeItem("token")
 
 
 
 
-      window.location.href = `/index`;
+                window.location.href = `/index`;
 
 
 
-    }      
-</script> 
+                }      
+            </script>
 </body>

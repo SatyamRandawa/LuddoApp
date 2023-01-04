@@ -9,6 +9,7 @@ const adminModel = require("../model/Admin_Model")
 const ip = require('ip');
 const jwt = require("jsonwebtoken")
 const Appoitment_Model = require("../model/appoitment")
+const doctor_avail_slots = require("../model/Doctor_available_slots")
 
 
 
@@ -332,18 +333,19 @@ const get_today_aapoitments = async (req, res) => {
 
         const Dr_ID = req.Dr_ID;
 
-         if(!Dr_ID){
-            return res.status(200).send({status : false, msg:"Please enter Doctor ID"})
-         }
+        if (!Dr_ID) {
+            return res.status(200).send({ status: false, msg: "Please enter Doctor ID" })
+        }
 
-         let date = new Date();
-         let year = date.getFullYear();
-         let months = date.getMonth() + 1;
-         let day = date.getDate();
-         let today_date = `${day}-${months}-${year}`
-         let find_data = await Appoitment_Model.find({date : today_date, isBooked : true }).populate("userID")
-         console.log("ertyuiouytrewrtyui",`${day}-${months}-${year}`)
-         return res.status(200).send({ status: true,  find_data})
+        let date = new Date();
+        let year = date.getFullYear();
+        let months = date.getMonth() + 1;
+        let day = date.getDate();
+        let today_date = `${day}-${months}-${year}`
+        console.log("date", today_date)
+        let find_data = await Appoitment_Model.find({ date: today_date, isBooked: true }).populate("userID")
+        console.log("ertyuiouytrewrtyui", `${day}-${months}-${year}`)
+        return res.status(200).send({ status: true, find_data })
 
 
     } catch (error) {
@@ -352,4 +354,167 @@ const get_today_aapoitments = async (req, res) => {
     }
 }
 
-module.exports = { Create_Doctors, Upload_Dr_Doc, Login_Dr, get_today_aapoitments }
+
+//--------------------------------------------Doctor-update-available-slots--------------------------------------------------------------------------------
+
+const update_available_slots = async (req, res) => {
+    try {
+
+        const Dr_ID = req.Dr_ID
+
+
+        let date = new Date();
+        let year = date.getFullYear();
+        let months = date.getMonth() + 1;
+        let day = date.getDate();
+        let today_date = `${day}-${months}-${year}`
+
+        let obj = {
+            Doctor_ID: Dr_ID,
+            date: today_date
+        }
+
+        let create = await doctor_avail_slots.create(obj)
+
+        if (create) {
+            return res.status(200).send({ status: true, msg: "Slot Created" })
+        } else {
+            return res.status(200).send({ status: true, msg: "failed Please Try again" })
+
+        }
+
+
+    } catch (error) {
+        console.log(error)
+        return res.status(200).send({ status: false, msg: error.message })
+    }
+}
+
+
+//-----------------------------------------check_doctor_slots----------------------------------------------------------------------------------------------
+
+
+const check_doctor_day_slot = async (req, res) => {
+    try {
+
+        const Dr_ID = req.Dr_ID
+        let date = new Date();
+        let year = date.getFullYear();
+        let months = date.getMonth() + 1;
+        let day = date.getDate();
+        let today_date = `${day}-${months}-${year}`
+
+        let find = await doctor_avail_slots.findOne({ Doctor_ID: Dr_ID, date: today_date })
+
+        if (find) {
+            return res.status(200).send({ status: true, msg: "Slot Updated" })
+        } else {
+            return res.status(200).send({ status: false, msg: "slot Not Updated" })
+
+        }
+
+    } catch (error) {
+        console.log(error)
+        return res.status(200).send({ status: false, msg: error.message })
+    }
+}
+
+//------------------------------------Add_time_slots_in_today_slot--------------------------------------------------------------------------------------
+
+const Add_time_slots_in_today_slot = async (req, res) => {
+    try {
+
+        const Dr_ID = req.Dr_ID
+        const time_slots = req.body;
+
+        const { six_to_seven_am, seven_to_eight_am, eight_to_nine_am, nine_to_ten_am, ten_to_eleven_am, eleven_totwelve_am, twelve_to_one_pm, one_to_two_pm,
+            two_to_three_pm, three_to_four_pm, four_to_five_pm, five_to_six_pm, six_to_seven_pm, seven_to_eigth_pm, eigth_to_nine_pm, nine_to_ten_pm,
+            ten_to_eleven_pm, eleven_to_twelve_pm } = time_slots
+
+
+        if (time_slots.length == 0) {
+            return res.status(200).send({ status: false, msg: "Please Select time" })
+        }
+
+        let obj1 = {
+            "6AM-7AM": six_to_seven_am,
+            "7AM-8AM": seven_to_eight_am,
+            "8AM-9AM": eight_to_nine_am,
+            "9AM-10AM": nine_to_ten_am,
+            "10AM-11AM": ten_to_eleven_am,
+            "11AM-12AM": eleven_totwelve_am,
+            "12PM-1PM": twelve_to_one_pm,
+            "1PM-2PM": one_to_two_pm,
+            "2PM-3PM": two_to_three_pm,
+            "3PM-4PM": three_to_four_pm,
+            "4PM-5PM": four_to_five_pm,
+            "5PM-6PM": five_to_six_pm,
+            "6PM-7PM": six_to_seven_pm,
+            "7PM-8PM": seven_to_eigth_pm,
+            "8PM-9PM": eigth_to_nine_pm,
+            "9PM-10PM": nine_to_ten_pm,
+            "10PM-11PM": ten_to_eleven_pm,
+            "11PM-12PM": eleven_to_twelve_pm,
+        }
+
+        let date = new Date();
+        let year = date.getFullYear();
+        let months = date.getMonth() + 1;
+        let day = date.getDate();
+        let today_date = `${day}-${months}-${year}`
+
+        let find = await doctor_avail_slots.findOneAndUpdate({ Doctor_ID: Dr_ID, date: today_date }, { time_Slots: obj1 })
+
+
+        if (find) {
+            return res.status(200).send({ status: true, msg: "Slot Updated" })
+        } else {
+            return res.status(200).send({ status: false, msg: "slot Not Updated" })
+        }
+
+
+    } catch (error) {
+        console.log(error)
+        return res.status(200).send({ status: false, msg: error.message })
+    }
+}
+
+//------------------------------------get-doctors-time----------------------------------------------------------------------------------------------------
+
+const get_Doctors_time = async (req, res) => {
+    try {
+
+        const Dr_ID = req.Dr_ID
+        let date = new Date();
+        let year = date.getFullYear();
+        let months = date.getMonth() + 1;
+        let day = date.getDate();
+        let today_date = `${day}-${months}-${year}`
+
+        let find_slots = await doctor_avail_slots.findOne({ Doctor_ID: Dr_ID, date: today_date })
+        let time_slots = find_slots.time_Slots
+
+        const newData = {};
+        for (let i of time_slots) {
+            Object.entries(i)
+                .filter(([, value]) => value !== null)
+                .forEach(([key, value]) => (newData[key] = value));
+
+        }
+        let time = Object.keys(newData)
+        if (time.includes("6AM-7AM")) {
+            console.log("Slot available")
+        }
+        return res.status(200).send({ status: true, time })
+
+    } catch (error) {
+        console.log(error)
+        return res.status(200).send({ status: false, msg: error.message })
+
+    }
+}
+
+module.exports = {
+    Create_Doctors, Upload_Dr_Doc, Login_Dr, get_today_aapoitments, update_available_slots,
+    check_doctor_day_slot, Add_time_slots_in_today_slot, get_Doctors_time
+}

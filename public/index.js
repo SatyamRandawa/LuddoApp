@@ -4,8 +4,7 @@ function validate() {
     jQuery.ajax({
         url: baseUrl + "rest/playerExists",
         type: "POST",
-        data: JSON.stringify({"playerName": $("#playerName").val()}),
-
+        data: JSON.stringify({ "playerName": $("#playerName").val() }),
         contentType: 'application/json; charset=utf-8',
         success: function (resultData) {
             if (!resultData.success) $("#nicknameError").text(resultData.message);
@@ -22,19 +21,23 @@ function validate() {
     $("#nicknameError").text(newText);
 
     $("#createNickname").attr("disabled", (newText != ""));
+    $("#createNickname1").attr("disabled", (newText != ""));
+
+
 }
 
 function submit(){
     jQuery.ajax({
         url: baseUrl + "rest/regPlayer",
         type: "POST",
-        data: JSON.stringify({"playerName": $("#playerName").val()}),
+        data: JSON.stringify({ "room_ID": $("#room_ID").val() }),
 
         contentType: 'application/json; charset=utf-8',
         success: function (resultData) {
             if (resultData.success) {
                 localStorage.token = resultData.token;
                 localStorage.playerId = resultData.playerId;
+                localStorage.room_id = resultData.roomstatus;
                 window.location.href = "/lobby";
             }
         },
@@ -67,6 +70,9 @@ $(document).ready(function () {
     });
 
     $("#createNickname").click(function () {
+        submit();
+    });
+    $("#createNickname1").click(function () {
         submit();
     });
 

@@ -32,6 +32,10 @@ router.get("/get_Dr_category_list", adminController.get_Dr_category_list)
 
 router.post("/Login_Dr", Doctor_Controller.Login_Dr)
 router.get("/get_today_aapoitments/:token",Doctor_auth.auth, Doctor_Controller.get_today_aapoitments )
+router.post("/update_available_slots/:token", Doctor_auth.auth, Doctor_Controller.update_available_slots)
+router.get("/check_doctor_day_slot/:token", Doctor_auth.auth, Doctor_Controller.check_doctor_day_slot)
+router.post("/Add_time_slots_in_today_slot/:token", Doctor_auth.auth, Doctor_Controller.Add_time_slots_in_today_slot)
+router.post('/get_Doctors_time/:token', Doctor_auth.auth, Doctor_Controller.get_Doctors_time)
 
 //------------------------------------users----------------------------------------------------------------------------------------------
 

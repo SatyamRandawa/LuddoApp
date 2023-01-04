@@ -1,4 +1,4 @@
-const secret = Math.random().toString(36).substring(7);
+const secret = "LUDOToken"
 var mongoose = require('mongoose'); 
 mongoose.connect('mongodb+srv://SatyamRandawa:loveyam@cluster0.d2cql.mongodb.net/?retryWrites=true&w=majority');
 

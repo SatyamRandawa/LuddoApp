@@ -15,6 +15,8 @@ var express = require('express'),
   const {add_game,update_game,getDataById } = require('./helper/game_fun_helper');
   const google = require("./routes/googleLogin")
   const session = require('express-session');
+const jwt = require('jsonwebtoken')
+const rooms_Model = require("./models/Rooms_players")
 
 const { contains } = require('jquery');
 
@@ -196,11 +198,33 @@ router.use('/rest/games', function (req, res, next) {
 
 router.get('/rest/games', function (req, res) {
     res.json(games);
-});
+}); 
 
 router.post('/rest/regPlayer', function (req, res) {
     let Random_name = (Math.random() + 1).toString(36).substring(7);
     
+
+    let roomstatus = req.body.room_ID;
+
+    console.log("consoleeeeeeeeee_rooooom_IIIIIDDDDD", roomstatus)
+
+    var player_ID = ""
+    var room_ID = ""
+    if (!roomstatus) {
+        // function game_id() {
+        //     return Math.floor(Math.random() * 800000) + 100000;
+        // }
+
+        room_ID = Math.floor(Math.random() * 800000) + 100000;
+        player_ID = 0
+        console.log("1231231231321321321321231231LODULODULODULDOULODULODULODULODULODULO(DU", room_ID)
+    } else {
+        room_ID = parseInt(req.body.room_ID);
+        player_ID = 1
+    }
+
+    console.log("ROOM_STATUS", roomstatus)
+
    // req.body.playerName = validator.escape(Random_name);
 
     if (Random_name == null)
@@ -210,12 +234,16 @@ router.post('/rest/regPlayer', function (req, res) {
     if (Random_name.length < 3 || Random_name.length > 16)
         return res.json({success: false , message : 'Nickname is to long or to short.'});
 
-    let token = playerAuth.addPlayer(Random_name);
-
+    let token = playerAuth.addPlayer(Random_name, room_ID, player_ID);
+    let decode = jwt.verify(token, "LUDOToken")
+    // console.log('====================================');
+    // console.log("Token_info", decode);
+    // console.log('====================================');
     res.json({
         success: true,
         playerId: playerAuth.getPlayerId(Random_name),
-        token: token
+        token: token,
+        roomstatus: room_ID
     });
 
     console.log("Player " + Random_name + " joined lobby.")
@@ -308,30 +336,77 @@ var tbl_game_data = '';
       
 
 async function startGame(players, idleTimeout, colors) {
+    console.log("=========Players_Players", players)
 
-    if (players.length < 2) return;
+    let room_players = [];
+    room_players.push(players);
+    let final = [];
+    let super_final = []
+
+    // for (i = 0; i <= players.length ; i++) {
+    //     for (let j = i + 1; j <= players.length - 1; j++) {
+    //         if (players[i].RoomID == players[j].RoomID) {
+    //             final.push(players[i])
+    //             final.push(players[j])
+    //         }
+    //     }
+    // }
+
+
+
+    //------------------------------------------------------------------------------------
+    let find = await rooms_Model.find();
+    console.log(">>>>>>>>>=================....................>>>>>>>>>find[find.length-1]", find[find.length - 1])
+
+    for (i = 0; i <= find.length; i++) {
+        for (let j = i + 1; j <= find.length - 1; j++) {
+            if (find[i].RoomID === find[j].RoomID) {
+                final.push(find[i])
+                final.push(find[j])
+            }
+        }
+    }
+
+
+    console.log("========>>>>>>>>========>>>>>>>========>>>>>>>>======+=l.>>>>>>>>>>>>>>>>>>>>>>>", final)
+
+
+
+
+    if (final.length < 2) return;
 
     let newPlayers = [];
 
-    while (players.length > 0) {
-        let index = Math.floor(Math.random() * (players.length));
-        newPlayers.push(players[index]);
-        players.splice(index, 1);
+    while (final.length > 0) {
+        let index = Math.floor(Math.random() * (final.length));
+        newPlayers.push(final[index]);
+        final.splice(index, 1);
     }
 
     //let playerID = localStorage.getItem("playerId")
     //let game_color = localStorage.getItem("color")
  
-    
-    
-    players = newPlayers; 
+    console.log("=================>>>>>>>>>>>>>>>>>>>======================>>>>>>>>>>>>>>>>>>>>+=================>>>>>>>>>>", newPlayers)
+
+    final = newPlayers; 
+
+
 
     var colors = {
          playerID : 0,
          color : "yellow"
         }
 
-    let game = gameJS.createGame(players, idleTimeout, colors);
+    for (let i of newPlayers) {
+        let find_and_delete = await rooms_Model.findOneAndDelete({ RoomID: i.RoomID })
+    }
+
+    let game = gameJS.createGame(newPlayers, idleTimeout, colors);
+
+
+
+    console.log(">>>>>>>>>=================....................>>>>>>>>>find[find.length-1]", game)
+
 
   
 
@@ -348,6 +423,7 @@ async function startGame(players, idleTimeout, colors) {
 
       // console.log( 'leeeeeeeee == ', tbl_game_data);
 
+   //   console.log("============================================>>>>>>>>>>>>>>>>>>>>>>>>", game)
 
     gamesObserver.push(jsonpatch.observe(game));
 
@@ -358,6 +434,10 @@ async function startGame(players, idleTimeout, colors) {
     setTimeout(function () {
         io.emit('gamestart', string);
     }, 200);
+
+    //players = []
+
+   // console.log("===PLAYERS===PLAYERS===PLAYERS===PLAYERS===PLAYERS===PLAYERS===PLAYERS===PLAYERS===PLAYERS===PLAYERS===PLAYERS===PLAYERS", players)
 }                     
 var i = 1;
 

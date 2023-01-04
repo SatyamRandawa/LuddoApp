@@ -1,7 +1,9 @@
+const rooms_Model = require("./models/Rooms_players")
+
 module.exports = {
 
-    addPlayer: function (playerName) {
-        return addPlayer(playerName);
+    addPlayer: function (playerName, room_ID, player_ID) {
+        return addPlayer(playerName, room_ID, player_ID);
     },
     playerExists: function (playerName) {
         return playerExists(playerName);
@@ -131,32 +133,64 @@ function playerExists(playerName) {
     return false;
 }
 
-function addPlayer(playerName) {
+
+
+
+
+
+
+  function addPlayer(playerName, room_ID , player_ID) {
+
+    //let join_ID = req.body;
+    console.log("======================================================================>>>>>>>>>>>>>>>>>>>>PPPPPPPPOIIIIIIIIIIIGG", playerName)
+    console.log("======================================================================>>>>>>>>>>>>>>>>>>>>PPPPPPPPOIIIIIIIIIIIGG", room_ID)
+
+
+
     const payload = {
         playerName: playerName,
-        playerId: playersIncrement
+        playerId: player_ID,
+        RoomID: room_ID
     };
 
+    console.log("====>PLAYESR====>", players)
+
     players.push({
-        playerId: playersIncrement,
+        playerId: player_ID,
         playerName: playerName,
         ingame: false,
         ready: false,
         spectating: false,
         inLobby: true,
-        lastActiveLobby: new Date()
+        lastActiveLobby: new Date(),
+        RoomID: room_ID
     });
     playersIncrement++;
+
+    let obj = {
+        playerId: player_ID,
+        playerName: playerName,
+        ingame: false,
+        ready: false,
+        spectating: false,
+        inLobby: true,
+        lastActiveLobby: new Date(),
+        RoomID: room_ID
+    }
+
+    let create =  rooms_Model.create(obj)
+
+
 
     if (playersIncrement >= 2) {
         playersIncrement = 0
     }
 
-    console.log("===========================aaaaaaaaaaasssssssssssssssssdddddddddddddddddffffffffffffffffggggggggggg======>", payload)
+    console.log(">>>===========================aaaaaaaaaaasssssssssssssssssdddddddddddddddddffffffffffffffffggggggggggg======>", payload)
     //let token12 = window.localStorage.getItem("token")
     //console.log("===========================aaaaaaaaaaasssssssssssssssssdddddddddddddddddffffffffffffffffggggggggggg======>", token12)
 
-    var token = jwt.sign(payload, config.secret, {
+    var token =   jwt.sign(payload, config.secret, {
         expiresIn: "10 days"
     });
 
@@ -196,7 +230,6 @@ function authPlayer(req, res) {
 
 function getPlayerId(playerName) {
     for (let i = 0; i < players.length; i++) if (playerName === players[i].playerName) return players[i].playerId;
-
     return;
 }
 
