@@ -17,55 +17,76 @@ passport.use(new GoogleStrategy({
     clientSecret: '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',
     callbackURL: 'http://localhost:8080/google/callback',
     passReqToCallback: true
-}, 
+},
 
-async function (request,response, accessToken, refreshToken, profile, done) {
-    //let find_cust = await user_Model.find({email : profile.email})
-   
-        let find_cust = await user_Model.find({email : profile.email})
 
-        if(find_cust){ 
-           console.log("Login_successfully")
-           localStorage.setItem("User", "Login")
-           return({status : true, msg:"Login Sucessfully", find_cust})
-        }
-    
-   
-    if(find_cust.length){
 
-        console.log("register")
 
-    }else{
+    async function (request, response, accessToken, refreshToken, profile, done) {
+        //let find_cust = await user_Model.find({email : profile.email})
 
-        let obj = {
-            name : profile.displayName,
-            email : profile.email,
-            password : profile.id,
-            mobile : "",
-            image : profile.picture,
-            gender : "",
-            address : "",
-            google_token : accessToken
-        }
+        router.post('/Login', async (req, res) => {
+            try {
 
-        let create_data = await user_Model.create(obj)
+                let find_cust = await user_Model.find({ email: profile.email })
+                if (find_cust) {
 
-        if(create_data){
-            console.log(create_data)
+                    console.log("Login_successfully")
+                    //localStorage.setItem("User", "Login")
+                    return ({ status: true, msg: "Login Sucessfully", find_cust })
+                }
+
+
+            } catch (error) {
+                console.log(error)
+                return res.status(200).send({ status: false, msg: "server error" })
+            }
+        })
+
+        let find_cust = await user_Model.find({ email: profile.email })
+        if (find_cust) {
+
+            console.log("Login_successfully")
+            //localStorage.setItem("User", "Login")
+            return ({ status: true, msg: "Login Sucessfully", find_cust })
         }
 
-        console.log("user_data ======>",obj)
 
-    }
-    if ("============>",profile.displayName) {
-        console.log("Token generated")
-        console.log("Token generated",accessToken)
-       
-    }
-    console.log("============>",profile.email)
-    //return res.status(200).send({status:true, profile})
-   // return done(null, profile)
-}
+        if (find_cust.length) {
+            console.log("register")
+
+        } else {
+            let obj = {
+                name: profile.displayName,
+                email: profile.email,
+                password: profile.id,
+                mobile: "",
+                image: profile.picture,
+                gender: "",
+                address: "",
+                google_token: accessToken
+            }
+
+            let create_data = await user_Model.create(obj)
+            if (create_data) {
+                console.log(create_data)
+            }
+
+            console.log("user_data ======>", obj)
+
+        }
+        if ("============>", profile.displayName) {
+            console.log("Token generated")
+            console.log("Token generated", accessToken)
+
+        }
+        console.log("============>", profile.email)
+        //return res.status(200).send({status:true, profile})
+        // return done(null, profile)
+    },
+
+
+
 ));
 
 
@@ -105,20 +126,21 @@ router.get('/failed', (req, res) => res.send('You Failed to log in!'));
 
 
 router.get('/good', isLoggedIn, (req, res) => {
+    console.log("123321123321123321123321123321123321")
     res.render("pages/profile", { name: req.user.displayName, pic: req.user.photos[0].value, email: req.user.emails[0].value })
 });
 
 
 router.get('/google', passport.authenticate('google', { scope: ['profile', 'email'] }),
     //console.log(scope)
-          
+
 );
 
 
 router.get('/google/callback', passport.authenticate('google', { failureRedirect: '/failed' }),
     function (req, res) {
 
-    
+
         res.redirect('/good');
     }
 );

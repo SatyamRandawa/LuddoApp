@@ -3,6 +3,7 @@ const express = require('express');
 const {isEmpty} = require('../helper/game_fun_helper')
 
 const user=require('../models/user');
+const players_Model = require("../models/Rooms_players")
 
 class userController {
 
@@ -135,6 +136,25 @@ class userController {
       return res.status(200).send({status:false,msg:"server error"});
     }
   }
+
+
+
+
+  static user_view = async (req, res) => {
+
+    try {
+
+      let find = await players_Model.find().sort("")
+
+      return res
+
+    } catch (error) {
+      console.log(error)
+      return res.status(200).send({ status: false, msg: "server error" })
+    }
+
+  }
+
 
 }
 

@@ -26,6 +26,9 @@ function validate() {
 
 }
 
+
+
+
 function submit(){
     jQuery.ajax({
         url: baseUrl + "rest/regPlayer",
@@ -47,6 +50,8 @@ function submit(){
         timeout: 120000,
     });
 }
+
+
 
 function validateToken(next) {
     jQuery.ajax({
