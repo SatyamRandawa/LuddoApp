@@ -14,6 +14,6 @@ module.exports = {
     lobbyTimeout: 10000,
     lobbyTimeoutCheckInterval: 5000,
     port: 8080,
-  baseUrlFullPath: "http://192.168.1.158:8080",
+  baseUrlFullPath: "http://ec2-3-113-5-221.ap-northeast-1.compute.amazonaws.com:8080",
     baseUrl: '/'       //For use with reverse proxies.
 };
