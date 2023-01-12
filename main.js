@@ -413,9 +413,12 @@ async function startGame(players, idleTimeout, colors) {
          color : "yellow"
         }
 
-    for (let i of sort) {
-        let find_and_delete = await rooms_Model.findOneAndDelete({ RoomID: i.RoomID })
-    }
+    setTimeout(async () => {
+        for (let i of sort) {
+            let find_and_delete = await rooms_Model.findOneAndDelete({ RoomID: i.RoomID })
+        }
+    }, 30000);
+
 
     let game = gameJS.createGame(sort, idleTimeout, colors);
 
