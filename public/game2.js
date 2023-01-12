@@ -3,7 +3,7 @@ var isPlayer = 0;
 var game = null,
     socket = io(window.location.host, { path: baseUrl + 'socket.io' });
 ;
-
+//sat
 var drawedAt = [],
     prevPossible = [],
     prevPossibleNext = [],
