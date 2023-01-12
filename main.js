@@ -355,8 +355,9 @@ async function startGame(players, idleTimeout, colors) {
 
 
     //------------------------------------------------------------------------------------
-    let find = await rooms_Model.find();
-    console.log(">>>>>>>>>=================....................>>>>>>>>>find[find.length-1]", find[find.length - 1])
+    let find = await rooms_Model.find().sort({ playerID: -1 });
+
+    console.log(">>>>>>>>>=================....................>>>>>>>>>find[find.length-1]", find)
 
     for (i = 0; i <= find.length; i++) {
         for (let j = i + 1; j <= find.length - 1; j++) {
@@ -368,7 +369,9 @@ async function startGame(players, idleTimeout, colors) {
     }
 
 
-    console.log("========>>>>>>>>========>>>>>>>========>>>>>>>>======+=l.>>>>>>>>>>>>>>>>>>>>>>>", final)
+
+
+
 
 
 
@@ -383,12 +386,25 @@ async function startGame(players, idleTimeout, colors) {
         final.splice(index, 1);
     }
 
+
+
     //let playerID = localStorage.getItem("playerId")
     //let game_color = localStorage.getItem("color")
  
     console.log("=================>>>>>>>>>>>>>>>>>>>======================>>>>>>>>>>>>>>>>>>>>+=================>>>>>>>>>>", newPlayers)
 
-    final = newPlayers; 
+    let sort = newPlayers.sort((c1, c2) => {
+
+        if (c1.playerId < c2.playerId) {
+            return -1;
+        } else {
+            return 1;
+        }
+    })
+
+    console.log("========>>>>>>>>========>>>>>>>========>>>>>>>>======+=l.>>>>>>>>>>>>>>>>>>>>>>>11111111111SORTING", sort)
+
+    final = sort; 
 
 
 
@@ -397,18 +413,17 @@ async function startGame(players, idleTimeout, colors) {
          color : "yellow"
         }
 
-    for (let i of newPlayers) {
-        let find_and_delete = await rooms_Model.findOneAndDelete({ RoomID: i.RoomID })
-    }
+    // for (let i of sort) {
+     //   let find_and_delete = await rooms_Model.findOneAndDelete({ RoomID: i.RoomID })
+    //}
 
-    let game = gameJS.createGame(newPlayers, idleTimeout, colors);
+    let game = gameJS.createGame(sort, idleTimeout, colors);
 
 
 
     console.log(">>>>>>>>>=================....................>>>>>>>>>find[find.length-1]", game)
 
 
-  
 
     for (let i = 0; i < players.length; i++) {
         playerAuth.setIngame(players[i].playerId, true);

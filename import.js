@@ -418,7 +418,7 @@ function nextPlayer(game) {
     try {
          let ddss =   await getDishNum(id);
      console.log( ddss+ " == new num G start time import js file call line no - 390"); 
-        return (ddss)? ddss : Math.floor(Math.random() * 5) + 1;
+        return (ddss) ? ddss : Math.floor(Math.random() * 6) + 1;
     } catch (error) {   console.log( "dice fun error == ", error );   return 1;}
 }
  

@@ -54,7 +54,6 @@ class GameController{
         try {
 
             let date = getcurntDate();
-
             console.log("Date=======================================>>>>>", date)
             let data = await gameData_tbl.find({ createdAt: { $gte: date } }).sort({ _id: -1 });
             let result = []
@@ -73,7 +72,7 @@ class GameController{
                     gameID: g_id,
                     Player_ID: item._id,
                     player_name: (p_name != '') ? m_ul : '',
-                    Url: `http://localhost:8080${urls}`,
+                    Url: `http://192.168.1.158:8080${urls}`,
                     game_time: g_time,
                 }
                 result.push(obj)

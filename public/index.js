@@ -34,10 +34,9 @@ function submit(){
         url: baseUrl + "rest/regPlayer",
         type: "POST",
         data: JSON.stringify({ "room_ID": $("#room_ID").val() }),
-
         contentType: 'application/json; charset=utf-8',
         success: function (resultData) {
-            if (resultData.success) {
+            if (resultData.success) {  
                 localStorage.token = resultData.token;
                 localStorage.playerId = resultData.playerId;
                 localStorage.room_id = resultData.roomstatus;
@@ -57,7 +56,6 @@ function validateToken(next) {
     jQuery.ajax({
         url: baseUrl + "rest/login/?token=" + localStorage.token,
         type: "GET",
-
         contentType: 'application/json; charset=utf-8',
         success: function (resultData) {
             next(resultData.valid);

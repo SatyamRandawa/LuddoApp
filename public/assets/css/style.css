@@ -5277,7 +5277,7 @@ margin-left: 4rem;
 .nav-tabs .nav-link.active {
   background-color: #001748;
   border-color: unset;
-  /* border-bottom: 3px solid #f7c021; */
+  border-bottom: 3px solid #f7c021;
 }
 
 .nav-tabs {
@@ -5285,7 +5285,7 @@ margin-left: 4rem;
 }
 
 #myTab li.nav-item {
-  margin: 0px 30px 0px 32px;
+  margin: 0px 30px 0px 30px;
 }
 
 .input-group>:not(:first-child):not(.dropdown-menu):not(.valid-tooltip):not(.valid-feedback):not(.invalid-tooltip):not(.invalid-feedback) {

@@ -1,6 +1,11 @@
 <html>
 
 <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Ludo | Mobile Game</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <script language="JavaScript">var baseUrl = "<%= baseUrl %>"</script>
     <script type="text/javascript" src="<%= baseUrl %>libs/jquery.min.js"></script>
     <script type="text/javascript" src="<%= baseUrl %>libs/socket.io.js"></script>
@@ -50,6 +55,7 @@
             background-size: cover;
         }
 
+
         .Dice_manage {
             width: 100%;
         }
@@ -59,32 +65,34 @@
         }
 
         .red_inbox {
-            fill: red
+            fill: #EA1D23;
         }
 
         .green_inbox {
-            fill: green;
+            fill: #02A24A;
         }
 
         .yellow_inbox {
-            fill: yellow
+            fill: #FFDE17;
         }
 
         .blue_inbox {
             fill: #298cf6;
         }
 
-        .Yellow{
+        .Yellow {
             fill: yellow;
         }
 
-        .Red{
+        .Red {
             fill: red;
         }
-        .Green{
+
+        .Green {
             fill: green;
         }
-        .Blue{
+
+        .Blue {
             fill: #2993f6;
         }
 
@@ -95,65 +103,65 @@
 
         .arrow-right {
             padding-left: 0px;
-            font-size: 50px;
+            font-size: 20px;
             color: red;
             position: absolute;
-            margin-top: -8px;
+            margin-top: -6px;
         }
 
         .arrow-down {
-            padding-left: 15px;
-            font-size: 62px;
+            padding-left: 7px;
             color: green;
-            margin-top: -21px;
+            margin-top: -3px;
+            font-size: 18px;
             position: absolute;
         }
 
         .arrow-left {
             padding-left: 0px;
-            font-size: 60px;
+            font-size: 20px;
             color: yellow;
             position: absolute;
-            margin-top: -20px;
+            margin-top: -5px;
         }
 
         .arrow-up {
-            padding-left: 16px;
-            font-size: 60px;
+            padding-left: 3px;
+            font-size: 26px;
             color: #2993f6;
-            margin-top: -16px;
+            margin-top: -10px;
             position: absolute;
         }
 
         .arrow-up1 {
-            padding-left: 0px;
-            font-size: 55px;
+            padding-left: 2px;
             color: #2993f6;
             position: absolute;
-            margin-top: -8px;
+            margin-top: -3px;
+            font-size: 18px;
         }
 
         .arrow-right1 {
-            padding-left: 16px;
-            font-size: 60px;
+            padding-left: 4px;
             color: red;
-            margin-top: -16px;
+            margin-top: -3px;
+            font-size: 18px;
             position: absolute;
         }
 
         .arrow-down1 {
             padding-left: 0px;
-            font-size: 50px;
+            margin-top: -3px;
+            font-size: 18px;
             color: green;
             position: absolute;
-            margin-top: -8px;
         }
 
         .arrow-left1 {
             padding-left: 15px;
-            font-size: 62px;
+            margin-top: -3px;
+            font-size: 18px;
             color: yellow;
-            margin-top: -21px;
             position: absolute;
         }
 
@@ -172,13 +180,7 @@
 
 
 
-        .dice-image {
-            height: 151px;
-            position: absolute;
-            margin-top: 424px;
-            margin-left: 400px;
-            
-        }
+
 
         .dice-image1 {
             margin-left: 86%;
@@ -188,22 +190,18 @@
             position: absolute;
             font-size: 40px;
             margin-left: 60%;
-            margin-top: 64px;
+            margin-top: 30px;
             background-color: unset;
             font-family: Arial, Helvetica, sans-serif;
-            font-size: 30px;
-            
-
+            font-size: 10px;
         }
 
         .ply {
             position: absolute;
-            font-size: 30px;
+            font-size: 10px;
             margin-left: 12%;
             background-color: unset;
-            margin-top: 64px;
-
-            
+            margin-top: 30px;
         }
 
         .reddice {
@@ -218,19 +216,42 @@
             margin-left: 135px;
         }
 
+        .dicegoat {
+            margin-top: 15px;
+            /* margin-left: 5px; */
+            position: absolute;
+            width: 100%;
+        }
+
         .redd {
-            margin-top: 43%;
+            margin-top: 32%;
+        }
+
+        .arrow-downside {
+            margin-left: 30%;
+        }
+
+
+        .bluegoatt {
+            width: 35px;
+            padding-left: 5px;
         }
     </style>
 </head>
 
 <body>
-    <- class="row-16" style="
-    margin-top: 15%;
-">
+    <div class="row-16" style="overflow: hidden;">
 
-        <div class="col-md-6 col-xs-12" style="margin-top: 15%;">
-            <div class="grid">
+        <div class="col-md-6 col-xs-12" style="
+        padding-right: 0px;
+        padding-left: 0px;
+        height: calc(100vh - 250px);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        ">
+            <div class="grid w-100">
                 <div class="col-6-15 border">
 
                     <div class="row-6-15 border red " id="red">
@@ -364,7 +385,7 @@
                                     </div>
                                 </div>
                             </div>
-                            
+
                         </div>
 
                     </div>
@@ -660,7 +681,7 @@
                                     </div>
                                 </div>
                             </div>
-                            
+
 
                         </div>
 
@@ -688,9 +709,9 @@
                 </div>
             </div>
         </div>
-        <div class="col-md-3 col-xs-12 mt-5">
+        <div class="col-md-3 col-xs-12 mt-5 footerBottom">
 
-            <div class="panel panel-default " style="display: none; ">
+            <div class="panel panel-default " style="display: none !important; ">
                 <div class="panel-heading" style="padding:0; margin: 0;">
                     <button class="btn btn-danger btn-block" id="leaveGame">To lobby</button>
                     <div class="panel-body">
@@ -763,20 +784,59 @@
                     </div>
                     <div class="col-md-12 mt-5">
                         <div class="dropup">
-                            <a class="btn  dropdown-toggle" type="button" id="about-us" data-toggle="dropdown" aria-haspopup="true"
-                                aria-expanded="false">
-                                <img src="assets/img/ludo/bar-menu.png" class="injectable " alt="" width="100px">
+                            <a class="btn  dropdown-toggle" type="button" id="about-us" data-toggle="dropdown"
+                                aria-haspopup="true" aria-expanded="false">
+                                <img src="assets/img/ludo/bar-menu.png" class="injectable " alt="" width="50px">
                                 <span class="caret"></span>
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="about-us">
-                                <li><a class="dropdown-item d-flex" href="#" data-toggle="modal" data-target="#flipFlop"><img
-                                            src="assets/img/ludo/cross.png" width="60px"> <span class="exit">Exit</span></a></li>
+                                <li><a class="dropdown-item d-flex" href="#" data-toggle="modal"
+                                        data-target="#flipFlop"><img src="assets/img/ludo/cross.png" width="30px"> <span
+                                            class="exit">Exit</span></a></li>
 
                             </ul>
                         </div>
                     </div>
-                    <div class="redd">
 
+
+                    
+              
+                    <!--<div class="square-progress-bar-container">
+                            <div class="square-progress-bar"></div>
+                        </div>-->
+
+
+                        <div class="dflex-items">
+                            <div><img src="assets/img/chat.png" width="52px" /></div>
+                            <div><img src="assets/img/gif.png" /></div>
+                            </div>
+                    <div class="avatar">
+                        <img src="assets/img/loadar.gif" alt="loader" class="loader-timer" id="loader">
+                       <div class="avatdiv">
+                        <img src="assets/img/userbg.png" class="first-child"/>
+                        <img src="assets/img/world.png" class="world-first" />
+                        </div>
+                        <div class="arrow avatdiv">
+                        <img src="assets/img/arrow.png" alt="arrow">
+                        </div>
+                        <div class="avatdiv">
+                            <img src="assets/img/world.png" class="world-last" />
+                            <img src="assets/img/userbg.png" class="last-child" />
+                        </div>
+                    </div>
+                    <div class="redd">
+                        <!--<div class="user-pic">
+                            <img src="assets/img/ludo/user1.png" class="injectable " alt="">
+                            <img src="assets/img/ludo/arrow.png" class="injectable arrow-downside" alt="" width="50">
+                            <img src="assets/img/ludo/user1.png" class="injectable" alt="" style="float: right;">
+                        </div> -->
+                        <div class="dicegoat">
+                            <img src="assets/img/ludo/reddice.png" class="injectable redgoatt" alt="">
+                            <img src="assets/img/dots.png" alt="dots" class="dots-right">
+                            <img src="assets/img/ludo/bluedice.png" class="injectable bluegoatt" alt=""
+                                style="float: right;margin-right: 12px; width: 29px; margin-bottom: 7px;">
+                            <img src="assets/img/dots.png" alt="dots" class="dots-left">
+                        </div>
 
                         <div class="backdice">
                             <div class="d-flex">
@@ -787,13 +847,15 @@
 
                         </div>
 
+
+
                     </div>
 
 
                 </div>
             </div>
 
-            // <button id="runGame"> Autoplay</button>
+            <!--<button id="runGame"> Autoplay</button>-->
             <div id="timeLeftDiv" class="panel panel-danger" style="display: none;">
                 <div class="panel-heading" style="padding:0; margin: 0;">
                     <h3 style="text-align: center; padding:0; margin: 0;"><i class="fa fa-clock-o"></i> Time remaining
@@ -825,30 +887,29 @@
 
                 </div>
                 <div class="modal-body popup-border">
-                    <div
-                        class="product-color-picker space-pt--25 space-pb--25   text-center mb-3 justify-content-center">
+                    <div class="product-color-picker space-pt--25 space-pb--25 text-center mb-3 justify-content-center">
                         <div class="container">
                             <div class="row">
                                 <div class="col-12 ">
-                                    <h3 class="space-mb--20 "><img src="assets/img/ludo/quitgame.png" alt="" width="550"
-                                            style="margin-left: 8rem;">
+                                    <h3 class="space-mb--20 "><img src="assets/img/ludo/quitgame.png" alt="" width="250"
+                                            style="margin-left: 4rem;">
                                     </h3>
-                                    <div class="row mt-3" style="margin-left: 6rem;padding-top: 2rem;">
+                                    <div class="row mt-3">
                                         <div class="col-4 mp-quit">
-                                            <button type="button" class="yes-btn btn" onclick="pageRedirect()"
+                                            <button type="button" class=" btn" onclick="pageRedirect()"
                                                 style="background-color: unset;"><img src="assets/img/ludo/yes.png"
-                                                    alt="" width="150px" height="80px"></button>
+                                                    alt="" width="55px" height="40px"></button>
                                         </div>
                                         <div class="col-2 mp-quit">
-                                            <img src="assets/img/ludo/volume.png" alt="" width="100">
+                                            <img src="assets/img/ludo/volume.png" alt="" width="50">
                                         </div>
                                         <div class="col-2 mp-quit">
-                                            <img src="assets/img/ludo/music.png" alt="" width="100">
+                                            <img src="assets/img/ludo/music.png" alt="" width="50">
                                         </div>
                                         <div class="col-4 mp-quit">
                                             <a type="button" class="yes-btn" data-dismiss="modal"
-                                                aria-label="Close"><img src="assets/img/ludo/no.png" alt=""
-                                                    width="150px" height="80px"></a>
+                                                aria-label="Close"><img src="assets/img/ludo/no.png" alt="" width="60px"
+                                                    height="40px"></a>
 
 
                                         </div>
@@ -865,220 +926,213 @@
 </div>-->
             </div>
         </div>
-        </div>
+    </div>
 
 
-        </div>
+    </div>
 
 
 
 
-        <script>
+    <script>
 
-            function set_dice_clr() {
-                let get_clr = localStorage.getItem("color")
+        function set_dice_clr() {
+            let get_clr = localStorage.getItem("color")
 
-                if (get_clr == "Red") {
-                    $(".Yellow").addClass("Red").removeClass("Yellow");
+            if (get_clr == "Red") {
+                $(".Yellow").addClass("Red").removeClass("Yellow");
 
-                }
+            }
 
-                if (get_clr == "Blue") {
-                    $(".Yellow").addClass("Blue").removeClass("Yellow");
+            if (get_clr == "Blue") {
+                $(".Yellow").addClass("Blue").removeClass("Yellow");
 
-                }
+            }
 
-                if (get_clr == "Green") {
-                    $(".Yellow").addClass("Green").removeClass("Yellow");
+            if (get_clr == "Green") {
+                $(".Yellow").addClass("Green").removeClass("Yellow");
 
-                }
+            }
 
-                if (get_clr == "Red") {
-                    $(".Yellow").addClass("Yellow").removeClass("Yellow");
+            if (get_clr == "Red") {
+                $(".Yellow").addClass("Yellow").removeClass("Yellow");
 
-                }
+            }
+
+
+        }
+
+        set_dice_clr()
+
+
+    </script>
+
+
+    <script>
+
+        function set_lobby_clr() {
+            let get_player_ID = localStorage.getItem("playerId")
+            let get_clr = localStorage.getItem("color")
+
+            if (get_player_ID == 0 && get_clr == "Blue") {
+                $(".red").addClass("blue").removeClass("red");
+                $("#pos-73").addClass("blue").removeClass("red")
+
+
+                //Blue_Id
+                $("#Blue_Id").addClass("red").removeClass("blue")
+                $("#pos-12").addClass("red").removeClass("blue")
+                $("#pos-13").addClass("red").removeClass("blue")
+                $("#pos-14").addClass("red").removeClass("blue")
+                $("#pos-15").addClass("red").removeClass("blue")
+                $("#pos-55").addClass("red").removeClass("blue")
+                $("#pos-86").addClass("red").removeClass("blue")
+                $("#pos-87").addClass("red").removeClass("blue")
+                $("#pos-88").addClass("red").removeClass("blue")
+                $("#pos-89").addClass("red").removeClass("blue")
+                $("#pos-90").addClass("red").removeClass("blue")
+                $("#pos-91").addClass("red").removeClass("blue")
+                $("#red_inbox").addClass("blue_inbox").removeClass("red_inbox")
+                $("#blue_inbox").addClass("red_inbox").removeClass("blue_inbox")
+                $("#arrow-right").addClass("arrow-up1 ").removeClass("arrow-right")
+                $("#arrow-up").addClass("arrow-right1").removeClass("arrow-up")
+
+                //$("#pos-92").addClass("red").removeClass("blue")
+
 
 
             }
 
-            set_dice_clr()
+            let yellow = 0
+            if (get_player_ID == 0 && get_clr == "Yellow") {
 
-
-        </script>
-
-
-        <script>
-
-            function set_lobby_clr() {
-                let get_player_ID = localStorage.getItem("playerId")
-                let get_clr = localStorage.getItem("color")
-
-                if (get_player_ID == 0 && get_clr == "Blue") {
-                    $(".red").addClass("blue").removeClass("red");
-                    $("#pos-73").addClass("blue").removeClass("red")
-
-
-                    //Blue_Id
-                    $("#Blue_Id").addClass("red").removeClass("blue")
-                    $("#pos-12").addClass("red").removeClass("blue")
-                    $("#pos-13").addClass("red").removeClass("blue")
-                    $("#pos-14").addClass("red").removeClass("blue")
-                    $("#pos-15").addClass("red").removeClass("blue")
-                    $("#pos-55").addClass("red").removeClass("blue")
-                    $("#pos-86").addClass("red").removeClass("blue")
-                    $("#pos-87").addClass("red").removeClass("blue")
-                    $("#pos-88").addClass("red").removeClass("blue")
-                    $("#pos-89").addClass("red").removeClass("blue")
-                    $("#pos-90").addClass("red").removeClass("blue")
-                    $("#pos-91").addClass("red").removeClass("blue")
-                    $("#red_inbox").addClass("blue_inbox").removeClass("red_inbox")
-                    $("#blue_inbox").addClass("red_inbox").removeClass("blue_inbox")
-                    $("#arrow-right").addClass("arrow-up1 ").removeClass("arrow-right")
-                    $("#arrow-up").addClass("arrow-right1").removeClass("arrow-up")
-
-                    //$("#pos-92").addClass("red").removeClass("blue")
+                $(".red").addClass("yellow").removeClass("red")
+                $("#Yellow_ID").addClass("red").removeClass("yellow")
+                $("#pos-8").addClass("red").removeClass("yellow")
+                $("#pos-9").addClass("red").removeClass("yellow")
+                $("#pos-10").addClass("red").removeClass("yellow")
+                $("#pos-11").addClass("red").removeClass("yellow")
+                $("#pos-42").addClass("red").removeClass("yellow")
+                $("#pos-80").addClass("red").removeClass("yellow")
+                $("#pos-81").addClass("red").removeClass("yellow")
+                $("#pos-82").addClass("red").removeClass("yellow")
+                $("#pos-83").addClass("red").removeClass("yellow")
+                $("#pos-84").addClass("red").removeClass("yellow")
+                $("#pos-84").addClass("red").removeClass("yellow")
+                $("#red_inbox").addClass("yellow_inbox").removeClass("red_inbox")
+                $("#yellow_inbox").addClass("red_inbox").removeClass("yellow_inbox")
+                $("#arrow-right").addClass("arrow-left").removeClass("arrow-right")
+                $("#arrow-left").addClass("arrow-right").removeClass("arrow-left")
+            }
 
 
 
-                }
+            if (get_player_ID == 0 && get_clr == "Green") {
+                $(".red").addClass("green").removeClass("red");
+                //Green_Id
+                $("#Green_Id").addClass("red").removeClass("green")
+                $("#pos-4").addClass("red").removeClass("green")
+                $("#pos-5").addClass("red").removeClass("green")
+                $("#pos-6").addClass("red").removeClass("green")
+                $("#pos-7").addClass("red").removeClass("green")
+                $("#pos-29").addClass("red").removeClass("green")
+                $("#pos-74").addClass("red").removeClass("green")
+                $("#pos-75").addClass("red").removeClass("green")
+                $("#pos-76").addClass("red").removeClass("green")
+                $("#pos-77").addClass("red").removeClass("green")
+                $("#pos-78").addClass("red").removeClass("green")
+                $("#pos-79").addClass("red").removeClass("green")
+                $("#red_inbox").addClass("green_inbox").removeClass("red_inbox")
+                $("#green_inbox").addClass("red_inbox").removeClass("green_inbox")
+                $("#arrow-right").addClass("arrow-down1").removeClass("arrow-right")
+                $("#arrow-down").addClass("arrow-right1").removeClass("arrow-down")
 
-                let yellow = 0
-                if (get_player_ID == 0 && get_clr == "Yellow") {
+            }
 
-                    $(".red").addClass("yellow").removeClass("red")
-                    $("#Yellow_ID").addClass("red").removeClass("yellow")
-                    $("#pos-8").addClass("red").removeClass("yellow")
-                    $("#pos-9").addClass("red").removeClass("yellow")
-                    $("#pos-10").addClass("red").removeClass("yellow")
-                    $("#pos-11").addClass("red").removeClass("yellow")
-                    $("#pos-42").addClass("red").removeClass("yellow")
-                    $("#pos-80").addClass("red").removeClass("yellow")
-                    $("#pos-81").addClass("red").removeClass("yellow")
-                    $("#pos-82").addClass("red").removeClass("yellow")
-                    $("#pos-83").addClass("red").removeClass("yellow")
-                    $("#pos-84").addClass("red").removeClass("yellow")
-                    $("#pos-84").addClass("red").removeClass("yellow")
-                    $("#red_inbox").addClass("yellow_inbox").removeClass("red_inbox")
-                    $("#yellow_inbox").addClass("red_inbox").removeClass("yellow_inbox")
-                    $("#arrow-right").addClass("arrow-left").removeClass("arrow-right")
-                    $("#arrow-left").addClass("arrow-right").removeClass("arrow-left")
-                }
-
-
-
-                if (get_player_ID == 0 && get_clr == "Green") {
-                    $(".red").addClass("green").removeClass("red");
-                    //Green_Id
-                    $("#Green_Id").addClass("red").removeClass("green")
-                    $("#pos-4").addClass("red").removeClass("green")
-                    $("#pos-5").addClass("red").removeClass("green")
-                    $("#pos-6").addClass("red").removeClass("green")
-                    $("#pos-7").addClass("red").removeClass("green")
-                    $("#pos-29").addClass("red").removeClass("green")
-                    $("#pos-74").addClass("red").removeClass("green")
-                    $("#pos-75").addClass("red").removeClass("green")
-                    $("#pos-76").addClass("red").removeClass("green")
-                    $("#pos-77").addClass("red").removeClass("green")
-                    $("#pos-78").addClass("red").removeClass("green")
-                    $("#pos-79").addClass("red").removeClass("green")
-                    $("#red_inbox").addClass("green_inbox").removeClass("red_inbox")
-                    $("#green_inbox").addClass("red_inbox").removeClass("green_inbox")
-                    $("#arrow-right").addClass("arrow-down1").removeClass("arrow-right")
-                    $("#arrow-down").addClass("arrow-right1").removeClass("arrow-down")
-
-                }
-
-                if (get_player_ID == 1 && get_clr == "Blue") {
-                    $(".green").addClass("blue").removeClass("green");
-                    //Blue_Id
-                    $("#Blue_Id").addClass("green").removeClass("blue")
-                    $("#pos-12").addClass("green").removeClass("blue")
-                    $("#pos-13").addClass("green").removeClass("blue")
-                    $("#pos-14").addClass("green").removeClass("blue")
-                    $("#pos-15").addClass("green").removeClass("blue")
-                    $("#pos-55").addClass("green").removeClass("blue")
-                    $("#pos-86").addClass("green").removeClass("blue")
-                    $("#pos-87").addClass("green").removeClass("blue")
-                    $("#pos-88").addClass("green").removeClass("blue")
-                    $("#pos-89").addClass("green").removeClass("blue")
-                    $("#pos-90").addClass("green").removeClass("blue")
-                    $("#pos-91").addClass("green").removeClass("blue")
-                    $("#green_inbox").addClass("blue_inbox").removeClass("green_inbox")
-                    $("#blue_inbox").addClass("green_inbox").removeClass("blue_inbox")
-                    $("#arrow-down").addClass("arrow-up").removeClass("arrow-down")
-                    $("#arrow-up").addClass("arrow-down").removeClass("arrow-up")
-                }
+            if (get_player_ID == 1 && get_clr == "Blue") {
+                $(".green").addClass("blue").removeClass("green");
+                //Blue_Id
+                $("#Blue_Id").addClass("green").removeClass("blue")
+                $("#pos-12").addClass("green").removeClass("blue")
+                $("#pos-13").addClass("green").removeClass("blue")
+                $("#pos-14").addClass("green").removeClass("blue")
+                $("#pos-15").addClass("green").removeClass("blue")
+                $("#pos-55").addClass("green").removeClass("blue")
+                $("#pos-86").addClass("green").removeClass("blue")
+                $("#pos-87").addClass("green").removeClass("blue")
+                $("#pos-88").addClass("green").removeClass("blue")
+                $("#pos-89").addClass("green").removeClass("blue")
+                $("#pos-90").addClass("green").removeClass("blue")
+                $("#pos-91").addClass("green").removeClass("blue")
+                $("#green_inbox").addClass("blue_inbox").removeClass("green_inbox")
+                $("#blue_inbox").addClass("green_inbox").removeClass("blue_inbox")
+                $("#arrow-down").addClass("arrow-up").removeClass("arrow-down")
+                $("#arrow-up").addClass("arrow-down").removeClass("arrow-up")
+            }
 
 
-                if (get_player_ID == 1 && get_clr == "Red") {
-                    $(".green").addClass("red").removeClass("green");
-                    //Blue_Id
-                    $("#red").addClass("green").removeClass("red")
-                    $("#pos-0").addClass("green").removeClass("red")
-                    $("#pos-1").addClass("green").removeClass("red")
-                    $("#pos-2").addClass("green").removeClass("red")
-                    $("#pos-3").addClass("green").removeClass("red")
-                    $("#pos-16").addClass("green").removeClass("red")
-                    $("#pos-68").addClass("green").removeClass("red")
-                    $("#pos-69").addClass("green").removeClass("red")
-                    $("#pos-70").addClass("green").removeClass("red")
-                    $("#pos-71").addClass("green").removeClass("red")
-                    $("#pos-72").addClass("green").removeClass("red")
-                    $("#pos-73").addClass("green").removeClass("red")
-                    $("#green_inbox").addClass("red_inbox").removeClass("green_inbox")
-                    $("#red_inbox").addClass("green_inbox").removeClass("red_inbox")
-                    $("#arrow-down").addClass("arrow-right1").removeClass("arrow-down")
-                    $("#arrow-right").addClass("arrow-down1").removeClass("arrow-right")
-                }
+            if (get_player_ID == 1 && get_clr == "Red") {
+                $(".green").addClass("red").removeClass("green");
+                //Blue_Id
+                $("#red").addClass("green").removeClass("red")
+                $("#pos-0").addClass("green").removeClass("red")
+                $("#pos-1").addClass("green").removeClass("red")
+                $("#pos-2").addClass("green").removeClass("red")
+                $("#pos-3").addClass("green").removeClass("red")
+                $("#pos-16").addClass("green").removeClass("red")
+                $("#pos-68").addClass("green").removeClass("red")
+                $("#pos-69").addClass("green").removeClass("red")
+                $("#pos-70").addClass("green").removeClass("red")
+                $("#pos-71").addClass("green").removeClass("red")
+                $("#pos-72").addClass("green").removeClass("red")
+                $("#pos-73").addClass("green").removeClass("red")
+                $("#green_inbox").addClass("red_inbox").removeClass("green_inbox")
+                $("#red_inbox").addClass("green_inbox").removeClass("red_inbox")
+                $("#arrow-down").addClass("arrow-right1").removeClass("arrow-down")
+                $("#arrow-right").addClass("arrow-down1").removeClass("arrow-right")
+            }
 
-                if (get_player_ID == 1 && get_clr == "Yellow") {
-                    $(".green").addClass("yellow").removeClass("green")
+            if (get_player_ID == 1 && get_clr == "Yellow") {
+                $(".green").addClass("yellow").removeClass("green")
 
-                    $("#Yellow_ID").addClass("green").removeClass("yellow")
-                    $("#pos-8").addClass("green").removeClass("yellow")
-                    $("#pos-9").addClass("green").removeClass("yellow")
-                    $("#pos-10").addClass("green").removeClass("yellow")
-                    $("#pos-11").addClass("green").removeClass("yellow")
-                    $("#pos-42").addClass("green").removeClass("yellow")
-                    $("#pos-80").addClass("green").removeClass("yellow")
-                    $("#pos-81").addClass("green").removeClass("yellow")
-                    $("#pos-82").addClass("green").removeClass("yellow")
-                    $("#pos-83").addClass("green").removeClass("yellow")
-                    $("#pos-84").addClass("green").removeClass("yellow")
-                    $("#pos-84").addClass("green").removeClass("yellow")
-                    $("#pos-85").addClass("green").removeClass("yellow")
-                    $("#green_inbox").addClass("yellow_inbox").removeClass("green_inbox")
-                    $("#yellow_inbox").addClass("green_inbox").removeClass("yellow_inbox")
-                    $("#arrow-down").addClass("arrow-left1").removeClass("arrow-down")
-                    $("#arrow-left").addClass("arrow-down1").removeClass("arrow-left")
-                }
+                $("#Yellow_ID").addClass("green").removeClass("yellow")
+                $("#pos-8").addClass("green").removeClass("yellow")
+                $("#pos-9").addClass("green").removeClass("yellow")
+                $("#pos-10").addClass("green").removeClass("yellow")
+                $("#pos-11").addClass("green").removeClass("yellow")
+                $("#pos-42").addClass("green").removeClass("yellow")
+                $("#pos-80").addClass("green").removeClass("yellow")
+                $("#pos-81").addClass("green").removeClass("yellow")
+                $("#pos-82").addClass("green").removeClass("yellow")
+                $("#pos-83").addClass("green").removeClass("yellow")
+                $("#pos-84").addClass("green").removeClass("yellow")
+                $("#pos-84").addClass("green").removeClass("yellow")
+                $("#pos-85").addClass("green").removeClass("yellow")
+                $("#green_inbox").addClass("yellow_inbox").removeClass("green_inbox")
+                $("#yellow_inbox").addClass("green_inbox").removeClass("yellow_inbox")
+                $("#arrow-down").addClass("arrow-left1").removeClass("arrow-down")
+                $("#arrow-left").addClass("arrow-down1").removeClass("arrow-left")
+            }
 
 
 
-                                                                                        }
-                                                                                        set_lobby_clr()
-                                                                                    </script>
+        }
+        set_lobby_clr()
+    </script>
 
-        <script>
+    <script>
+        function pageRedirect() {
+            localStorage.removeItem("token");
+            window.location.href = `/index`;
+        }
 
-
-
-                                                                                        function pageRedirect() {
-                                                                                        localStorage.removeItem("token");
-                                                                                        window.location.href = `/index`;
-                                                                                    }
-
-
-
-
-
-
-
-
-
-
-</script>
-
-
-
+    </script>
+ <script>
+    setTimeout(function () {
+         var loaderID = document.getElementById("loader");
+         loaderID.classList.add("next");
+     }, 21000);  
+ </script>
 </body>
+
+</html>
