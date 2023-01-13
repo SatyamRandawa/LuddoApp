@@ -423,10 +423,10 @@ async function startGame(players, idleTimeout, colors) {
 
 
 
-    for (let i = 0; i < players.length; i++) {
-        playerAuth.setIngame(players[i].playerId, true);
-        playerAuth.setReady(players[i].playerId, false);
-        playerAuth.setInLobby(players[i].playerId, false);
+    for (let i = 0; i < sort.length; i++) {
+        playerAuth.setIngame(sort[i].playerId, true);
+        playerAuth.setReady(sort[i].playerId, false);
+        playerAuth.setInLobby(sort[i].playerId, false);
     }
 
     games.push(game);
@@ -443,16 +443,16 @@ async function startGame(players, idleTimeout, colors) {
     console.log("Starting game id: " + game.gameId);
 
     let string = game.gameId;
-    for (let i = 0; i < players.length; i++) string += " " + players[i].playerId;
+    for (let i = 0; i < sort.length; i++) string += " " + sort[i].playerId;
     setTimeout(function () {
         io.emit('gamestart', string);
     }, 200);
 
-    setTimeout(async () => {
+   // setTimeout(async () => {
         for (let i of sort) {
             let find_and_delete = await rooms_Model.findOneAndDelete({ RoomID: i.RoomID })
         }
-    }, 20000);
+  //  }, 20000);
 
 
     //players = []
