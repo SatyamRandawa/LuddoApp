@@ -355,7 +355,7 @@ async function startGame(players, idleTimeout, colors) {
 
 
     //------------------------------------------------------------------------------------
-    let find = await rooms_Model.find().sort({ playerID: -1 });
+    let find = await rooms_Model.find();
 
     console.log(">>>>>>>>>=================....................>>>>>>>>>find[find.length-1]", find)
 
@@ -413,11 +413,6 @@ async function startGame(players, idleTimeout, colors) {
          color : "yellow"
         }
 
-    setTimeout(async () => {
-        for (let i of sort) {
-            let find_and_delete = await rooms_Model.findOneAndDelete({ RoomID: i.RoomID })
-        }
-    }, 30000);
 
 
     let game = gameJS.createGame(sort, idleTimeout, colors);
@@ -452,6 +447,13 @@ async function startGame(players, idleTimeout, colors) {
     setTimeout(function () {
         io.emit('gamestart', string);
     }, 200);
+
+    setTimeout(async () => {
+        for (let i of sort) {
+            let find_and_delete = await rooms_Model.findOneAndDelete({ RoomID: i.RoomID })
+        }
+    }, 20000);
+
 
     //players = []
 

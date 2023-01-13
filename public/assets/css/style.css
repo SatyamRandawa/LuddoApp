@@ -5312,4 +5312,33 @@ margin-left: 4rem;
 }*/
 }
 
+@media (min-width: 360px) and (max-width: 768px) {
+  .image-border {
+    height: 338px !important;
+  }
+
+  #myTab li.nav-item {
+    margin: 0px 27px 0px 27px !important;
+  }
+}
+
+@media (min-width: 412px) and (max-width: 768px) {
+  .image-border {
+    height: 338px !important;
+  }
+
+  #myTab li.nav-item {
+    margin: 0px 35px 0px 35px !important
+  }
+}
+
+@media (min-width: 390px) and (max-width: 768px) {
+  .image-border {
+    height: 338px !important;
+  }
+
+  #myTab li.nav-item {
+    margin: 0px 35px 0px 35px !important
+  }
+}
 

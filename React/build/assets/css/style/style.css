@@ -8778,7 +8778,7 @@ div.dataTables_wrapper div.dataTables_length select {
 
 .main-header {
     height: 60px;
-    background-color: #fff;
+    background-color: #e9000;
     box-shadow: none;
     border-bottom: 1px solid #e8e8f7;
     z-index: 99;
@@ -9695,15 +9695,23 @@ div.dataTables_wrapper div.dataTables_length select {
     }
 }
 
+.dataTogglerResponsive{
+    width: 240px!important;
+    transform: translateX(0px)!important ;
+    transition: all .2s;
+    visibility: visible!important;
+
+}
 .main-sidebar {
-    width: 240px;
+  width: 0px;
     flex-direction: column;
     flex-shrink: 0;
     border-right: 0;
     transform: translateX(-240px);
     visibility: hidden;
-    transition: all .4s
+ 
 }
+
 
 @media (prefers-reduced-motion:reduce) {
     .main-sidebar {
@@ -52624,7 +52632,7 @@ button.bg-dark:hover {
 }
 
 .pos-absolute {
-    position: absolute
+    position: inherit;
 }
 
 .pos-relative {
@@ -56843,6 +56851,9 @@ button.bg-dark:hover {
 
     .tx-md-left-f {
         text-align: left !important
+    }
+    .btn_handler{
+        width:160px !important;
     }
 }
 
@@ -69743,7 +69754,9 @@ ul.inbox-pagination {
     }
 
     .main-header.side-header {
-        border-bottom: 1px solid #ddddf7
+        border-bottom: 1px solid #ddddf7;
+    background-color:#181818!important ;
+    z-index: 99999999;
     }
 
     .sidemenu-logo .main-logo {
@@ -69779,7 +69792,7 @@ ul.inbox-pagination {
     .main-header-right .header-settings,
     .main-header-right .main-header-notification,
     .main-header-right .main-profile-menu {
-        display: none
+        /* display: none */
     }
 
     .main-header-center {

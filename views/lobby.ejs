@@ -35,63 +35,67 @@
             color: #ffffff;
             font-size: 18px;
             margin-top: -28px;
-           
+
         }
 
         .well img {
-    width: 110px;
-    height: 30px;
-    position: absolute;
-    z-index: -1;
-    margin-left: -14px;
-    margin-top: 0px;
-}
-#readyPlayers .well img {
-    width: 110px;
-    height: 30px;
-    position: absolute;
-    z-index: -1;
-    margin-left: -36px;
-    margin-top: 0px;
-}
+            width: 110px;
+            height: 30px;
+            position: absolute;
+            z-index: -1;
+            margin-left: -14px;
+            margin-top: 0px;
+        }
+
+        #readyPlayers .well img {
+            width: 110px;
+            height: 30px;
+            position: absolute;
+            z-index: -1;
+            margin-left: -36px;
+            margin-top: 0px;
+        }
 
         .b_color {
-    border: 3px solid #871e19;
-}
+            border: 3px solid #871e19;
+        }
+
         .uper-top {
             margin-top: -3rem;
         }
 
         #time {
-    color: #ffffff;
-    margin-top: -26px;
-    font-size: 18px;
-}
+            color: #ffffff;
+            margin-top: -26px;
+            font-size: 18px;
+        }
 
         .user-tow {
             margin-top: -25px;
         }
 
         #room_ID {
-    font-size: 17px;
-    color: #f7c021;
-    font-weight: 900;
-    width: 110px;
-    border: 2px solid #ffb701;
-    margin-left: 122px;
-    background-color: #022a92;
-    padding-top: 3px;
-    padding-bottom: 3px;
-    border-radius: 32px;
-}
-.logo-img-center {
-    width: 100%;
-    max-width: 75%;
-    margin-left: 45px;
-}
-.time{
-    margin-top: -30px;
-}
+            font-size: 17px;
+            color: #f7c021;
+            font-weight: 900;
+            width: 110px;
+            border: 2px solid #ffb701;
+            margin-left: 122px;
+            background-color: #022a92;
+            padding-top: 3px;
+            padding-bottom: 3px;
+            border-radius: 32px;
+        }
+
+        .logo-img-center {
+            width: 100%;
+            max-width: 75%;
+            margin-left: 45px;
+        }
+
+        .time {
+            margin-top: -30px;
+        }
     </style>
 </head>
 
@@ -104,9 +108,14 @@
                 <button class="btn" style="padding: 0px;" onclick="pageRedirect()"><img
                         src="assets\img\ludo\Backbutton.png" class="img-fluid" alt="" width="45"></button>
             </div>
+            
             <div class=" col-4 d-flex handle_sound justify-content-end">
+                <h5 onclick="share_data()" class="modal-title" id="staticBackdropLabel"><img src="assets\img\ludo\whatsapp.png"
+                        class="img-fluid"
+                        alt="" width="115px"></h5>
                 <h5 class="modal-title" id="staticBackdropLabel"><img src="assets\img\ludo\music.png" class="img-fluid"
                         alt="" width="100px"></h5>
+                        
                 <h5 class="modal-title" id="staticBackdropLabel"><img src="assets\img\ludo\sound.png" class="img-fluid"
                         alt="" width="100px"></h5>
             </div>
@@ -143,7 +152,8 @@
 
                     <div class="card-header text-right">
                         <div class="">
-                            <img src="assets/img/ludo/user1.png" class="img-fluid b_color" width="110" style="margin-left: 15px;">
+                            <img src="assets/img/ludo/user1.png" class="img-fluid b_color" width="110"
+                                style="margin-left: 15px;">
                         </div>
                     </div>
                     <div class="card-body text-center">
@@ -155,8 +165,7 @@
             <div class="col-md-2 col-xs-12" style="width:30%;padding-right: 0px;
     padding-left: 0px">
                 <div class="card card-default">
-                    <div class="card-header mt-3 " ><img src="assets/img/ludo/vs-img.png"
-                            class="img-fluid" width="110">
+                    <div class="card-header mt-3 "><img src="assets/img/ludo/vs-img.png" class="img-fluid" width="110">
                     </div>
                     <div id="ongoingGames1" class="card-body">
 
@@ -312,7 +321,27 @@
 
 
 
-        }      
+        }
+
+
+
+        function share_data() {
+
+            console.log("fuunction Share")
+
+
+            let Player_ID = localStorage.getItem("playerId")
+            let roomID = localStorage.getItem("room_id")
+
+            window.location.href = `whatsapp://send?text=I want to play Ludo King with you! 
+                                                                                                 Room Code: ${roomID} 
+                                                                                                 Start Game > Play with Friends > Join > Enter Room code.
+                                                                                                 Please install:
+                                                                                                 Android: http://http://ec2-3-113-5-221.ap-northeast-1.compute.amazonaws.com:8080
+                                                                                                 Believe me this is awesome game!`
+
+
+        }
     </script>
 </body>
 
